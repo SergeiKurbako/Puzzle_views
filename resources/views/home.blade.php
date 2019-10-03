@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@guest
+
 @section('content')
 <div class="entrance">
         <h1>Login</h1>
