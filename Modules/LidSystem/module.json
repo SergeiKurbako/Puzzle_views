@@ -1,0 +1,14 @@
+{
+    "name": "LidSystem",
+    "alias": "lidsystem",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\LidSystem\\Providers\\LidSystemServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

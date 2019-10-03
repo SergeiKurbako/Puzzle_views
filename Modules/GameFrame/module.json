@@ -1,0 +1,14 @@
+{
+    "name": "GameFrame",
+    "alias": "gameframe",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\GameFrame\\Providers\\GameFrameServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,111 @@
+:root{
+    font-family: 'Roboto','Nunito', 'Arial', 'sans-selif';
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrance{
+    width: 400px;
+}
+
+.entrance h1{
+    font-size: 1.3rem;
+    font-weight: 300 !important;
+    color: #313435;
+    margin-bottom: 40px;
+}
+
+.bl-input{
+    margin-bottom: 10px;
+}
+
+
+.entrance label{
+    color: #343a40;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.entrance input[type=tel], .entrance input[type=text], .entrance input[type=number]{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    width: 370px;
+    padding: 7.5px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.entrance input::-webkit-outer-spin-button,
+.entrance input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.entrance input:focus{
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.entrance__btn{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: 20px;
+}
+
+.entrance__btn-login span{
+    color: #fff;
+    font-size: 18px;
+    background-color: #2196f3;
+    /* border-color: #2196f3; */
+    padding: 10px 15px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.entrance__btn-login span:hover{
+    background-color: #0c83e2;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]+ label:before {
+    content: "✔";
+    color: transparent;
+    display: inline-block;
+    font-size: 20px;    
+    line-height: 22px;
+    margin: -5px 5px 0 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: color ease .3s;
+    border: .5px solid #ced4da;
+}
+
+input[type=checkbox]:checked + label:before {
+    background-color: #2196f3;
+    color: #ffffff;
+}
+
+.war-phone{
+    color: #ff1818;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0;
+}

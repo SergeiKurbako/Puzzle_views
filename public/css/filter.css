@@ -1,0 +1,190 @@
+.main__table h2{
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: .5px;
+    font-weight: 600;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.main__table--filter form .main__table--filter--wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.main__table--filter form p{
+    font-size: 14px;
+    color: #444444;
+    font-weight: 600;
+}
+
+.main__table--filter form label{
+    font-size: 14px;
+    color: #72777a;
+}
+
+.main__table--filter form .main__table--filter--wrapper>div>p{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.main__table--filter form input{
+    border: 1px solid #ced4da;
+    border-radius: .3rem;
+}
+
+.main__table--filter form input:focus{
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.main__filter--price input{
+    height: 37px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+::-webkit-datetime-edit-month-field{
+    font-size: 14px;
+    /* color: blue; */
+}
+
+.main__filter--date-input-wrapper{
+    width: 390px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Filter frame.blade.css */
+
+.main__filter--date--stat-user{
+    width: 400px !important;
+}
+
+.main__filter--date-input-wrapper--stas-user{
+    width: 390px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*  */
+
+.main__filter--date input{
+    color: #495057;
+    background: #fff;
+    font-size: 16px;
+    height: 40px;
+    /* padding: 10px 15px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    font-family: 'Roboto','Courier New', Courier, monospace
+}
+
+.main__filter--date input::-webkit-inner-spin-button { display: none; }
+
+
+.main__filter--date input[type="text"]{
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.main__table--filter--wrapper select{
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    color:#495057;
+    border-radius: .35rem;
+    transition: .2s;
+}
+
+.main__table--filter--wrapper select:focus{
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.main__filter--price input{
+    width: 70px;
+    font-size: 16px;
+}
+
+.main__filter--exel{
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    
+    /* height: 90px; */
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]+ label:before {
+    content: "✔";
+    border-radius: 50%;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;    
+    line-height: 22px;
+    margin: -5px 5px 0 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease .3s;
+    border: .5px solid #ced4da;
+}
+
+input[type=checkbox]:checked + label:before {
+    background: #0F9AEE;
+}
+
+.main__filter--btn{
+   padding: 15px;
+   padding-left: 15px;
+}
+
+.main__filter--btn input{
+    border: 1px solid #e9ecef;
+    padding: 10px 20px;
+    
+    background: #2196f3;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.main__filter--btn input:hover{
+    background: #227fcc;
+}
+
+@media screen and (max-width: 1435px){
+    /* .main__table--filter form .main__table--filter--wrapper{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .main__filter--exel{
+        padding-left: 15px;
+    }
+    .main__filter--btn{
+        padding-left: 15px;
+    } */
+    .main__filter--date{
+        width: 395px;
+    }
+    .main__filter--date-input-wrapper{
+        width: auto;
+        display: flex;
+        /* flex-direction: column; */
+        align-items: flex-end;
+    }
+}
+
+@media screen and (max-width: 1425px){
+    
+}

@@ -1,0 +1,14 @@
+{
+    "name": "UserDashboard",
+    "alias": "userdashboard",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\UserDashboard\\Providers\\UserDashboardServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

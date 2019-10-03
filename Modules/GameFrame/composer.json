@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/gameframe",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\GameFrame\\Providers\\GameFrameServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\GameFrame\\": ""
+        }
+    }
+}
