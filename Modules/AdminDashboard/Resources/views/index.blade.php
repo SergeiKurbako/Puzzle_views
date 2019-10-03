@@ -35,8 +35,8 @@
                             @foreach($users as $user)
                             <tr>
                                 <td>{{$user->id}}</td>
-                                <td>$user->userInfo->first_name</td>
-                                <td>$user->userInfo->work_place</td>
+                                <td>{{$user->userInfo->first_name}}</td>
+                                <td>{{$user->userInfo->work_place}}</td>
                                 <td>{{$user->created_at}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->balance}}</td>
