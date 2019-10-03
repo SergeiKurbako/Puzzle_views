@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
+class ComposerStaticInit89a58f08fa894c9b57cd35996902edda
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -131,6 +131,7 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         ),
         'R' => 
         array (
+            'React\\ZMQ\\' => 10,
             'React\\Stream\\' => 13,
             'React\\Socket\\' => 13,
             'React\\Promise\\Timer\\' => 20,
@@ -332,6 +333,10 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'React\\ZMQ\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/zmq/src',
         ),
         'React\\Stream\\' => 
         array (
@@ -2622,7 +2627,6 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'Modules\\LidSystem\\Database\\Seeders\\LidSystemDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/LidSystem/Database/Seeders/LidSystemDatabaseSeeder.php',
         'Modules\\LidSystem\\Entities\\Complaint' => __DIR__ . '/../..' . '/Modules/LidSystem/Entities/Complaint.php',
         'Modules\\LidSystem\\Entities\\Lid' => __DIR__ . '/../..' . '/Modules/LidSystem/Entities/Lid.php',
-        'Modules\\LidSystem\\Exports\\LidsExport' => __DIR__ . '/../..' . '/Modules/LidSystem/Exports/LidsExport.php',
         'Modules\\LidSystem\\Http\\Controllers\\ComplaintController' => __DIR__ . '/../..' . '/Modules/LidSystem/Http/Controllers/ComplaintController.php',
         'Modules\\LidSystem\\Http\\Controllers\\LidSystemController' => __DIR__ . '/../..' . '/Modules/LidSystem/Http/Controllers/LidSystemController.php',
         'Modules\\LidSystem\\Providers\\LidSystemServiceProvider' => __DIR__ . '/../..' . '/Modules/LidSystem/Providers/LidSystemServiceProvider.php',
@@ -2936,7 +2940,6 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'PHPUnit\\Framework\\IncompleteTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/IncompleteTestCase.php',
         'PHPUnit\\Framework\\IncompleteTestError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/IncompleteTestError.php',
         'PHPUnit\\Framework\\InvalidCoversTargetException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/InvalidCoversTargetException.php',
-        'PHPUnit\\Framework\\InvalidParameterGroupException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/InvalidParameterGroupException.php',
         'PHPUnit\\Framework\\MissingCoversAnnotationException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/MissingCoversAnnotationException.php',
         'PHPUnit\\Framework\\MockObject\\BadMethodCallException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/MockObject/Exception/BadMethodCallException.php',
         'PHPUnit\\Framework\\MockObject\\Builder\\Identity' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/MockObject/Builder/Identity.php',
@@ -3001,7 +3004,6 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'PHPUnit\\Framework\\TestResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/TestResult.php',
         'PHPUnit\\Framework\\TestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/TestSuite.php',
         'PHPUnit\\Framework\\TestSuiteIterator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/TestSuiteIterator.php',
-        'PHPUnit\\Framework\\UnexpectedValueException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/UnexpectedValueException.php',
         'PHPUnit\\Framework\\UnintentionallyCoveredCodeError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/UnintentionallyCoveredCodeError.php',
         'PHPUnit\\Framework\\Warning' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Warning.php',
         'PHPUnit\\Framework\\WarningTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/WarningTestCase.php',
@@ -4178,6 +4180,9 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'React\\Stream\\Util' => __DIR__ . '/..' . '/react/stream/src/Util.php',
         'React\\Stream\\WritableResourceStream' => __DIR__ . '/..' . '/react/stream/src/WritableResourceStream.php',
         'React\\Stream\\WritableStreamInterface' => __DIR__ . '/..' . '/react/stream/src/WritableStreamInterface.php',
+        'React\\ZMQ\\Buffer' => __DIR__ . '/..' . '/react/zmq/src/Buffer.php',
+        'React\\ZMQ\\Context' => __DIR__ . '/..' . '/react/zmq/src/Context.php',
+        'React\\ZMQ\\SocketWrapper' => __DIR__ . '/..' . '/react/zmq/src/SocketWrapper.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -5046,11 +5051,9 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
         'phpDocumentor\\Reflection\\ProjectFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src/ProjectFactory.php',
         'phpDocumentor\\Reflection\\Type' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Type.php',
         'phpDocumentor\\Reflection\\TypeResolver' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/TypeResolver.php',
-        'phpDocumentor\\Reflection\\Types\\AbstractList' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/AbstractList.php',
         'phpDocumentor\\Reflection\\Types\\Array_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Array_.php',
         'phpDocumentor\\Reflection\\Types\\Boolean' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Boolean.php',
         'phpDocumentor\\Reflection\\Types\\Callable_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Callable_.php',
-        'phpDocumentor\\Reflection\\Types\\Collection' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Collection.php',
         'phpDocumentor\\Reflection\\Types\\Compound' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Compound.php',
         'phpDocumentor\\Reflection\\Types\\Context' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Context.php',
         'phpDocumentor\\Reflection\\Types\\ContextFactory' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/ContextFactory.php',
@@ -5074,10 +5077,10 @@ class ComposerStaticInit5300dce42510071dc8d8578797ffacf0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5300dce42510071dc8d8578797ffacf0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5300dce42510071dc8d8578797ffacf0::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5300dce42510071dc8d8578797ffacf0::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5300dce42510071dc8d8578797ffacf0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit89a58f08fa894c9b57cd35996902edda::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit89a58f08fa894c9b57cd35996902edda::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit89a58f08fa894c9b57cd35996902edda::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit89a58f08fa894c9b57cd35996902edda::$classMap;
 
         }, null, ClassLoader::class);
     }
