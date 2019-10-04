@@ -17,6 +17,29 @@ body{
     padding: 30px 40px;
 }
 
+.entrance__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.entrance__logo p{
+    font-size: 1.4em;
+    color: #0178BF; 
+    text-transform: uppercase; 
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.entrance__logo span{
+    font-weight:600;
+}
+
+.entrance__logo img{
+    width: 110px;
+}
+
 .entrance h1{
     font-size: 1.3rem;
     font-weight: 300 !important;
@@ -52,7 +75,7 @@ body{
 
 .entrance__btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -61,7 +84,7 @@ body{
     font-size: 18px;
     background-color: #2196f3;
     /* border-color: #2196f3; */
-    padding: 10px 15px;
+    padding: 10px 50px;
     border-radius: 7px;
     border: none;
 }
@@ -101,10 +124,15 @@ input[type=checkbox]:checked + label:before {
     color: #be4c4c;
 }
 
+.entrance__check{
+    text-align: center;
+    margin-top: 20px;
+}
+
 .entrance__btn--register-link{
     font-size: 14px;
-    text-align: right;
     margin-top: 20px;
+    text-align: center;
 }
 
 .entrance__btn--register-link a{

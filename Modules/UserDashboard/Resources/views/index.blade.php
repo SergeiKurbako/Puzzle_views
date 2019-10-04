@@ -95,7 +95,7 @@
                                 </td>
 
                                 <td>
-                                    <div class="table__content--center">
+                                    <div class="table__content--center main__table--table--last-child--icon">
                                         <a href="/user-dashboard/frame-rules/{{$frame->id}}">
                                             <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                         </a>
@@ -131,7 +131,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="table__content--center">
+                                    <div class="table__content--center main__table--table--last-child--icon">
                                         <a href="/user-dashboard/frame/{{$frame->id}}">
                                             <i style="color: #2196f3" class="far fa-eye"></i>
                                         </a>

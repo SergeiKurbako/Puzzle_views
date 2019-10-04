@@ -45,7 +45,7 @@
 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
                                 
-                                <td>
+                                <td class="main__table--table--last-child--icon">
                                     <a href="/admin-dashboard/frame/{{$frame->id}}/update">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                     </a>
@@ -103,8 +103,10 @@
                                     </div>
                                 </td>
                                 <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
-                                <td style="text-align: center;"> <a href="/admin-dashboard/frame/{{$frame->id}}">
-                                    <i style="color: #2196f3" class="far fa-eye"></i>
+                                
+                                <td class="main__table--table--last-child--icon" style="text-align: center;">
+                                    <a href="/admin-dashboard/frame/{{$frame->id}}">
+                                        <i style="color: #2196f3" class="far fa-eye"></i>
                                     </a></td>
                                 <form class="" action="/gameframe/set-price/{{$frame->id}}" method="post">
                                     @csrf

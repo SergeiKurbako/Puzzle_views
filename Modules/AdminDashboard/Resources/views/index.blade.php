@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="main">
+        <div class="main main__index">
             <div class="main__wrapper">
 
                 <div class="main__name-page">
@@ -40,7 +40,7 @@
                                 <td>{{$user->created_at}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->balance}}</td>
-                                <td class="main__table--table--last-child">
+                                <td class="main__table--table--last-child main__table--table--last-child--icon">
                                 
                                    @if ($user->status === 'off')
                                     <a href="/admin-dashboard/user/{{$user->id}}/on"><i class="fas fa-plus-circle"></i></a>
@@ -52,7 +52,11 @@
                                     @endif
 
                                 </td>
-                                <td><a href="/admin-dashboard/user/{{$user->id}}"><i class="far fa-window-maximize"></i></a></td>
+                                <td class="main__table--table--last-child--icon">
+                                    <a href="/admin-dashboard/user/{{$user->id}}">
+                                        <i class="far fa-window-maximize"></i>
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </table>

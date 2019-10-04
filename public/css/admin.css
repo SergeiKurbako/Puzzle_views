@@ -33,6 +33,17 @@ a{
     padding: 25px;
 }
 
+.header--user{
+    display: flex;
+}
+
+.header__user--balance{
+    display: flex;
+    align-items: center;
+    font-size: .87rem;
+    padding-right: 40px;
+}
+
 .header__user{
     font-size: .87rem;
     padding-right: 40px;
@@ -188,6 +199,7 @@ a{
     margin-right: 30px;
     background: #ffffff;
     border: 1px solid #e9ecef;
+    padding-bottom: 20px;
 }
 
 .main__table--select{
@@ -225,7 +237,7 @@ a{
     font-size: 14px;
     color: #72777a;
     letter-spacing: .2px;
-    padding: 15px 15px;
+    padding: 10px 15px 15px;
 }
 
 .main__table--table table tr td i{
@@ -251,6 +263,15 @@ a{
     color: #be4c4c;
 }
 
+.main__table--table--last-child--icon{
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.main__table--table--last-child--icon a{
+    padding: 10px 10px;
+}
+
 .fa-trash-alt{
     color: #be4c4c;
 }
@@ -262,6 +283,14 @@ a{
 .main__table--table table tr:nth-child(1){
     white-space: nowrap;
     font-weight: 600;
+}
+
+.main__index .main__table--table table tr:nth-child(1) td:nth-child(1){
+    width: 1%;
+}
+
+.main__index .main__table--table table tr:nth-child(1) td:nth-child(7){
+    width: 13%;
 }
 
 .main__table--table table tr:nth-child(2n){
@@ -277,7 +306,7 @@ a{
 
 .main__table--footer{
     padding-top: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .main__table--footer>p{

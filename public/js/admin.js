@@ -9,19 +9,14 @@ $(document).ready(function(){
     let slider = $('.slider'),
         burgerBox =  $('.js-header--burger-box');
 
-    
-
     popup.mouseleave(function (){
         console.log("gg")
 		popup.hide(speed);
     });
-    
-    
 
     $('.header__user').mouseenter(function(){
         popup.show(speed);
     });
-
 
     burgerBox.click(function(){
         slideMenuToggle('click');
@@ -74,25 +69,42 @@ $(document).ready(function(){
         }
     }
 
-      let smsCheckbox = $('.sms-checkbox'),
-          emailCheckbox = $('.email-checkbox'),
-          complaintCheckbox = $('.complaint-checkbox');
+    // Вместо ссылок стоят чекбоксы. При измении чекбокса. Отправляется ajax-запрос по ссылке.
+
+    let smsCheckbox = $('.sms-checkbox'),
+        emailCheckbox = $('.email-checkbox'),
+        complaintCheckbox = $('.complaint-checkbox');
 
     smsCheckbox.change(function(){
-        if(this.checked) window.open($('.sms-check-'+this.id).attr('href'),'_parent');
-        else window.open($('.sms-check-'+this.id).attr('href'),'_parent');
+        if(this.checked)ajaxLink('.sms-check-', this.id, 'on', 'off')
+        else ajaxLink('.sms-check-', this.id, 'off', 'on');
     })
 
     emailCheckbox.change(function(){
-        if(this.checked) window.open($('.email-check-'+this.id).attr('href'),'_parent');
-        else window.open($('.email-check-'+this.id).attr('href'),'_parent');
-    })
+        if(this.checked) ajaxLink('.email-check-', this.id, 'on', 'off')
+        else ajaxLink('.email-check-', this.id, 'off', 'on')
+    });
 
     complaintCheckbox.change(function(){
-        if(this.checked) window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
-        else window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
-    })
+        // if(this.checked) window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
+        // else window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
+        
+        if(this.checked) ajaxLink('.complaint-check-', this.id, 'on', 'off')
+        else ajaxLink('.complaint-check-', this.id, 'off', 'on')
+    });
 
+    function ajaxLink(classLink, id, status, newStatus){
+        $.ajax({
+            url: $(classLink+id).attr('href'),
 
-    
+            success: function(){
+                let url = $(classLink+id).attr('href');
+
+                let newUrl = url.replace('/?status='+status, '/?status='+newStatus);
+
+                $(classLink+id).attr('href', newUrl);
+               
+              }
+          });
+    }
 });

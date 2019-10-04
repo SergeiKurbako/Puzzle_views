@@ -3,6 +3,10 @@
 
 @section('content')
 <div class="entrance">
+        <div class="entrance__logo">
+            <img src="../img/icon/logo.png" alt="">
+            <p><span>Web</span>widgets</p>
+        </div>
         <h1>Авторизация</h1>
         <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -29,10 +33,7 @@
             @enderror
             <div>
             <div class="entrance__btn">
-                <div class="entrance__check">
-                    <input id="check" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label for="check">Запомнить меня</label>
-                </div>
+                
                 <div class="entrance__btn-login">
                     <input type="submit" value="Вход">
                 </div>
@@ -41,6 +42,11 @@
                     {{ $message }}
                 </span>
                 @enderror
+            </div>
+            
+            <div class="entrance__check">
+                <input id="check" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                <label for="check">Запомнить меня</label>
             </div>
             <div class="entrance__btn--register-link">
                 <a href="/register">Регистрация</a>

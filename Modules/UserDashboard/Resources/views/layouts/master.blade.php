@@ -18,9 +18,14 @@
         <div class="header__icon">
             <i class="js-header--burger-box fas fa-bars"></i>
         </div>
-        <div class="header__user">
-            <img src="../../../img/icon/user.png" alt="">
-            <p>User</p>
+        <div class="header--user">
+            <div class="header__user--balance">
+                <p>Баланс: 100000</p>
+            </div>
+            <div class="header__user">
+                <img src="../../../img/icon/user.png" alt="">
+                <p>User</p>
+            </div>
         </div>
     </div>
 
