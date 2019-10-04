@@ -75,7 +75,8 @@ $(document).ready(function(){
     }
 
       let smsCheckbox = $('.sms-checkbox'),
-        emailCheckbox = $('.email-checkbox');
+          emailCheckbox = $('.email-checkbox'),
+          complaintCheckbox = $('.complaint-checkbox');
 
     smsCheckbox.change(function(){
         if(this.checked) window.open($('.sms-check-'+this.id).attr('href'),'_parent');
@@ -85,6 +86,11 @@ $(document).ready(function(){
     emailCheckbox.change(function(){
         if(this.checked) window.open($('.email-check-'+this.id).attr('href'),'_parent');
         else window.open($('.email-check-'+this.id).attr('href'),'_parent');
+    })
+
+    complaintCheckbox.change(function(){
+        if(this.checked) window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
+        else window.open($('.complaint-check-'+this.id).attr('href'),'_parent');
     })
 
 

@@ -52,51 +52,55 @@
                                 </td>
                                 
                                 <td>
-                                    @if ($frame->frame_status === 'on')
-                                        @if($frame->sms_confirm === 'on') 
+                                    <div class="table__content--center">
+                                        @if ($frame->frame_status === 'on')
+                                            @if($frame->sms_confirm === 'on') 
 
+                                            <div class="checkbox--user-nav">
+                                                <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                            </div>
+
+                                            <a class="sms-check-off sms-check-{{$frame->id}}" href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
+                                            
+                                            @else 
+
+                                            <div class="checkbox--user-nav">
+                                                <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}">
+                                            </div>
+
+                                            <a class="sms-check-on sms-check-{{$frame->id}}"  href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
+                                            
+                                            @endif
+                                        @else
+
+                                        Выкл
+                                        @endif
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="table__content--center">
+                                        @if ($frame->frame_status === 'on')
+                                        @if($frame->email_confirm === 'on')
                                         <div class="checkbox--user-nav">
-                                            <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" checked>
                                         </div>
 
-                                        <a class="sms-check-off sms-check-{{$frame->id}}" href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
+                                        <a class="email-check-off email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
                                         
                                         @else 
 
                                         <div class="checkbox--user-nav">
-                                            <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}">
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}">
                                         </div>
 
-                                        <a class="sms-check-on sms-check-{{$frame->id}}"  href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
-                                        
+                                        <a class="email-check-on email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
                                         @endif
-                                    @else
-
-                                    Выкл
-                                    @endif
-                                </td>
-
-                                <td>
-                                    @if ($frame->frame_status === 'on')
-                                    @if($frame->email_confirm === 'on')
-                                    <div class="checkbox--user-nav">
-                                        <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                        
+                                        @else
+                                        Выкл
+                                        @endif
                                     </div>
-
-                                    <a class="email-check-off email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
-                                    
-                                    @else 
-
-                                    <div class="checkbox--user-nav">
-                                        <input class="email-checkbox" type="checkbox" id="{{$frame->id}}">
-                                    </div>
-
-                                    <a class="email-check-on email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
-                                    @endif
-                                    
-                                    @else
-                                    Выкл
-                                    @endif
                                 </td>
                                 <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
                                 <td style="text-align: center;"> <a href="/admin-dashboard/frame/{{$frame->id}}">

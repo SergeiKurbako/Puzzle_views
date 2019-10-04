@@ -46,38 +46,11 @@
                                 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
                                 
-                                <!-- <td>
-                                @if ($frame->frame_status === 'on')
-                                    @if($frame->sms_confirm === 'on') Вкл <br> (<a href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br> (<a href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a>) @endif
-                                @else
-                                    Выкл
-                                @endif
-                                </td> -->
-                                <!-- <td>
-                                    @if ($frame->frame_status === 'on')
-                                    @if($frame->sms_confirm === 'on') 
-                                    <div class="checkbox--user-nav">
-                                        <input class="sms-checkbox" type="checkbox" checked>
-                                    </div>
-                                    <a class="sms-check-off" href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
-                                    
-                                    @else 
-
-                                    <div class="checkbox--user-nav">
-                                        <input class="sms-checkbox" type="checkbox">
-                                    </div>
-                                    <a class="sms-check-on"  href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
-                                    @endif
-                                    @else
-
-                                    Выкл
-                                    @endif
-                                </td> -->
                                 <td>
                                     @if ($frame->frame_status === 'on')
                                         @if($frame->sms_confirm === 'on') 
 
-                                        <div class="checkbox--user-nav">
+                                        <div class="checkbox--user-nav table__content--center">
                                             <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}" checked>
                                         </div>
 
@@ -85,7 +58,7 @@
                                         
                                         @else 
 
-                                        <div class="checkbox--user-nav">
+                                        <div class="checkbox--user-nav table__content--center">
                                             <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}">
                                         </div>
 
@@ -97,17 +70,11 @@
                                     Выкл
                                     @endif
                                 </td>
-                                <!-- <td>
-                                @if ($frame->frame_status === 'on')
-                                    @if($frame->email_confirm === 'on') Вкл <br> (<a href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br> (<a href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=on">Вкл</a>) @endif
-                                @else
-                                    Выкл
-                                @endif
-                                </td> -->
+                                
                                 <td>
                                     @if ($frame->frame_status === 'on')
                                     @if($frame->email_confirm === 'on')
-                                    <div class="checkbox--user-nav">
+                                    <div class="checkbox--user-nav table__content--center">
                                         <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" checked>
                                     </div>
 
@@ -115,7 +82,7 @@
                                     
                                     @else 
 
-                                    <div class="checkbox--user-nav">
+                                    <div class="checkbox--user-nav table__content--center">
                                         <input class="email-checkbox" type="checkbox" id="{{$frame->id}}">
                                     </div>
 
@@ -128,23 +95,47 @@
                                 </td>
 
                                 <td>
-                                    <a href="/user-dashboard/frame-rules/{{$frame->id}}">
-                                        <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
-                                    </a>
+                                    <div class="table__content--center">
+                                        <a href="/user-dashboard/frame-rules/{{$frame->id}}">
+                                            <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
+                                        </a>
+                                    </div>
                                 </td>
 
-                                <td>
-                                    @if ($frame->frame_status === 'on')
-                                        @if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>) @endif
-                                    @else
-                                        Выкл
-                                    @endif
-                                    /<a href="/gameframe/delete/{{$frame->id}}">удалить</a>
+                                <td style="display: flex;">
+                                    <div class="table__content--center">
+                                        @if ($frame->frame_status === 'on')
+                                            @if($frame->status === 'on') 
+
+                                            <div class="checkbox--user-nav table__content--center">
+                                                <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                            </div>
+
+                                            <a class="complaint-check-off complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>
+
+                                            @else
+
+                                            <div class="checkbox--user-nav table__content--center">
+                                                <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}">
+                                            </div>
+
+                                            <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>
+                                            
+                                            @endif
+                                        @else
+                                            Выкл
+                                        @endif
+                                        <a style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
+                                            <i class="far fa-trash-alt"></i>
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>
-                                    <a href="/user-dashboard/frame/{{$frame->id}}">
-                                        <i style="color: #2196f3" class="far fa-eye"></i>
-                                    </a>
+                                    <div class="table__content--center">
+                                        <a href="/user-dashboard/frame/{{$frame->id}}">
+                                            <i style="color: #2196f3" class="far fa-eye"></i>
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>{{$frame->price}}</td>
                             </tr>

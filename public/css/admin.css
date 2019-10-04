@@ -251,11 +251,16 @@ a{
     color: #be4c4c;
 }
 
+.fa-trash-alt{
+    color: #be4c4c;
+}
+
 .main__table--table table tr td .fa-window-maximize{
     color: #4cb1be;
 }
 
 .main__table--table table tr:nth-child(1){
+    white-space: nowrap;
     font-weight: 600;
 }
 
@@ -385,11 +390,11 @@ a{
 
 /* Chechbox user sms,email,status */
 
-.sms-checkbox, .email-checkbox{
+.sms-checkbox, .email-checkbox, .complaint-checkbox{
     display: block !important;
 }
 
-.sms-check-off, .sms-check-on, .email-check-off, .email-check-on{
+.sms-check-off, .sms-check-on, .email-check-off, .email-check-on, .complaint-check-off, .complaint-check-on{
     display: none;
 }
   
@@ -427,7 +432,13 @@ a{
 .checkbox--user-nav input:checked[type="checkbox"]::before {
     left: 20px;
 }
+
+.table__content--center{
+    display: flex;
+    justify-content: center;
+}
 /*  */
+
 
 @media screen and (max-width: 1470px){
     .main__table--table table td{

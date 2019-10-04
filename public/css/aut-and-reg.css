@@ -91,3 +91,13 @@ input[type=checkbox]:checked + label:before {
     background-color: #2196f3;
     color: #ffffff;
 }
+
+.entrance_error{
+    /* margin-top: 10px; */
+}
+
+.entrance_error span{
+    margin-top: 10px;
+    font-size: 14px;
+    color: #be4c4c;
+}
