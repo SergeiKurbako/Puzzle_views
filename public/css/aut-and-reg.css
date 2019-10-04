@@ -8,10 +8,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #2196f3;
 }
 
 .entrance{
     width: 400px;
+    background: #ffffff;
+    padding: 30px 40px;
 }
 
 .entrance h1{
@@ -92,12 +95,19 @@ input[type=checkbox]:checked + label:before {
     color: #ffffff;
 }
 
-.entrance_error{
-    /* margin-top: 10px; */
-}
-
 .entrance_error span{
     margin-top: 10px;
     font-size: 14px;
     color: #be4c4c;
+}
+
+.entrance__btn--register-link{
+    font-size: 14px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.entrance__btn--register-link a{
+    text-decoration: none;
+    color: #0c83e2;
 }

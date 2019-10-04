@@ -3,11 +3,11 @@
 
 @section('content')
 <div class="entrance">
-        <h1>Login</h1>
+        <h1>Авторизация</h1>
         <form method="POST" action="{{ route('login') }}">
         @csrf
             <div class="entrance__email bl-input">
-                <label for="e-mail">E-mail Address</label>
+                <label for="e-mail">E-mail адрес</label>
                 <input id="e-mail" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" />
             </div>
             @error('email')
@@ -18,7 +18,7 @@
             </div>
             @enderror
             <div class="entrance__pass bl-input">
-                <label for="pass">Password</label>
+                <label for="pass">Пароль</label>
                 <input id="pass" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" />
             </div>
             <div>
@@ -31,16 +31,19 @@
             <div class="entrance__btn">
                 <div class="entrance__check">
                     <input id="check" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label for="check">Remember Me</label>
+                    <label for="check">Запомнить меня</label>
                 </div>
                 <div class="entrance__btn-login">
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Вход">
                 </div>
                 @error('password')
                 <span class="invalid-feedback" role="alert">
                     {{ $message }}
                 </span>
                 @enderror
+            </div>
+            <div class="entrance__btn--register-link">
+                <a href="/register">Регистрация</a>
             </div>
         </form>
     </div>
