@@ -12,7 +12,7 @@ use Modules\GameFrame\Entities\GameFrame;
 
 class UserDashboardController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         if (Auth::user()->role === 'wait_confirm') {
             return redirect('/wait-confirm');
