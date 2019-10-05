@@ -24,7 +24,7 @@
             </div>
             <div class="header__user">
                 <img src="../../../img/icon/user.png" alt="">
-                <p>User</p>
+                <p>{{$email}}</p>
             </div>
         </div>
     </div>

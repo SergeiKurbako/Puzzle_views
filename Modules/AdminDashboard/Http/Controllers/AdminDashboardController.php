@@ -40,7 +40,8 @@ class AdminDashboardController extends Controller
         $users = User::where('role', 'user')->paginate($itemCount);
 
         return view('admindashboard::index', [
-            'users' => $users
+            'users' => $users,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -53,7 +54,8 @@ class AdminDashboardController extends Controller
         $frames = GameFrame::where('frame_status', 'off')->get();
 
         return view('admindashboard::requests', [
-            'frames' => $frames
+            'frames' => $frames,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -72,7 +74,8 @@ class AdminDashboardController extends Controller
 
         return view('admindashboard::user', [
             'frames' => $frames,
-            'userId' => $id
+            'userId' => $id,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -109,7 +112,8 @@ class AdminDashboardController extends Controller
             'lids' => $lids,
             'lidCount' => count($lids),
             'lidSum' => $lids->sum('price'),
-            'frameId' => $id
+            'frameId' => $id,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -121,7 +125,8 @@ class AdminDashboardController extends Controller
 
         return view('admindashboard::create-frame',[
             'userId' => $request->input('user_id'),
-            'error' => ''
+            'error' => '',
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -227,7 +232,8 @@ class AdminDashboardController extends Controller
         }
 
         return view('admindashboard::complaints',[
-            'lids' => $lids
+            'lids' => $lids,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -240,7 +246,8 @@ class AdminDashboardController extends Controller
         $complaint = Complaint::find($id);
 
         return view('admindashboard::complaint',[
-            'complaint' => $complaint
+            'complaint' => $complaint,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -253,7 +260,8 @@ class AdminDashboardController extends Controller
         $frame = GameFrame::find($frameId);
 
         return view('admindashboard::update-frame',[
-            'frame' => $frame
+            'frame' => $frame,
+            'email' => Auth::user()->email
         ]);
     }
 
