@@ -1,7 +1,7 @@
 @extends('admindashboard::layouts.master')
 
 @section('content')
- 
+
 <div class="main">
             <div class="main__wrapper">
 
@@ -26,7 +26,7 @@
                                                 <input name="to_date" type="date" />
                                             </div>
                                         </div>
-                                    
+
                                 </div>
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
@@ -51,16 +51,16 @@
                                     <input type="text" name="to_price" />
                                 </div>
 
-                                
+
                             </div>
                             <div class="main__filter--exel">
-                                
+
                                     <input id="exel"  type="checkbox" name="exel" checked>
                                     <label for="exel">Выгрузить в exel</label>
                                 </div>
-                            
 
-                            <div class="main__filter--btn">           
+
+                            <div class="main__filter--btn">
                                 <input type="submit" name="" value="Применить" />
                             </div>
 
@@ -118,7 +118,7 @@
                                 </td>
                                 <td>
                                 @if ($lid->complaint->status === 'moderation')
-                    
+
                                 <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
                                 <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
                                 @else
@@ -126,11 +126,14 @@
                                 </td>
                             </tr>
                             @endforeach
-                            
-                            
-                            
+
+
+
                         </table>
                         <div class="main__table--footer">
+
+                            {{ $lids->links() }}
+
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
@@ -140,8 +143,8 @@
                                 <div class="main__footer--item"><p>next</p></div>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

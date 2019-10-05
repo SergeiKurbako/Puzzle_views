@@ -32,7 +32,12 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $users = User::where('role', 'user')->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $users = User::where('role', 'user')->paginate($itemCount);
 
         return view('admindashboard::index', [
             'users' => $users
@@ -58,7 +63,12 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $frames = GameFrame::where('user_id',$id)->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $frames = GameFrame::where('user_id',$id)->paginate($itemCount);
 
         return view('admindashboard::user', [
             'frames' => $frames,
@@ -88,7 +98,12 @@ class AdminDashboardController extends Controller
             $lids->where('gender', '=', $request->input('gender'));
         }
 
-        $lids = $lids->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $lids = $lids->paginate($itemCount);
 
         return view('admindashboard::frame', [
             'lids' => $lids,
@@ -199,7 +214,12 @@ class AdminDashboardController extends Controller
             $lids->where('price', '=<', $request->input('to_price'));
         }
 
-        $lids = $lids->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $lids = $lids->paginate($itemCount);
 
         if ($request->input('exel') !== null) {
             $lidExport = new LidsExport($lids);
