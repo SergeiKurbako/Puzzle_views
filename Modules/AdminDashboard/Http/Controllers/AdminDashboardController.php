@@ -26,7 +26,7 @@ class AdminDashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
