@@ -50,7 +50,7 @@
     </div>
 
     <div class="admin">
-      
+
         <div class="slider-and-header--shadow"></div>
 
         <div class="slider-and-header">
@@ -89,13 +89,13 @@
                             </div>
                         </a>
                     </div>
-                
+
 
                     <div class="slider__menu--item">
                     <div></div>
                         <a href="/user-dashboard/wallet">
                             <div class="slider__menu--img">
-                                <i class="fas fa-recycle"></i>
+                                <i class="fas fa-recycle">{{$balance}}</i>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Баланс</p>
@@ -103,7 +103,7 @@
                         </a>
                     </div>
 
-                
+
                 </div>
 
             </div>
@@ -112,7 +112,7 @@
         @yield('content')
 
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="../../../js/admin.js"></script>
 </body>
