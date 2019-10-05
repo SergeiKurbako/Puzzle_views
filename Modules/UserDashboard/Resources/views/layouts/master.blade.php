@@ -20,7 +20,7 @@
         </div>
         <div class="header--user">
             <div class="header__user--balance">
-                <p>Баланс: 100000</p>
+                <p>Баланс: {{$balance}}</p>
             </div>
             <div class="header__user">
                 <img src="../../../img/icon/user.png" alt="">
@@ -95,7 +95,7 @@
                     <div></div>
                         <a href="/user-dashboard/wallet">
                             <div class="slider__menu--img">
-                                <i class="fas fa-recycle">{{$balance}}</i>
+                                <i class="fas fa-recycle"></i>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Баланс</p>
