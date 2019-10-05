@@ -33,7 +33,8 @@ class UserDashboardController extends Controller
         $frames = GameFrame::where('user_id', Auth::user()->id)->paginate($itemCount);
 
         return view('userdashboard::index', [
-            'frames' => $frames
+            'frames' => $frames,
+            'balance' => Auth::user()->balance
         ]);
     }
 
@@ -80,7 +81,8 @@ class UserDashboardController extends Controller
             'lids' => $lids,
             'lidCount' => count($lids),
             'lidSum' => $lids->sum('price'),
-            'frameId' => $id
+            'frameId' => $id,
+            'balance' => Auth::user()->balance
         ]);
     }
 
@@ -97,7 +99,10 @@ class UserDashboardController extends Controller
             return view('userdashboard::wait-access');
         }
 
-        return view('userdashboard::create-frame', ['error' => '']);
+        return view('userdashboard::create-frame', [
+            'error' => '',
+            'balance' => Auth::user()->balance
+        ]);
     }
 
     public function showFrameRules(Request $request, $frameId)
@@ -127,7 +132,8 @@ class UserDashboardController extends Controller
             'speed' => $rule->stateData->speed,
             'health' => $rule->stateData->health,
             'time' => $rule->stateData->time,
-            'botSpeed' => $rule->stateData->botSpeed
+            'botSpeed' => $rule->stateData->botSpeed,
+            'balance' => Auth::user()->balance
         ]);
     }
 
