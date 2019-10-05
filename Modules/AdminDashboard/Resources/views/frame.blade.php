@@ -25,7 +25,7 @@
                                                 <input name="to_date" type="date" />
                                             </div>
                                         </div>
-                                    
+
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
@@ -34,10 +34,10 @@
                                         <option value="waman">Женский</option>
                                     </select>
                                 </div>
-                                
+
                             </div>
 
-                            <div class="main__filter--btn">           
+                            <div class="main__filter--btn">
                                 <input type="submit" name=""  value="Применить" />
                             </div>
 
@@ -80,16 +80,19 @@
                                 <td>{{$lid->price}}</td>
                             </tr>
                             @endforeach
-                            
+
                         </table>
                         <table style="margin-top: 20px;">
                             <tr>
                                 <td>Итого: {{$lidCount}} лид {{$lidSum}} руб</td>
-                                
-                                
+
+
                             </tr>
                         </table>
                         <div class="main__table--footer">
+
+                            {{ $lids->links() }}
+
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
@@ -99,8 +102,8 @@
                                 <div class="main__footer--item"><p>next</p></div>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

@@ -43,34 +43,34 @@
                                 <td>{{$frame->game->name}} {{$frame->game->type}}</td>
 
                                 <td>{{$frame->url}}</td>
-                                
+
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
-                                
+
                                 <td>
                                     @if ($frame->frame_status === 'on')
-                                        @if($frame->sms_confirm === 'on') 
+                                        @if($frame->sms_confirm === 'on')
 
                                         <div class="checkbox--user-nav table__content--center">
                                             <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}" checked>
                                         </div>
 
                                         <a class="sms-check-off sms-check-{{$frame->id}}" href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
-                                        
-                                        @else 
+
+                                        @else
 
                                         <div class="checkbox--user-nav table__content--center">
                                             <input class="sms-checkbox" type="checkbox" id="{{$frame->id}}">
                                         </div>
 
-                                        <a class="sms-check-on sms-check-{{$frame->id}}"  href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
-                                        
+                                        <a class="sms-check-on sms-check-{{$frame->id}}"  href="/gameframe/update-sms-confirm-status/{{$frame->id}}/?status=on">Вкл</a>
+
                                         @endif
                                     @else
 
                                     Выкл
                                     @endif
                                 </td>
-                                
+
                                 <td>
                                     @if ($frame->frame_status === 'on')
                                     @if($frame->email_confirm === 'on')
@@ -79,16 +79,16 @@
                                     </div>
 
                                     <a class="email-check-off email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=off">Выкл</a>
-                                    
-                                    @else 
+
+                                    @else
 
                                     <div class="checkbox--user-nav table__content--center">
                                         <input class="email-checkbox" type="checkbox" id="{{$frame->id}}">
                                     </div>
 
-                                    <a class="email-check-on email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=on">Вкл</a> 
+                                    <a class="email-check-on email-check-{{$frame->id}}" href="/gameframe/update-email-confirm-status/{{$frame->id}}/?status=on">Вкл</a>
                                     @endif
-                                    
+
                                     @else
                                     Выкл
                                     @endif
@@ -105,7 +105,7 @@
                                 <td style="display: flex;">
                                     <div class="table__content--center">
                                         @if ($frame->frame_status === 'on')
-                                            @if($frame->status === 'on') 
+                                            @if($frame->status === 'on')
 
                                             <div class="checkbox--user-nav table__content--center">
                                                 <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" checked>
@@ -120,7 +120,7 @@
                                             </div>
 
                                             <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>
-                                            
+
                                             @endif
                                         @else
                                             Выкл
@@ -140,16 +140,19 @@
                                 <td>{{$frame->price}}</td>
                             </tr>
                             @endforeach
-                            
+
                         </table>
                         <table style="margin-top: 20px;">
-                            
+
                             <td colspan="9">
                                     <a href="/user-dashboard/create-frame">
                                         <input class="btn-prim" type="submit" value="Создать код игры" />
                                     </a>
                                 </td>
                         </table>
+
+                        {{ $frames->links() }}
+
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
@@ -160,8 +163,8 @@
                                 <div class="main__footer--item"><p>next</p></div>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

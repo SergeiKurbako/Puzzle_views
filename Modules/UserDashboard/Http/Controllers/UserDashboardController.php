@@ -25,7 +25,12 @@ class UserDashboardController extends Controller
             return view('userdashboard::wait-access');
         }
 
-        $frames = GameFrame::where('user_id', Auth::user()->id)->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $frames = GameFrame::where('user_id', Auth::user()->id)->paginate($itemCount);
 
         return view('userdashboard::index', [
             'frames' => $frames
@@ -64,7 +69,12 @@ class UserDashboardController extends Controller
             $lids->where('gender', '=', $request->input('gender'));
         }
 
-        $lids = $lids->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $lids = $lids->paginate($itemCount);
 
         return view('userdashboard::frame', [
             'lids' => $lids,
