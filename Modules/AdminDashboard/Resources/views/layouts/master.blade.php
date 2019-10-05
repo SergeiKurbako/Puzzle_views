@@ -27,7 +27,7 @@
             </div>
             <div class="header__user">
                 <img src="../../../img/icon/user.png" alt="">
-                <p>User</p>
+                <p>{{$email}}</p>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
     </div>
 
     <div class="admin">
-        
+
         <div class="slider-and-header--shadow"></div>
 
         <div class="slider-and-header">
@@ -122,7 +122,7 @@
         @yield('content')
 
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="../../../js/admin.js"></script>
 </body>

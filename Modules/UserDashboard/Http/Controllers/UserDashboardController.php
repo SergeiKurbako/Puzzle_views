@@ -34,7 +34,8 @@ class UserDashboardController extends Controller
 
         return view('userdashboard::index', [
             'frames' => $frames,
-            'balance' => Auth::user()->balance
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -82,7 +83,8 @@ class UserDashboardController extends Controller
             'lidCount' => count($lids),
             'lidSum' => $lids->sum('price'),
             'frameId' => $id,
-            'balance' => Auth::user()->balance
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -101,7 +103,8 @@ class UserDashboardController extends Controller
 
         return view('userdashboard::create-frame', [
             'error' => '',
-            'balance' => Auth::user()->balance
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -133,7 +136,8 @@ class UserDashboardController extends Controller
             'health' => $rule->stateData->health,
             'time' => $rule->stateData->time,
             'botSpeed' => $rule->stateData->botSpeed,
-            'balance' => Auth::user()->balance
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
         ]);
     }
 
@@ -188,7 +192,8 @@ class UserDashboardController extends Controller
         $balance = Auth::user()->balance;
 
         return view('userdashboard::wallet', [
-            'balance' => $balance
+            'balance' => $balance,
+            'email' => Auth::user()->email
         ]);
     }
 }
