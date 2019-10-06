@@ -67,7 +67,9 @@
                                         @endif
                                     @else
 
-                                    Выкл
+                                    <div class="checkbox--user-nav table__content--center">
+                                        <input class="sms-checkbox" type="checkbox" disabled>
+                                    </div>
                                     @endif
                                 </td>
 
@@ -90,7 +92,9 @@
                                     @endif
 
                                     @else
-                                    Выкл
+                                    <div class="checkbox--user-nav table__content--center">
+                                        <input class="sms-checkbox" type="checkbox" disabled>
+                                    </div>
                                     @endif
                                 </td>
 
@@ -123,7 +127,9 @@
 
                                             @endif
                                         @else
-                                            Выкл
+                                        <div class="checkbox--user-nav table__content--center">
+                                            <input class="sms-checkbox" type="checkbox" disabled>
+                                        </div>
                                         @endif
                                         <a style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
                                             <i class="far fa-trash-alt"></i>

@@ -44,11 +44,12 @@
 
                                    @if ($user->status === 'off')
                                     <a href="/admin-dashboard/user/{{$user->id}}/on"><i class="fas fa-plus-circle"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
                                     @else
 
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
                                     <a href="/admin-dashboard/user/{{$user->id}}/off"><i class="fas fa-minus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
+                                    
                                     @endif
 
                                 </td>

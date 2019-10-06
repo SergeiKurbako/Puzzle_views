@@ -90,9 +90,12 @@
                                     {{$lid->game_result}}
                                 @endif
                                 </td>
-                                <td>
+                                <td class="main__table--table--last-child--icon">
                                 @if ($lid->have_complaint === 'no')
-                                    <a href="/lidsystem/{{$lid->id}}/complaint">Пожаловаться</a>
+                                    <a href="/lidsystem/{{$lid->id}}/complaint">
+                                    <!-- <i style="color: #be4c4c;" class="fas fa-exclamation"></i> -->
+                                    Пожаловаться
+                                    </a>
                                 @else
                                 @if ($lid->complaint->status === 'moderation')
                                     Отправлена на модерацию

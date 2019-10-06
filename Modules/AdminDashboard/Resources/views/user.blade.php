@@ -72,8 +72,9 @@
 
                                             @endif
                                         @else
-
-                                        Выкл
+                                        <div class="checkbox--user-nav table__content--center">
+                                            <input class="sms-checkbox" type="checkbox" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
@@ -98,10 +99,13 @@
                                         @endif
 
                                         @else
-                                        Выкл
+                                        <div class="checkbox--user-nav table__content--center">
+                                            <input class="sms-checkbox" type="checkbox" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
+                                
                                 <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
 
                                 <td class="main__table--table--last-child--icon" style="text-align: center;">
