@@ -20,6 +20,8 @@ a{
     background: #ffffff;
     position: fixed;
     border-bottom: 1px solid #e9ecef;
+    color: #ffffff;
+    z-index: 1;
 }
 
 .header__icon{
@@ -42,9 +44,11 @@ a{
     align-items: center;
     font-size: .87rem;
     padding-right: 40px;
+    color: #000000;
 }
 
 .header__user{
+    color: #000000;
     font-size: .87rem;
     padding-right: 40px;
     cursor: pointer;
@@ -65,9 +69,11 @@ a{
 .slider-and-header--shadow{
     display: block;
     width: 70px;
+    
 }
 
 .slider-and-header{
+    z-index: 2;
     position: fixed;
     top:0;
     left:0;
@@ -295,6 +301,39 @@ a{
 
 .main__table--table table tr:nth-child(2n){
     background-color: rgba(0,0,0,.05);
+}
+
+.main__table--table .pagination{
+    display: flex;
+}
+
+.main__table--table .pagination .page-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__table--table .pagination .active, .main__table--table .pagination .disabled, .main__table--table .pagination .page-item a{
+    background: #ffffff;
+    font-size: 14px;
+    color: #000000;
+    padding: 10px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+
+
+.main__table--table .pagination .page-item a:hover, .main__table--table .pagination .disabled:hover{
+    background: #2196f3;
+    color: #ffffff;
+}
+
+.main__table--table .pagination .active{
+    background: #2196f3;
+    color: #ffffff; 
 }
 
 .main__table--footer{

@@ -111,7 +111,7 @@
                                     </div>
                                 </td>
 
-                                <td style="display: flex;">
+                                <td>
                                     <div class="table__content--center">
                                         @if ($frame->frame_status === 'on')
                                             @if($frame->status === 'on')
