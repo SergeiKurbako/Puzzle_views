@@ -1,5 +1,4 @@
-@extends('admindashboard::layouts.master')
-
+@extends('userdashboard::layouts.master')
 @section('content')
 <div class="main">
             <div class="main__wrapper">
@@ -12,8 +11,8 @@
 
                     <div class="main__table--table">
                         <table>
-                        <form class="" action="/admin-dashboard/frame/{{$frame->id}}/update" method="post">
-                        @csrf    
+                        <form class="" action="/user-dashboard/frame/{{$frame->id}}/update" method="post">
+                        @csrf
                             <tr>
                                 <td>Сайт</td>
                                 <td colspan="2">Код фрейма</td>

@@ -28,7 +28,7 @@
                                 <td>№</td>
                                 <td>Игра</td>
                                 <td>Сайт</td>
-                                <td>Код игры</td>
+                                <td colspan="2">Код игры</td>
                                 <td>SMS подтв.</td>
                                 <td>email подтв.</td>
                                 <td>Правила</td>
@@ -45,7 +45,12 @@
                                 <td>{{$frame->url}}</td>
 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
-
+                                <!-- <td><a href="/user-dashboard/frame/{{$frame->id}}/update">Редактировать</a></td> -->
+                                <td class="main__table--table--last-child--icon">
+                                    <a href="/user-dashboard/frame/{{$frame->id}}/update">
+                                        <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </td>
                                 <td>
                                     @if ($frame->frame_status === 'on')
                                         @if($frame->sms_confirm === 'on')
