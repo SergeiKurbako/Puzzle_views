@@ -107,4 +107,16 @@ $(document).ready(function(){
               }
           });
     }
+
+    $('.main__table--select select').click(function(){
+        $(".main__table--select select :selected").val();
+        
+        // console.log(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val())
+        
+        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
+        
+    })
+
+    
+
 });

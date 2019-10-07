@@ -9,6 +9,13 @@ body{
 a{
     text-decoration: none;
     color: #000000;
+    outline: none;
+    border: none;
+}
+
+a:focus{
+    border: none;
+    outline: none;
 }
 
 .header{
@@ -20,6 +27,8 @@ a{
     background: #ffffff;
     position: fixed;
     border-bottom: 1px solid #e9ecef;
+    color: #ffffff;
+    z-index: 1;
 }
 
 .header__icon{
@@ -42,9 +51,11 @@ a{
     align-items: center;
     font-size: .87rem;
     padding-right: 40px;
+    color: #000000;
 }
 
 .header__user{
+    color: #000000;
     font-size: .87rem;
     padding-right: 40px;
     cursor: pointer;
@@ -65,9 +76,11 @@ a{
 .slider-and-header--shadow{
     display: block;
     width: 70px;
+    
 }
 
 .slider-and-header{
+    z-index: 2;
     position: fixed;
     top:0;
     left:0;
@@ -269,7 +282,7 @@ a{
 }
 
 .main__table--table--last-child--icon a{
-    padding: 10px 10px;
+    padding: 2px 10px;
 }
 
 .fa-trash-alt{
@@ -295,6 +308,39 @@ a{
 
 .main__table--table table tr:nth-child(2n){
     background-color: rgba(0,0,0,.05);
+}
+
+.main__table--table .pagination{
+    display: flex;
+}
+
+.main__table--table .pagination .page-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__table--table .pagination .active, .main__table--table .pagination .disabled, .main__table--table .pagination .page-item a{
+    background: #ffffff;
+    font-size: 14px;
+    color: #000000;
+    padding: 10px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+
+
+.main__table--table .pagination .page-item a:hover, .main__table--table .pagination .disabled:hover{
+    background: #2196f3;
+    color: #ffffff;
+}
+
+.main__table--table .pagination .active{
+    background: #2196f3;
+    color: #ffffff; 
 }
 
 .main__table--footer{
@@ -468,6 +514,48 @@ a{
 }
 /*  */
 
+/* Create complaint */
+
+.create-complaint-label{
+    padding-bottom: 20px;
+}
+
+.create-complaint-label label{
+    color: #343a40;
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+.create-complaint-input textarea{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 7.5px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-family: "Roboto"
+}
+
+.create-complaint-input textarea:focus{
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.create-complaint-btn input{
+    color: #fff;
+    font-size: 18px;
+    background-color: #2196f3;
+    padding: 10px 50px;
+    border-radius: 7px;
+    border: none;
+}
+
+.create-complaint-btn input:hover{
+    background-color: #0c83e2;
+}
+
+/*  */
 
 @media screen and (max-width: 1470px){
     .main__table--table table td{

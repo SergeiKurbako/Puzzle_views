@@ -5,27 +5,38 @@ $(document).ready(function(){
         age = false,
         email = false;
 
+    let nameFor = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`=1234567890";
+
     $('#btn').click(function(){
-        if($('.name').val() == ''){
-            $('.war-name').css({'opacity':'1'});
-        }else{
-            name = true;
-            $('.war-name').css({'opacity':'0'});
-        }
+        for (let x = 0; x<$('.name').val().length; x++){
+            if( nameFor.indexOf($('.name').val()[x]) != -1  || $('.name').val() == ''){
+                $('.war-name').css({'opacity':'1'});
+                break;
+            }else{
+                $('.war-name').css({'opacity':'0'});
+                name = true;
+            }
+        };
+    
+        for (let x = 0; x<nameFor.length; x++){
+            if( $('#second').val().indexOf(nameFor[x]) != -1 || $('#second').val() == ''){
+                $('.war-second').css({'opacity':'1'});
+                break;
+            }else{
+                $('.war-second').css({'opacity':'0'});
+                second = true;
+            }
+        };
 
-        if($('#second').val() == ''){
-            $('.war-second').css({'opacity':'1'});
-        }else{
-            second = true;
-            $('.war-second').css({'opacity':'0'});
-        }
-
-        if($('#patronymic').val() == ''){
-            $('.war-patronymic').css({'opacity':'1'});
-        }else{
-            patronymic = true;
-            $('.war-patronymic').css({'opacity':'0'});
-        }
+        for (let x = 0; x<nameFor.length; x++){
+            if( $('#patronymic').val().indexOf(nameFor[x]) != -1 || $('#patronymic').val() == ''){
+                $('.war-patronymic').css({'opacity':'1'});
+                break;
+            }else{
+                $('.war-patronymic').css({'opacity':'0'});
+                patronymic = true;
+            }
+        };
 
         if($('#age').val() == '' || $('#age').val() < 1 || $('#age').val() > 99){
             $('.war-age').css({'opacity':'1'});
@@ -34,7 +45,7 @@ $(document).ready(function(){
             $('.war-age').css({'opacity':'0'});
         }
 
-        if($('#email').val() == '' || $('#email').val().indexOf('@') == -1){
+        if($('#email').val() == '' || $('#email').val().indexOf('@') == -1 || $('#email').val().indexOf('.') == -1){
             $('.war-email').css({'opacity':'1'});
         }else{
             email = true;
