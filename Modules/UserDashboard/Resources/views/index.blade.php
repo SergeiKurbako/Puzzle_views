@@ -136,7 +136,7 @@
                                             <input class="sms-checkbox" type="checkbox" disabled>
                                         </div>
                                         @endif
-                                        <a style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
+                                        <a class="main__table--table--last-child--icon" style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </div>
@@ -162,17 +162,18 @@
                                 </td>
                         </table>
 
-                        {{ $frames->links() }}
+                       
 
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
+                            <!-- <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
                                 <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            </div> -->
+                            {{ $frames->links() }}
                         </div>
 
 

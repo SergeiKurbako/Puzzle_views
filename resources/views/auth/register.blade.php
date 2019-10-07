@@ -6,7 +6,7 @@
             <img src="../img/icon/logo.png" alt="">
             <p><span>Web</span>widgets</p>
         </div>
-        <h1>Register</h1>
+        <h1>Регистрация</h1>
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="entrance__email bl-input">
