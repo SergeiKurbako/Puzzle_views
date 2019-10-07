@@ -196,4 +196,32 @@ class UserDashboardController extends Controller
             'email' => Auth::user()->email
         ]);
     }
+
+    public function updateFrame(Request $request, int $frameId)
+    {
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        $frame = GameFrame::find($frameId);
+
+        return view('admindashboard::update-frame',[
+            'frame' => $frame,
+            'email' => Auth::user()->email
+        ]);
+    }
+
+    public function storeFrame(Request $request, int $frameId)
+    {
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        $frame = GameFrame::find($frameId);
+        $frame->url = $request->input('url');
+        $frame->code = $request->input('code');
+        $frame->save();
+
+        return \redirect()->back();
+    }
 }

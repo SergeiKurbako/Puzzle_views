@@ -18,4 +18,6 @@ Route::prefix('user-dashboard')->group(function() {
     Route::get('/frame-rules/{id}', 'UserDashboardController@showFrameRules');
     Route::post('/frame-rules/{id}/update', 'UserDashboardController@updateFrameRules');
     Route::get('/wallet', 'UserDashboardController@showWallet');
+    Route::get('/frame/{id}/update', 'UserDashboardController@updateFrame');
+    Route::post('/frame/{id}/update', 'UserDashboardController@storeFrame');
 });
