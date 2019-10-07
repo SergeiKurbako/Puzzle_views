@@ -226,12 +226,12 @@ class LidSystemController extends Controller
 
         $frame = GameFrame::find($frameId);
 
-        if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
-        }
-        if ($frame->code !== $code) {
-            return 'Не верный код фрейма';
-        }
+        // if (!isset($_SERVER['HTTP_REFERER'])) {
+        //     return 'Нельзя открывать фрейм из данного места';
+        // }
+        // if ($frame->code !== $code) {
+        //     return 'Не верный код фрейма';
+        // }
 
         return view('lidsystem::step3',[
             'code' => $code,
