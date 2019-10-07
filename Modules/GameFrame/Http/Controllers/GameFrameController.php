@@ -116,12 +116,15 @@ class GameFrameController extends Controller
             ]);
         }
 
+        $user = User::find($request->input('user_id'));
+
         // проверка наличия фрейма для данного сайта
         $frame = GameFrame::where('url', $url)->first();
         if ($frame !== null) {
             return view('admindashboard::create-frame', [
                 'error' => 'Фрейм с таким url уже есть',
-                'userId' => $request->input('user_id')
+                'userId' => $request->input('user_id'),
+                'email' => $user
             ]);
         }
 

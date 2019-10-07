@@ -44,11 +44,12 @@
                                 </td>
                             </tr>
                             @endforeach
-                            
-        
-                            
+
+
+
                         </table>
                         <div class="main__table--footer">
+                            {{$frames->links()}}
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
@@ -58,8 +59,8 @@
                                 <div class="main__footer--item"><p>next</p></div>
                             </div>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

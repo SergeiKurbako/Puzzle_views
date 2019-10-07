@@ -61,9 +61,7 @@
                             </tr>
                             @endforeach
                         </table>
-                        <div class="main__table--footer">
-
-                            
+                        <div class="main__tabl
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <!-- <div class="main__table--footer--page">
