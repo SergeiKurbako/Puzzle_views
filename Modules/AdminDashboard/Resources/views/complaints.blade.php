@@ -118,8 +118,8 @@
                                 </td>
                                 <td class="main__table--table--last-child main__table--table--last-child--icon" style="justify-content: normal;">
                                 @if ($lid->complaint->status === 'moderation')
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept"><i class="fas fa-plus-circle"></i></a>
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected"><i class="far fa-trash-alt"></i></a>
+                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept" title="Одобрить"><i class="fas fa-plus-circle"></i></a>
+                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected" title="Отклонить"><i class="far fa-trash-alt"></i></a>
                                 @else
                                 @endif
                                 </td>

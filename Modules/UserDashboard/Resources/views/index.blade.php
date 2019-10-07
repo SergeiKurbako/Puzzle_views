@@ -47,7 +47,7 @@
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
                                 <!-- <td><a href="/user-dashboard/frame/{{$frame->id}}/update">Редактировать</a></td> -->
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/user-dashboard/frame/{{$frame->id}}/update">
+                                    <a href="/user-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
@@ -105,7 +105,7 @@
 
                                 <td>
                                     <div class="table__content--center main__table--table--last-child--icon">
-                                        <a href="/user-dashboard/frame-rules/{{$frame->id}}">
+                                        <a href="/user-dashboard/frame-rules/{{$frame->id}}" title="Редактировать">
                                             <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                         </a>
                                     </div>
@@ -136,14 +136,14 @@
                                             <input class="sms-checkbox" type="checkbox" disabled>
                                         </div>
                                         @endif
-                                        <a class="main__table--table--last-child--icon" style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
+                                        <a class="main__table--table--last-child--icon" style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}" title="Удалить">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="table__content--center main__table--table--last-child--icon">
-                                        <a href="/user-dashboard/frame/{{$frame->id}}">
+                                        <a href="/user-dashboard/frame/{{$frame->id}}" title="Просмотреть">
                                             <i style="color: #2196f3" class="far fa-eye"></i>
                                         </a>
                                     </div>

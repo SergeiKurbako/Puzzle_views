@@ -43,18 +43,18 @@
                                 <td class="main__table--table--last-child main__table--table--last-child--icon">
 
                                    @if ($user->status === 'off')
-                                    <a href="/admin-dashboard/user/{{$user->id}}/on"><i class="fas fa-plus-circle"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/on" title="Добавить"><i class="fas fa-plus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="far fa-trash-alt"></i></a>
                                     @else
 
-                                    <a href="/admin-dashboard/user/{{$user->id}}/off"><i class="fas fa-minus-circle"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/off" title="Остановить"><i class="fas fa-minus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="far fa-trash-alt"></i></a>
                                     
                                     @endif
 
                                 </td>
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/admin-dashboard/user/{{$user->id}}">
+                                    <a href="/admin-dashboard/user/{{$user->id}}" title="Подробнее">
                                         <i class="far fa-window-maximize"></i>
                                     </a>
                                 </td>
