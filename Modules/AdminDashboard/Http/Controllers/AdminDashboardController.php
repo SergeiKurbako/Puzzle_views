@@ -41,21 +41,28 @@ class AdminDashboardController extends Controller
 
         return view('admindashboard::index', [
             'users' => $users,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
-    public function showRequests()
+    public function showRequests(Request $request)
     {
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
 
-        $frames = GameFrame::where('frame_status', 'off')->get();
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $frames = GameFrame::where('frame_status', 'off')->paginate($itemCount);
 
         return view('admindashboard::requests', [
             'frames' => $frames,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
@@ -75,7 +82,8 @@ class AdminDashboardController extends Controller
         return view('admindashboard::user', [
             'frames' => $frames,
             'userId' => $id,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
@@ -113,7 +121,8 @@ class AdminDashboardController extends Controller
             'lidCount' => count($lids),
             'lidSum' => $lids->sum('price'),
             'frameId' => $id,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
@@ -233,7 +242,8 @@ class AdminDashboardController extends Controller
 
         return view('admindashboard::complaints',[
             'lids' => $lids,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 

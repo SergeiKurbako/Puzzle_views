@@ -62,7 +62,7 @@
                         </table>
                         <div class="main__table--footer">
 
-                            {{ $users->links() }}
+                            @include('pagination', ['paginator' => $users])
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">

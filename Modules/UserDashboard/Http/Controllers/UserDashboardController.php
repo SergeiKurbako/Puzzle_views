@@ -35,7 +35,8 @@ class UserDashboardController extends Controller
         return view('userdashboard::index', [
             'frames' => $frames,
             'balance' => Auth::user()->balance,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
@@ -84,7 +85,8 @@ class UserDashboardController extends Controller
             'lidSum' => $lids->sum('price'),
             'frameId' => $id,
             'balance' => Auth::user()->balance,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
         ]);
     }
 
