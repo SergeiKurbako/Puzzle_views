@@ -33,7 +33,7 @@
                                 <td>Статус игры</td>
                                 <td>Статистика</td>
                                 <td colspan="2">Цена за лид</td>
-                                <td>Статус</td>
+                                
                             </tr>
                             @foreach($frames as $frame)
                             <tr>
@@ -72,8 +72,9 @@
 
                                             @endif
                                         @else
-
-                                        Выкл
+                                        <div class="checkbox--user-nav">
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
@@ -98,22 +99,45 @@
                                         @endif
 
                                         @else
-                                        Выкл
+                                        <div class="checkbox--user-nav">
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
-                                <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
+                                <td>
+                                
+                                @if($frame->status === 'on')
+
+                                <div class="checkbox--user-nav table__content--center">
+                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                    </div>
+
+                                <a class="complaint-check-off complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>
+
+                                @else
+
+                                <div class="checkbox--user-nav table__content--center">
+                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}">
+                                </div>
+
+                                <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>
+                                @endif
+                                
+                                
+                                </td>
 
                                 <td class="main__table--table--last-child--icon" style="text-align: center;">
                                     <a href="/admin-dashboard/frame/{{$frame->id}}">
                                         <i style="color: #2196f3" class="far fa-eye"></i>
-                                    </a></td>
+                                    </a>
+                                </td>
                                 <form class="" action="/gameframe/set-price/{{$frame->id}}" method="post">
                                     @csrf
                                 <td><input class="input-prim-price input-prim" type="text" name="price" value="{{$frame->price}}"></td>
                                 <td><input class="btn-prim" type="submit" name="" value="Задать"></td>
                                 </form>
-                                <td>Активен</td>
+                                
                             </tr>
                             @endforeach
                             <tr>

@@ -132,15 +132,16 @@
                         </table>
                         <div class="main__table--footer">
 
-                            @include('pagination.default', ['paginator' => $lids])
+                            
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
-                                <div class="main__footer--item main__footer--item--active"><p>1</p></div>
+                                <!-- <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
-                                <div class="main__footer--item"><p>next</p></div>
+                                <div class="main__footer--item"><p>next</p></div> -->
+                                @include('pagination', ['paginator' => $lids])
                             </div>
                         </div>
 
