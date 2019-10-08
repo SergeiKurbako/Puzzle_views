@@ -33,7 +33,7 @@
                             <tr>
                                 <td>{{$frame->id}}</td>
                                 <td>{{$frame->game->name}} {{$frame->game->type}}</td>
-                                <td>{{$frame->url}}</td>
+                                <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
                                 <td><a href="/gameframe/update-frame-status/{{$frame->id}}/?frame_status=on" title="Одобрить"><i class="fas fa-check-circle"></i></a>  <a href="/gameframe/delete/{{$frame->id}}" title="Удалить"><i class="far fa-trash-alt"></i></a></td>
                                 <td>
                                 <form class="" action="/gameframe/set-price/{{$frame->id}}" method="post">

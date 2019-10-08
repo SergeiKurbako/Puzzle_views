@@ -40,7 +40,7 @@
 
                                 <td>{{$frame->game->name}} {{$frame->game->type}}</td>
 
-                                <td>{{$frame->url}}</td>
+                                <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
 
