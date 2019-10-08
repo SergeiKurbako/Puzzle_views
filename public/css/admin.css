@@ -52,6 +52,8 @@ a:focus{
     font-size: .87rem;
     padding-right: 40px;
     color: #000000;
+    font-weight: bold;
+    letter-spacing: .5px;
 }
 
 .header__user{
@@ -293,9 +295,10 @@ a:focus{
     color: #4cb1be;
 }
 
-.main__table--table table tr:nth-child(1){
+.main__table--table table tr:nth-child(1) td{
     white-space: nowrap;
     font-weight: 600;
+    color: #000000 !important;
 }
 
 .main__index .main__table--table table tr:nth-child(1) td:nth-child(1){
@@ -396,6 +399,14 @@ a:focus{
     background: #ffffff;
     border: 1px solid #d3d3d3;
     display: none;
+}
+
+.popup-user:hover{
+    background: #4c7dbe;
+}
+
+.popup-user:hover .popup-user__logout a{
+    color: #ffffff;
 }
 
 .popup-user>div{

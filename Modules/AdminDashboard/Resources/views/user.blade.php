@@ -41,7 +41,7 @@
 
                                 <td>{{$frame->game->name}} {{$frame->game->type}}</td>
 
-                                <td>{{$frame->url}}</td>
+                                <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
 
@@ -128,8 +128,7 @@
                         </table>
                         <div class="main__table--footer">
 
-                            @include('pagination.default', ['paginator' => $frames])
-
+@include('pagination.default', ['paginator' => $frames])
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
