@@ -124,7 +124,7 @@ class GameFrameController extends Controller
             return view('admindashboard::create-frame', [
                 'error' => 'Фрейм с таким url уже есть',
                 'userId' => $request->input('user_id'),
-                'email' => $user
+                'email' => $user->email
             ]);
         }
 
