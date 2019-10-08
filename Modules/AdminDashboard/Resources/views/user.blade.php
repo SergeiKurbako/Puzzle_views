@@ -128,7 +128,7 @@
                         </table>
                         <div class="main__table--footer">
 
-                            @include('pagination.default', ['paginator' => $frames])
+                            @include('pagination', ['paginator' => $frames])
                         </div>
 
 
