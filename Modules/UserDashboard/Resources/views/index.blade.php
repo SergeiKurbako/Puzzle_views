@@ -28,7 +28,7 @@
                                 <td>№</td>
                                 <td>Игра</td>
                                 <td>Сайт</td>
-                                <td>Код игры</td>
+                                <td colspan="2">Код игры</td>
                                 <td>SMS подтв.</td>
                                 <td>email подтв.</td>
                                 <td>Правила</td>
@@ -45,7 +45,12 @@
                                 <td>{{$frame->url}}</td>
 
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
-
+                                <!-- <td><a href="/user-dashboard/frame/{{$frame->id}}/update">Редактировать</a></td> -->
+                                <td class="main__table--table--last-child--icon">
+                                    <a href="/user-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
+                                        <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </td>
                                 <td>
                                     @if ($frame->frame_status === 'on')
                                         @if($frame->sms_confirm === 'on')
@@ -67,7 +72,9 @@
                                         @endif
                                     @else
 
-                                    Выкл
+                                    <div class="checkbox--user-nav table__content--center">
+                                        <input class="sms-checkbox" type="checkbox" disabled>
+                                    </div>
                                     @endif
                                 </td>
 
@@ -90,19 +97,21 @@
                                     @endif
 
                                     @else
-                                    Выкл
+                                    <div class="checkbox--user-nav table__content--center">
+                                        <input class="sms-checkbox" type="checkbox" disabled>
+                                    </div>
                                     @endif
                                 </td>
 
                                 <td>
                                     <div class="table__content--center main__table--table--last-child--icon">
-                                        <a href="/user-dashboard/frame-rules/{{$frame->id}}">
+                                        <a href="/user-dashboard/frame-rules/{{$frame->id}}" title="Редактировать">
                                             <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td style="display: flex;">
+                                <td>
                                     <div class="table__content--center">
                                         @if ($frame->frame_status === 'on')
                                             @if($frame->status === 'on')
@@ -123,16 +132,18 @@
 
                                             @endif
                                         @else
-                                            Выкл
+                                        <div class="checkbox--user-nav table__content--center">
+                                            <input class="sms-checkbox" type="checkbox" disabled>
+                                        </div>
                                         @endif
-                                        <a style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}">
+                                        <a class="main__table--table--last-child--icon" style="margin-left: 15px;" href="/gameframe/delete/{{$frame->id}}" title="Удалить">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="table__content--center main__table--table--last-child--icon">
-                                        <a href="/user-dashboard/frame/{{$frame->id}}">
+                                        <a href="/user-dashboard/frame/{{$frame->id}}" title="Просмотреть">
                                             <i style="color: #2196f3" class="far fa-eye"></i>
                                         </a>
                                     </div>
@@ -151,17 +162,18 @@
                                 </td>
                         </table>
 
-                        {{ $frames->links() }}
+                       
 
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
+                            <!-- <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
                                 <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            </div> -->
+                            {{ $frames->links() }}
                         </div>
 
 

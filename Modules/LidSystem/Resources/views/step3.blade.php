@@ -13,12 +13,12 @@
             <input type="text" name="lid_id" value="{{$lidId}}" hidden>
             <input type="text" name="code" value="{{$code}}" hidden>
             <label for="first">Имя</label>
-            <input class="name" for="first" type="text" name="first_name" value="">
+            <input class="name" for="first" type="text" name="first_name" value="" required>
             <p class="war-name">Некорректное имя</p>
             
 
             <label for="second">Фамилия</label>
-            <input id="second" type="text" name="second_name" value="">
+            <input id="second" type="text" name="second_name" value="" required>
             <p class="war-second">Некорректная фамилия</p>
 
 
@@ -34,12 +34,12 @@
             <br>
 
             <label for="age">Возраст</label><br>
-            <input id="age" class="entrance__age" type="number" name="age" value="">
+            <input id="age" class="entrance__age" type="number" name="age" value="" required>
             <p class="war-age">Некорректный возраст</p>
             
 
             <label for="email">E-mail</label>
-            <input id="email" type="text" name="email" value="">
+            <input id="email" type="text" name="email" value="" required>
             <p class="war-email">Некорректный E-mail</p>
 
             <label for="job">Место работы</label>

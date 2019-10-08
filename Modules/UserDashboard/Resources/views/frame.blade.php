@@ -90,9 +90,12 @@
                                     {{$lid->game_result}}
                                 @endif
                                 </td>
-                                <td>
+                                <td class="main__table--table--last-child--icon">
                                 @if ($lid->have_complaint === 'no')
-                                    <a href="/lidsystem/{{$lid->id}}/complaint">Пожаловаться</a>
+                                    <a href="/lidsystem/{{$lid->id}}/complaint">
+                                    <!-- <i style="color: #be4c4c;" class="fas fa-exclamation"></i> -->
+                                    Пожаловаться
+                                    </a>
                                 @else
                                 @if ($lid->complaint->status === 'moderation')
                                     Отправлена на модерацию
@@ -115,17 +118,18 @@
                             </tr>
                         </table>
 
-                        {{ $lids->links() }}
+                        
 
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
+                            <!-- <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
                                 <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            </div> -->
+                            {{ $lids->links() }}
                         </div>
 
 

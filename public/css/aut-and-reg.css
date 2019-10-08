@@ -118,6 +118,10 @@ input[type=checkbox]:checked + label:before {
     color: #ffffff;
 }
 
+.entrance_error{
+    margin-bottom: 20px;
+}
+
 .entrance_error span{
     margin-top: 10px;
     font-size: 14px;

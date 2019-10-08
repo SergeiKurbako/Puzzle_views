@@ -43,35 +43,35 @@
                                 <td class="main__table--table--last-child main__table--table--last-child--icon">
 
                                    @if ($user->status === 'off')
-                                    <a href="/admin-dashboard/user/{{$user->id}}/on"><i class="fas fa-plus-circle"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/on" title="Добавить"><i class="fas fa-plus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="far fa-trash-alt"></i></a>
                                     @else
 
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete"><i class="far fa-trash-alt"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/off"><i class="fas fa-minus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/off" title="Остановить"><i class="fas fa-minus-circle"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="far fa-trash-alt"></i></a>
+                                    
                                     @endif
 
                                 </td>
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/admin-dashboard/user/{{$user->id}}">
+                                    <a href="/admin-dashboard/user/{{$user->id}}" title="Подробнее">
                                         <i class="far fa-window-maximize"></i>
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                         </table>
-                        <div class="main__table--footer">
-
-                            @include('pagination', ['paginator' => $users])
+                        <div class="main__tabl
 
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
+                            <!-- <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
                                 <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            </div> -->
+                            {{ $users->links() }}
                         </div>
 
 

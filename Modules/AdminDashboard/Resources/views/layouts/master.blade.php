@@ -23,7 +23,6 @@
         </div> -->
         <div class="header--user">
             <div class="header__user--balance">
-                <p>Баланс: 100000</p>
             </div>
             <div class="header__user">
                 <img src="../../../img/icon/user.png" alt="">
