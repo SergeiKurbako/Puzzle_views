@@ -113,13 +113,14 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="8">Сообщение:
+                                <td colspan="9">Сообщение:
                                     {{$lid->complaint->message}}
                                 </td>
-                                <td class="main__table--table--last-child main__table--table--last-child--icon" style="justify-content: normal;">
+                                <td>
                                 @if ($lid->complaint->status === 'moderation')
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept" title="Одобрить"><i class="fas fa-plus-circle"></i></a>
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected" title="Отклонить"><i class="far fa-trash-alt"></i></a>
+
+                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
                                 @else
                                 @endif
                                 </td>
@@ -131,17 +132,16 @@
                         </table>
                         <div class="main__table--footer">
 
-                            
+                            @include('pagination.default', ['paginator' => $lids])
 
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <!-- <div class="main__table--footer--page">
+                            <div class="main__table--footer--page">
                                 <div class="main__footer--item main__footer--item--active"><p>1</p></div>
                                 <div class="main__footer--item"><p>2</p></div>
                                 <div class="main__footer--item"><p>3</p></div>
                                 <div class="main__footer--item"><p>4</p></div>
                                 <div class="main__footer--item"><p>next</p></div>
-                            </div> -->
-                            {{ $lids->links() }}
+                            </div>
                         </div>
 
 

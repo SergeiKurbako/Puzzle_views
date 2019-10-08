@@ -33,6 +33,7 @@
                                 <td>Статус игры</td>
                                 <td>Статистика</td>
                                 <td colspan="2">Цена за лид</td>
+                                <td>Статус</td>
                             </tr>
                             @foreach($frames as $frame)
                             <tr>
@@ -45,7 +46,7 @@
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
 
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
+                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
@@ -71,9 +72,8 @@
 
                                             @endif
                                         @else
-                                        <div class="checkbox--user-nav table__content--center">
-                                            <input class="sms-checkbox" type="checkbox" disabled>
-                                        </div>
+
+                                        Выкл
                                         @endif
                                     </div>
                                 </td>
@@ -98,36 +98,11 @@
                                         @endif
 
                                         @else
-                                        <div class="checkbox--user-nav table__content--center">
-                                            <input class="sms-checkbox" type="checkbox" disabled>
-                                        </div>
+                                        Выкл
                                         @endif
                                     </div>
                                 </td>
-
-
-
-                                <td>@if($frame->status === 'on') 
-                                    <div class="checkbox--user-nav table__content--center">
-                                        <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" checked>
-                                    </div>
-
-                                    <a class="complaint-check-off complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>
-                                    
-                                    @else
-                                    <div class="checkbox--user-nav table__content--center">
-                                        <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}">
-                                    </div>
-
-                                    <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>
-
-                                    
-                                    
-                                    
-                                    @endif
-                                </td>
-
-
+                                <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
 
                                 <td class="main__table--table--last-child--icon" style="text-align: center;">
                                     <a href="/admin-dashboard/frame/{{$frame->id}}">
@@ -138,7 +113,7 @@
                                 <td><input class="input-prim-price input-prim" type="text" name="price" value="{{$frame->price}}"></td>
                                 <td><input class="btn-prim" type="submit" name="" value="Задать"></td>
                                 </form>
-                                
+                                <td>Активен</td>
                             </tr>
                             @endforeach
                             <tr>
@@ -153,15 +128,7 @@
                         </table>
                         <div class="main__table--footer">
 
-                            <p>Показано от 1 до 10 из 10 записей </p>
-                            <!-- <div class="main__table--footer--page">
-                                <div class="main__footer--item main__footer--item--active"><p>1</p></div>
-                                <div class="main__footer--item"><p>2</p></div>
-                                <div class="main__footer--item"><p>3</p></div>
-                                <div class="main__footer--item"><p>4</p></div>
-                                <div class="main__footer--item"><p>next</p></div>
-                            </div> -->
-                            {{ $frames->links() }}
+                            @include('pagination.default', ['paginator' => $frames])
                         </div>
 
 
