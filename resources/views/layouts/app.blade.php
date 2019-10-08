@@ -41,7 +41,7 @@
             @enderror
             <div>
             <div class="entrance__btn">
-                
+
                 <div class="entrance__btn-login">
                     <input type="submit" value="Вход">
                 </div>
@@ -51,7 +51,7 @@
                 </span>
                 @enderror
             </div>
-            
+
             <div class="entrance__check">
                 <input id="check" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label for="check">Запомнить меня</label>
