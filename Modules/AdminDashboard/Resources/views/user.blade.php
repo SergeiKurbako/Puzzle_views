@@ -46,7 +46,7 @@
                                 <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
 
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update">
+                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
@@ -151,7 +151,7 @@
 
                         </table>
                         <div class="main__table--footer">
-
+                            <p>Показано от 1 до 10 из 10 записей </p>
                             @include('pagination', ['paginator' => $frames])
                         </div>
 

@@ -317,13 +317,13 @@ a:focus{
     display: flex;
 }
 
-.main__table--table .pagination .page-item{
+.main__table--table .pagination ul li{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main__table--table .pagination .active, .main__table--table .pagination .disabled, .main__table--table .pagination .page-item a{
+.main__table--table .pagination li, .main__table--table .pagination .page-item a{
     background: #ffffff;
     font-size: 14px;
     color: #000000;
@@ -334,14 +334,21 @@ a:focus{
     cursor: pointer;
 }
 
-
-
-.main__table--table .pagination .page-item a:hover, .main__table--table .pagination .disabled:hover{
+.main__table--table .pagination li:hover{
     background: #2196f3;
     color: #ffffff;
 }
 
+.main__table--table .pagination li:hover a{
+    color: #ffffff;
+}
+
 .main__table--table .pagination .active{
+    background: #2196f3;
+    color: #ffffff; 
+}
+
+.main__table--table .pagination .active a{
     background: #2196f3;
     color: #ffffff; 
 }
