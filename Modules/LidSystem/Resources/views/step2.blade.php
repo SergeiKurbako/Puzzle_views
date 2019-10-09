@@ -13,7 +13,7 @@
                 <input type="text" name="code" value="{{$code}}" hidden>
                 <input type="text" name="frame_id" value="{{$frameId}}" hidden>
                 <input type="text" name="lid_id" value="{{$lidId}}" hidden>
-                <input id="sms" type="text" />
+                <input id="sms" name="sms_code" type="text" />
 
                 <span class="war-phone">Неверный код</span>
             </div>
