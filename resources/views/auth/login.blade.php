@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('content')
 <div class="entrance">
         <div class="entrance__logo">
             <img src="../img/icon/logo.png" alt="">
