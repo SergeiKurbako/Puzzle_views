@@ -31,7 +31,7 @@
             <div class="slider">
 
                 <div class="slider__administrator">
-                    <a href="#">
+                    <a href="/">
                         <div class="slider__administrator--img">
                             <img src="../../../img/icon/logo.png" alt="">
                         </div>

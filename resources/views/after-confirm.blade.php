@@ -41,7 +41,7 @@
             <div class="slider">
 
                 <div class="slider__administrator">
-                    <a href="#">
+                    <a href="/">
                         <div class="slider__administrator--img">
                             <img src="../../../img/icon/logo.png" alt="">
                         </div>
@@ -78,7 +78,7 @@
                 <div class="main__table">
 
                     <div class="main__table--table" style="margin-bottom: 20px;">
-                        <p>Регистрация пройдена, теперь можете <a href="/login">авторизоваться</a> </p>  
+                        <p>Регистрация пройдена, теперь можете <a style="color: #2196f3" href="/login">авторизоваться</a> </p>  
                     </div>
                 </div>
             </div>
