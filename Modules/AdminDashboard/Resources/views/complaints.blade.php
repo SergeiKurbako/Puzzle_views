@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select id="gender" name="gender">
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>

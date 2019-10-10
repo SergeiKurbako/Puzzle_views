@@ -118,5 +118,9 @@ $(document).ready(function(){
     })
 
     
+    $('#gender').SumoSelect();
+    console.log("good")
+
+    
 
 });
