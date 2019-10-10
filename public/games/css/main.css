@@ -136,7 +136,7 @@ body {
     /* width: 100vh; */
     /* max-width: 100vh; */
     max-height: 100vh;
-    /* margin: 0 auto; */ */
+    /* margin: 0 auto; */
 }
 #game >
 canvas {
@@ -216,7 +216,7 @@ canvas {
   align-self: center;
 }
 } */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 999px) {
     body {
         background: black !important;
 
@@ -294,7 +294,7 @@ margin-top: auto;
 margin-bottom: 5px;
     background: #000;
     flex-direction: row;
-    align-items: flex-end; */
+    align-items: flex-end;
 }
 .menu-container {
     /* position: absolute; */

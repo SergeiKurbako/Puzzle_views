@@ -8,25 +8,25 @@ function startGame() {
         preload: function () {
             this.setGameConfig();
             this.game.load.tilemap('map', BasicGame.tilemapURL, null, Phaser.Tilemap.TILED_JSON);
-            this.game.load.image('debug', 'images/debug-grid-1920x1920.png');
-            this.game.load.image('btn', 'images/btn.png');
-            this.game.load.image('restartBtn', 'images/restart-btn.png');
-            this.game.load.image('stopBtn', 'images/stop-btn.png');
-            this.game.load.image('demoBtn', 'images/demo-btn.png');
-            this.game.load.image('wall', 'images/wall.png');
-            this.game.load.image('level', 'images/wall.png');
-            this.game.load.image('path', 'images/path.png');
-            this.game.load.image('pathWin', 'images/pathWin.png');
-            this.game.load.image('wallFinish', 'images/wallFinish.png');
-            this.game.load.image('wallStart', 'images/wallStart.png');
-            this.game.load.image('pathFinish', 'images/pathFinish.png');
-            this.game.load.image('pathPreFinish', 'images/pathPreFinish.png');
-            this.game.load.image('pathStart', 'images/pathStart.png');
-            this.game.load.image('pathPreStart', 'images/pathPreStart.png');
-            this.game.load.image('men', 'images/men4.png');
-            this.game.load.image('enemy', 'images/enemy.png');
-            this.game.load.image('healthItem', 'images/health-item.png');
-            this.game.load.image('heart', 'images/heart.png');
+            this.game.load.image('debug', '../games/images/debug-grid-1920x1920.png');
+            this.game.load.image('btn', '../games/images/btn.png');
+            this.game.load.image('restartBtn', '../games/images/restart-btn.png');
+            this.game.load.image('stopBtn', '../games/images/stop-btn.png');
+            this.game.load.image('demoBtn', '../games/images/demo-btn.png');
+            this.game.load.image('wall', '../games/images/wall.png');
+            this.game.load.image('level', '../games/images/wall.png');
+            this.game.load.image('path', '../games/images/path.png');
+            this.game.load.image('pathWin', '../games/images/pathWin.png');
+            this.game.load.image('wallFinish', '../games/images/wallFinish.png');
+            this.game.load.image('wallStart', '../games/images/wallStart.png');
+            this.game.load.image('pathFinish', '../games/images/pathFinish.png');
+            this.game.load.image('pathPreFinish', '../games/images/pathPreFinish.png');
+            this.game.load.image('pathStart', '../games/images/pathStart.png');
+            this.game.load.image('pathPreStart', '../games/images/pathPreStart.png');
+            this.game.load.image('men', '../games/images/men4.png');
+            this.game.load.image('enemy', '../games/images/enemy.png');
+            this.game.load.image('healthItem', '../games/images/health-item.png');
+            this.game.load.image('heart', '../games/images/heart.png');
         },
         create: function () {
         },
