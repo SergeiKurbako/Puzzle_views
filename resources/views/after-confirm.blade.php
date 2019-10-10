@@ -1,13 +1,3 @@
-@extends('layouts.app')
-
-@section('content')
-
-<div class="container">
-    Регистрация пройдена
-</div>
-
-
-@endsection
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -70,11 +60,9 @@
 
         <div class="main">
             <div class="main__wrapper">
-
                 <div class="main__name-page">
                     <h1>Успех!</h1>
                 </div>
-
                 <div class="main__table">
 
                     <div class="main__table--table" style="margin-bottom: 20px;">
