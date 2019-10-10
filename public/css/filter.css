@@ -185,6 +185,7 @@ input[type=checkbox]:checked + label:before {
 /* Style lib sumoselect */
 
 .SumoSelect > .CaptionCont{
+    font-weight: 500 !important;
     border: none !important;
     padding: 10px 15px !important;
     font-size: 16px !important;
@@ -197,6 +198,23 @@ input[type=checkbox]:checked + label:before {
     transition: .2s !important;
 }
 
+.SumoSelect > .optWrapper > .options li.opt{
+    padding: 11px 15px;
+}
+
+.SumoSelect > .optWrapper > .options li.opt:hover {
+    background-color: #6abbfd;  
+}
+
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{
+    color: #000000;
+}
+
+.SumoSelect:focus > .CaptionCont, .SumoSelect.open > .CaptionCont {
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+}
 
 /*  */
 

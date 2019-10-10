@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="main__filter--status">
                                     <p>Статус</p>
-                                    <select name="status">
+                                    <select id="status" name="status">
                                         <option value="moderation">На модерации</option>
                                         <option value="rejected">Отклонена администратором</option>
                                         <option value="accept">Забракована администратором</option>
