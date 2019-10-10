@@ -319,6 +319,7 @@
             // };
             // xhr.send(null);
         }
+        setTimeout(() => submitForm(), 50);
     </script>
     <script src="../games/js/phaser.min.js"></script>
     <script src="../games/js/tilemapGen.js"></script>

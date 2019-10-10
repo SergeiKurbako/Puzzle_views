@@ -102,6 +102,13 @@ body {
   /* justify-self: center; */
 }
 .side-panel{
+
+    /*  */
+
+    display: none;
+
+    /*  */
+    
     max-width: 15vw;
     background: #000;
     flex-direction: column;

@@ -31,6 +31,7 @@
 	</div>
 
 	<script>
+		console.log("gameframe.OLD")
 		let BasicGame = {
 			orientated: false
 		};

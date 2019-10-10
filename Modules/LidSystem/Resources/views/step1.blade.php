@@ -14,7 +14,8 @@
                 <input type="text" name="frame_id" value="{{$frameId}}" hidden>
                 <input id="phone" name="phone" type="number" />
 
-                <span class="war-phone">Некорректный номер телефона</span>
+                <span class="war-phone">Пользователь с таким номером уже зарегистрирован</span>
+                
             </div>
             <div class="entrance__btn">
                 <div class="entrance__btn-login">
