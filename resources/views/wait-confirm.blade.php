@@ -15,46 +15,18 @@
 </head>
 <body>
     <div class="header">
-        <div class="header__icon">
-            <i class="js-header--burger-box fas fa-bars"></i>
-        </div>
+    <a href="/" style="display: flex; padding-left:40px;">
+            <div class="slider__administrator--img">
+                <img src="../../../img/icon/logo.png" alt="">
+            </div>
+            <div class="slider__administrator--text">
+                <p><span>web</span>widgets</p>
+            </div>
+        </a>
         
     </div>
 
-    <div class="admin">
-
-        <div class="slider-and-header--shadow"></div>
-
-        <div class="slider-and-header">
-            <div class="slider">
-
-                <div class="slider__administrator">
-                    <a href="/">
-                        <div class="slider__administrator--img">
-                            <img src="../../../img/icon/logo.png" alt="">
-                        </div>
-                        <div class="slider__administrator--text">
-                            <p><span>web</span>widgets</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="slider__menu">
-                    <div class="slider__menu--item">
-                        <a href="#">
-                            <div class="slider__menu--img">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="slider__menu--text">
-                                <p>Dashboard</p>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
+    
 
         <div class="main">
             <div class="main__wrapper">
