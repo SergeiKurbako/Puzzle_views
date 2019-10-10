@@ -125,7 +125,9 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
-    <script src="../../../js/admin.js"></script>
+    
     <script src="../../../js/lib/jquery.sumoselect.min.js"></script>
+
+    <script src="../../../js/admin.js"></script>
 </body>
 </html>
