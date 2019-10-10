@@ -21,7 +21,7 @@ select:focus{
 }
 
 .entrance__age{
-    width: 50px !important;
+    width: 55px !important;
 }
 
 .entrance p{
@@ -31,4 +31,18 @@ select:focus{
     font-weight: 400;
     padding-bottom: 10px;
     opacity: 0;
+}
+
+.bl-input__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+}
+
+.bl-input__wrapper--item{
+    width: 160px;
+}
+
+.bl-input__wrapper--item input{
+    width: 160px !important;
 }
