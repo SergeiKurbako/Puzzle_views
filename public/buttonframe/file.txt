@@ -1,16 +1,16 @@
-<link rel="stylesheet" href="https://partycamera.org/buttonframe/style.css">
+<!-- <link rel="stylesheet" href="http://partycamera.org/buttonframe/style.css"> -->
 
+<link rel="stylesheet" href="http://partycamera.org/buttonframe/css/style.css">
 
 <div class="disabled modalIframe" id="wrapper-iframe">
 	<div class="wrapper-iframe--wrapper">
 		<a id="js-close-modal" class="madalIframe--close" href="#"></a>
-		<iframe src='https://partycamera.org/lidsystem/?frame_id=4&code=890712b0-e786-11e9-946d-3738e85d4578' width='1000' height='600'></iframe>
+		<iframe src='http://194.87.145.192/lidsystem/?frame_id=4&code=890712b0-e786-11e9-946d-3738e85d4578' width='1000' height='600'></iframe>
 	</div>
 </div>
+<img src="http://partycamera.org/buttonframe/index.png" />
 
-<div class="header"><p>Header</p></div>
-<div class="main">
-	<div class="right"><svg id="game" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" overflow="visible">
+<svg id="game" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" overflow="visible">
     
 		<linearGradient id="ArcGradient" >
 				<stop offset="0"  stop-color="#fff" stop-opacity=".2"/>
@@ -67,13 +67,7 @@
 	<!-- 	<line x1= "875", y1= "280", x2= "925", y2= "220" stroke="red"/>
 	
 	<circle class="point" r="7" fill="purple" opacity=".4"/> --></svg>
-	</div>
-	<div class="left"><p>Right</p></div>
-</div>
-<div class="footer"><p>Footer</p></div>
-
+	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-<script src="https://partycamera.org/buttonframe/mb.js"></script>
-<script src="https://partycamera.org/buttonframe/main.js"></script>
-
-
+<script src="http://partycamera.org/buttonframe/js/mb.js"></script>
+<script src="http://partycamera.org/buttonframe/js/main.js"></script>
