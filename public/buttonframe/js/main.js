@@ -204,16 +204,47 @@ function showMessage(selector) {
 
 }
 
+
+
 function showIframe(){
-    svg.classList.add('disabled');
-    document.getElementById('wrapper-iframe').classList.remove('disabled');
+	svg.classList.add('disabled');
+
+	var div = document.getElementById('wrapper-iframe');
+
+	div.classList.remove('disabled');
+
+	var n = 0;
+	int = setInterval(function () {
+		if (n >= 1) {
+			n = 1;
+			clearInterval(int);
+		}
+		n = n + 0.1;
+		div.style.opacity = n;
+		div.style.filter = 'alpha(opacity=' + 100*n + ')';
+	}, 30);
+
+    
 }
 
 document.getElementById('js-close-modal').onclick = function(){
-	// svg.classList.remove('disabled');
-    document.getElementById('wrapper-iframe').classList.add('disabled');
-}
+	var div = document.getElementById('wrapper-iframe');
 
+	var n = 1;
+
+	int = setInterval(function () {
+		if (n <= 0) {
+			n = 0;
+			clearInterval(int);
+		}
+		n = n - 0.1;
+		div.style.opacity = n;
+		div.style.filter = 'alpha(opacity=' + 100*n + ')';
+	}, 30);
+
+
+	div.classList.add('disabled');
+}
 
 
 

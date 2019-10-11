@@ -1,4 +1,3 @@
-
 body{
 	margin:0;
 	background:#444;
@@ -14,6 +13,7 @@ svg{
 	left: 0;
 	right: 0;
 	bottom: 0;
+	transition: all 1s linear;
 }
 
 .disabled{
@@ -34,7 +34,9 @@ span{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: rgba(0,0,0,.8)
+	background: rgba(0,0,0,.8);
+	opacity: 0;
+	
 }
 
 .wrapper-iframe--wrapper{
@@ -73,4 +75,8 @@ span{
 
 img{
 	max-width: 100%;
+}
+
+iframe{
+	border: none !important;
 }
