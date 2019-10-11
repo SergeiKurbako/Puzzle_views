@@ -51,6 +51,7 @@ body{
 
     <div class="entrance">
         
-        <p> Спасибо за регистрацию </p>
+        <p>Спасибо за регистрацию </p>
         <a href="/gameframe/{{$frameId}}?&code={{$code}}&lid_id={{$lidId}}">Начать игру</a>
+        <!-- <a href="#">Покинуть</a> -->
     </div>

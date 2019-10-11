@@ -1,0 +1,66 @@
+body{
+	margin:0;
+	background:#222;
+	
+	margin:20px;
+}
+svg{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+}
+
+.disabled{
+	display: none !important;
+}
+
+span{
+	color:white;
+	font-family:sans-serif;
+	opacity:.3;
+}
+
+.modalIframe{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #222;
+}
+
+.wrapper-iframe--wrapper{
+	position: relative;
+}
+
+.madalIframe--close{
+    position: absolute;
+    right: -36px;
+    top: -44px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.madalIframe--close:hover {
+    opacity: 1;
+}
+
+.madalIframe--close:before, .madalIframe--close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 5px;
+    background-color: rgb(173, 173, 173);
+}
+.madalIframe--close:before {
+    transform: rotate(45deg);
+}
+
+.madalIframe--close:after {
+    transform: rotate(-45deg);
+}
