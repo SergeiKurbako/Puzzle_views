@@ -30,7 +30,7 @@ aim({
 
 
 // set up start drag event
-window.addEventListener("mousedown", draw);
+svg.addEventListener("mousedown", draw);
 
 function draw(e) {
 	// pull back arrow
