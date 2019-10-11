@@ -1,13 +1,14 @@
+
 body{
 	margin:0;
-	background:#ffffff;
+	background:#444;
 	
 	margin:20px;
 }
 svg{
-	width:50%;
-	height: 50%;
-	position:fixed;
+	width:100%;
+	height: 100%;
+	/* position:fixed; */
 	top:0;
 	left:0;
 	background:#222;
@@ -30,7 +31,7 @@ span{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #ffffff;
+	background: #444
 }
 
 .wrapper-iframe--wrapper{
@@ -64,4 +65,52 @@ span{
 
 .madalIframe--close:after {
     transform: rotate(-45deg);
+}
+
+/* Site */
+*{
+	color: #ffffff;
+	font-size: 100px;
+}
+
+.header{
+	width: 100%;
+	height: 400px;
+	background: #444;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.main{
+	display: flex;
+	background: rgb(27, 27, 27);
+}
+
+.right, .left{
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.right{
+	background: #222;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 40%;
+}
+
+.left{
+	width: 60%;
+}
+
+.footer{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	height: 400px;
+	background: rgb(63, 62, 62)
 }
