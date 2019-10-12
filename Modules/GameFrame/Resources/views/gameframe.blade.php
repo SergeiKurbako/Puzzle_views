@@ -14,6 +14,11 @@
 </head>
 
 <body>
+    <div class="messege-game" id="messege-game">
+        
+            <p class="messege-game-wrapper" id="messege-game-wrapper">dfdsfdkf;jdlkkl; jdklfjkldj klfj kdsjf kdsjklf jdkfj kldjskfkljv kdlj vkldf vkjfkljlkfjdklg m</p>
+        
+    </div>
     
     <div class="box">
         <div class="game-container">
@@ -48,8 +53,10 @@
 
             let width = 22;
             let height = 22;
-            HERO_SPEED = 500;
+            HERO_SPEED = 500; 
+            // HERO_SPEED = 500; 
             ENEMY_SPEED = 64;
+            // HEALTH_REDUCTION_RATE = 0.05;
             HEALTH_REDUCTION_RATE = 0.05;
             COOKIES_QUANTITY = 20;
             HEART_QUANTITY_BOOL = true;
