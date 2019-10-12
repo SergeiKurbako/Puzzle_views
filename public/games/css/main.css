@@ -6,33 +6,6 @@ body {
   display: flex;
   flex-direction: row;
 }
-
-.messege-game{
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  background: #2196f3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.messege-game-wrapper{
-  background: #ffffff;
-  /* width: 730px; */
-  /* height: 77px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 40px;
-}
-
-.messege-game-wrapper{
-
-}
-
 .box{
     width: 100vw;
     /* height: 100vh; */
@@ -129,13 +102,6 @@ body {
   /* justify-self: center; */
 }
 .side-panel{
-
-    /*  */
-
-    display: none;
-
-    /*  */
-    
     max-width: 15vw;
     background: #000;
     flex-direction: column;
@@ -170,7 +136,7 @@ body {
     /* width: 100vh; */
     /* max-width: 100vh; */
     max-height: 100vh;
-    /* margin: 0 auto; */
+    /* margin: 0 auto; */ */
 }
 #game >
 canvas {
@@ -250,7 +216,7 @@ canvas {
   align-self: center;
 }
 } */
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1000px) {
     body {
         background: black !important;
 
@@ -328,7 +294,7 @@ margin-top: auto;
 margin-bottom: 5px;
     background: #000;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-end; */
 }
 .menu-container {
     /* position: absolute; */

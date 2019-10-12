@@ -301,4 +301,26 @@ class LidSystemController extends Controller
             'lidId' => $lid->id
         ]);
     }
+
+    public function step5(Request $request)
+    {
+        $lidId = $request->input('lid_id');
+        $lid = Lid::find($lidId);
+
+        return view('lidsystem::step5',[
+            'gameResult' => $lid->game_result
+        ]);
+    }
+
+    public function saveGameResult(Request $request)
+    {
+        $lidId = $request->input('lid_id');
+        $gameResult = $request->input('game_result');
+
+        $lid = Lid::find($lidId);
+        $lid->game_result = $gameResult;
+        $lid->save();
+
+        return true;
+    }
 }

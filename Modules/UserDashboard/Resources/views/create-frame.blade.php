@@ -21,7 +21,8 @@
                             
                             <tr>
                                 <td style="width: 20%">
-                                    <input id="url" class="input-prim" type="text" name="url" value="" style="margin-bottom:0;">
+                                    
+                                    <input class="input-prim" type="text" name="url" value="" style="margin-bottom:0;">
                                 </td>
                                 <td><input class="btn-prim" type="submit" name="" value="Создать"></td>
                             </tr>
@@ -32,12 +33,6 @@
                             </tr>
                         </table>
                         </form>
-                        <script>
-                            var inp = document.getElementById('url');
-                            inp.oninput = function(){
-                                if('')
-                            }
-                        </script>
                     </div>
                 </div>
             </div>

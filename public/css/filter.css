@@ -9,12 +9,8 @@
 }
 
 .main__table--filter form .main__table--filter--wrapper{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -42,8 +38,7 @@
 
 .main__table--filter form input:focus{
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
 }
 
 .main__filter--price input{
@@ -59,12 +54,8 @@
 
 .main__filter--date-input-wrapper{
     width: 390px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
 }
 
 /* Filter frame.blade.css */
@@ -75,12 +66,8 @@
 
 .main__filter--date-input-wrapper--stas-user{
     width: 390px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
 }
 
 /*  */
@@ -106,22 +93,19 @@
 }
 
 .main__table--filter--wrapper select{
-    border: none !important;
-    padding: 10px 15px !important;
-    font-size: 16px !important;
-    background: #ffffff !important;
-    border: 1px solid #ced4da !important;
-    color:#495057 !important;
-    border-radius: .35rem !important;
-    -webkit-transition: .2s !important;
-    -o-transition: .2s !important;
-    transition: .2s !important;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 1px solid #ced4da;
+    color:#495057;
+    border-radius: .35rem;
+    transition: .2s;
 }
 
 .main__table--filter--wrapper select:focus{
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
 }
 
 .main__filter--price input{
@@ -153,8 +137,6 @@ input[type=checkbox]+ label:before {
     width: 20px;
     text-align: center;
     vertical-align: middle;
-    -webkit-transition: color ease .3s;
-    -o-transition: color ease .3s;
     transition: color ease .3s;
     border: .5px solid #ced4da;
 }
@@ -181,43 +163,6 @@ input[type=checkbox]:checked + label:before {
     background: #227fcc;
 }
 
-
-/* Style lib sumoselect */
-
-.SumoSelect > .CaptionCont{
-    font-weight: 500 !important;
-    border: none !important;
-    padding: 10px 15px !important;
-    font-size: 16px !important;
-    background: #ffffff !important;
-    border: 1px solid #ced4da !important;
-    color: #495057 !important;
-    border-radius: .35rem !important;
-    -webkit-transition: .2s !important;
-    -o-transition: .2s !important;
-    transition: .2s !important;
-}
-
-.SumoSelect > .optWrapper > .options li.opt{
-    padding: 11px 15px;
-}
-
-.SumoSelect > .optWrapper > .options li.opt:hover {
-    background-color: #6abbfd;  
-}
-
-.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{
-    color: #000000;
-}
-
-.SumoSelect:focus > .CaptionCont, .SumoSelect.open > .CaptionCont {
-    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-}
-
-/*  */
-
 @media screen and (max-width: 1435px){
     /* .main__table--filter form .main__table--filter--wrapper{
         padding-right: 15px;
@@ -234,13 +179,9 @@ input[type=checkbox]:checked + label:before {
     }
     .main__filter--date-input-wrapper{
         width: auto;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         /* flex-direction: column; */
-        -webkit-box-align: end;
-            -ms-flex-align: end;
-                align-items: flex-end;
+        align-items: flex-end;
     }
 }
 
