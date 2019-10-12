@@ -45,13 +45,21 @@ class GameFrameController extends Controller
         // определение является ли url
         $checkIsUrl = filter_var($url, FILTER_VALIDATE_URL);
         if ($checkIsUrl === false) {
-            return view('userdashboard::create-frame', ['error' => 'Введите url']);
+            return view('userdashboard::create-frame', [
+                'error' => 'Введите url',
+                'balance' => Auth::user()->balance,
+                'email' => Auth::user()->email
+                ]);
         }
 
         // проверка наличия фрейма для данного сайта
         $frame = GameFrame::where('url', $url)->first();
         if ($frame !== null) {
-            return view('userdashboard::create-frame', ['error' => 'Фрейм с таким url уже есть']);
+            return view('userdashboard::create-frame', [
+                'error' => 'Фрейм с таким url уже есть',
+                'balance' => Auth::user()->balance,
+                'email' => Auth::user()->email
+                ]);
         }
 
         // определение ip
@@ -112,7 +120,8 @@ class GameFrameController extends Controller
         if ($checkIsUrl === false) {
             return view('admindashboard::create-frame', [
                 'error' => 'Введите url',
-                'userId' => $request->input('user_id')
+                'userId' => $request->input('user_id'),
+                'email' => Auth::user()->email
             ]);
         }
 

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ ('../../../css/lib/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/fonts.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/admin.css') }}">
+    
+    <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/filter.css') }}">
     <title>Admin</title>
 </head>
@@ -123,6 +125,10 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    
+    <script src="../../../js/lib/jquery.sumoselect.min.js"></script>
+
     <script src="../../../js/admin.js"></script>
+    
 </body>
 </html>
