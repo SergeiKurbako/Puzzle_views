@@ -118,5 +118,7 @@ $(document).ready(function(){
     })
 
     
+    $('#gender').SumoSelect();
+    $('#status').SumoSelect();
 
 });
