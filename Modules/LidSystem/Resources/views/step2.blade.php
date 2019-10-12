@@ -13,8 +13,8 @@
                 <input type="text" name="code" value="{{$code}}" hidden>
                 <input type="text" name="frame_id" value="{{$frameId}}" hidden>
                 <input type="text" name="lid_id" value="{{$lidId}}" hidden>
-                <input id="sms" name="sms_code" type="text" />
-                
+                <input id="sms" type="text" />
+
                 <span class="war-phone">Неверный код</span>
             </div>
             <div class="entrance__btn">
@@ -24,8 +24,7 @@
                 </div>
             </div>
         </form>
-        <p style="padding-top: 20px;">{{$smsCode}}</p>
+        {{$smsCode}}
     </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../js/number-sms-val.js"></script>

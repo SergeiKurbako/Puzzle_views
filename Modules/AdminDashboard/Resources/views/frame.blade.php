@@ -67,6 +67,7 @@
                                 <td>E-mail</td>
                                 <td>Номер телефона</td>
                                 <td>Цена за лид</td>
+                                <td>Результат игры</td>
                             </tr>
                             @foreach($lids as $lid)
                             <tr>
@@ -78,6 +79,7 @@
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>
                                 <td>{{$lid->price}}</td>
+                                <td>{{$lid->game_result}}</td>
                             </tr>
                             @endforeach
 
@@ -91,7 +93,7 @@
                         </table>
                         <div class="main__table--footer">
 
-                            
+
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <!-- <div class="main__table--footer--page">

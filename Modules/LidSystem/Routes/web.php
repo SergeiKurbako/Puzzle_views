@@ -8,6 +8,8 @@ Route::prefix('lidsystem')->group(function() {
     Route::post('/step2/create', 'LidSystemController@step2Create');
     Route::get('/step3', 'LidSystemController@step3');
     Route::post('/step3/create', 'LidSystemController@step3Create');
+    Route::get('/step5', 'LidSystemController@step5');
+    Route::get('/save-game-result', 'LidSystemController@saveGameResult');
 
     Route::get('/{id}/complaint', 'ComplaintController@createComplaint');
     Route::post('/{id}/complaint', 'ComplaintController@storeComplaint');
