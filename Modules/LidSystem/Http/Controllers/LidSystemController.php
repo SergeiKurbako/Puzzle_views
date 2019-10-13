@@ -362,10 +362,12 @@ class LidSystemController extends Controller
     {
         $lidId = $request->input('lid_id');
         $gameResult = $request->input('game_result');
+
         $lid = Lid::find($lidId);
         $lid->game_result = $gameResult;
         $lid->save();
-        return true;
+
+        return json_encode(true);
     }
 
 }
