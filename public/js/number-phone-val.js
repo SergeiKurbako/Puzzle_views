@@ -25,7 +25,7 @@ $(document).ready(function(){
             $('.war-phone').css({'opacity':'1'});
         }else{
             $.ajax({
-                url: "http://194.87.145.192/lidsystem/check-have-phone?phone="+phone.val(),
+                url: "https://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
                 success: function(data){
                   if(data != 'true'){
                     $('#btn-input').click();
