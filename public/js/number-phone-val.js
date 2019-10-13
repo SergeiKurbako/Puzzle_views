@@ -12,6 +12,12 @@
 // });
 
 $(document).ready(function(){
+
+  $('.btn-start').click(function(){
+    $('.entrance-start').css({'display' : 'none'})
+    $('.entrance').css({'display' : 'block'})
+  })
+
     let phone = $("#phone");
     
     $('#btn').click(function(){

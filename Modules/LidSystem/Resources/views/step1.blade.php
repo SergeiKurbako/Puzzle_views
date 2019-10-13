@@ -1,3 +1,47 @@
+<head>
+<style>
+*:root{
+    font-family: 'Roboto','Nunito', 'Arial', 'sans-selif';
+}
+
+.entrance-start{
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 100px;
+}
+
+.entrance-start *{
+    font-size: 29px;
+}
+
+.entrance-start p{
+    color: #000000;
+}
+
+.entrance-start a{
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    background: #2196f3;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.entrance-start a:hover{
+    background: #0c83e2;
+}
+
+
+.entrance{
+    display: none;
+}
+
+</style>  
+    
+    
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/lig-systems.css">
@@ -24,6 +68,18 @@
                 </div>
             </div>
         </form>
+    </div>
+
+    <div class="entrance-start">
+        
+        
+        <div style="width: 340px; padding-top: 30px"><p style="font-size: 16px; text-align: justify">Говорят, безвыходных ситуаций не бывает. Но зато бывают ситуации, когда отыскать выход очень и очень непросто!
+        Сможешь ли ты сориентироваться и найти решение проблемы, которая кажется на первый взгляд неразрешимой?
+        Сможешь ли не выбиться из сил на пути к цели, которой не видно, но которая обязательно должна быть уже за следующим поворотом?
+        Или ещё за следующим?… Или ещё за одним…Собери в кулак всю свою волю к победе, и вперёд - на штурм сложных закоулков и хитросплетений своей судьбы!
+        </p></div>
+        <a href="#" class="btn-start">Начать игру</a>
+        <!-- <a href="#">Покинуть</a> -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
