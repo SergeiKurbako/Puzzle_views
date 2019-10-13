@@ -162,17 +162,16 @@ class LidSystemController extends Controller
             }
 
             $lid = Lid::find($lidId);
-            $lid->phone = $phone;
-            $lid->save();
 
             return view('lidsystem::step2',[
                 'code' => $code,
                 'frameId' => $frameId,
                 'lidId' => $lidId,
-                'smsCode' => $request->input('sms_code')
+                'smsCode' => $request->input('sms_code'),
+                'phone' => $request->input('phone')
             ]);
         } else {
-            return redirect('/lidsystem/step3?frame_id=' . $frameId . '&code=' . $code . '&lid_id=' . $lidId);
+            return redirect('/lidsystem/step3?frame_id=' . $frameId . '&code=' . $code . '&lid_id=' . $lidId . '&phone=' . $request->input('phone'));
         }
     }
 
@@ -189,6 +188,7 @@ class LidSystemController extends Controller
         $code = $request->input('code');
         $smsCode = $request->input('sms_code');
         $lidId = $request->input('lid_id');
+        $phone = $request->input('phone');
 
         $frame = GameFrame::find($frameId);
 
@@ -208,7 +208,7 @@ class LidSystemController extends Controller
             return 'Не существующий лид';
         }
 
-        return redirect('/lidsystem/step3?frame_id=' . $frameId . '&code=' . $code . '&lid_id=' . $lidId);
+        return redirect('/lidsystem/step3?frame_id=' . $frameId . '&code=' . $code . '&lid_id=' . $lidId . '&phone=' . $phone);
     }
 
     /**
@@ -223,6 +223,7 @@ class LidSystemController extends Controller
         $frameId = $request->input('frame_id');
         $code = $request->input('code');
         $lidId = $request->input('lid_id');
+        $phone = $request->input('phone');
 
         $frame = GameFrame::find($frameId);
 
@@ -236,7 +237,8 @@ class LidSystemController extends Controller
         return view('lidsystem::step3',[
             'code' => $code,
             'frameId' => $frameId,
-            'lidId' => $lidId
+            'lidId' => $lidId,
+            'phone' => $phone
         ]);
     }
 
@@ -252,6 +254,7 @@ class LidSystemController extends Controller
         $frameId = $request->input('frame_id');
         $code = $request->input('code');
         $lidId = $request->input('lid_id');
+        $phone = $request->input('phone');
 
         $frame = GameFrame::find($frameId);
 
@@ -293,6 +296,7 @@ class LidSystemController extends Controller
         $lid->work_place = $request->input('work_place');
         $lid->status = 'on';
         $lid->price = $frame->price;
+        $lid->phone = $phone;
         $lid->save();
 
         return view('lidsystem::thanks',[
@@ -319,5 +323,5 @@ class LidSystemController extends Controller
         $lid->save();
         return true;
     }
-    
+
 }
