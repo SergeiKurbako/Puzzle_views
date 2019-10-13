@@ -9,6 +9,7 @@
 }
 
 .main__table--filter form .main__table--filter--wrapper{
+    max-width: 1300px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

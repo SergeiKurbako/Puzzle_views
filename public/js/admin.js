@@ -116,7 +116,20 @@ $(document).ready(function(){
         
     })
 
-    
+    if(window.location.pathname.indexOf('/user/') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('requests') != -1){
+        $('.fa-recycle').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('complaints') != -1){
+        $('.fa-angry').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('wallet') != -1){
+        $('.fa-recycle').css({'color':'#2898F3'})
+    }else if(window.location.pathname === '/admin-dashboard'){
+        $('.fa-home').css({'color':'#2898F3'})
+    }
+
+    // slider__menu--img i
+
     $('#gender').SumoSelect();
     $('#status').SumoSelect();
 
