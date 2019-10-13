@@ -14,7 +14,7 @@
                                 @csrf
                                 <div class="create-complaint-label"><label>Напишите причину:</label></div>
                                 <div class="create-complaint-input"><textarea name="message" rows="8" cols="80"></textarea></div>
-                                <div class="create-complaint-btn"><input type="submit" name="" value="Отправить"></div>
+                                <div class="create-complaint-btn" style="margin-bottom: 20px;"><input type="submit" name="" value="Отправить"></div>
                             </form>
                         </table>
                        

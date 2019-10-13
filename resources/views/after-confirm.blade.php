@@ -1,13 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
-
-<div class="container">
-    Регистрация пройдена
-</div>
-
-
-@endsection
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -24,9 +15,16 @@
     <title>Admin</title>
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <div class="header__icon">
-            <i class="js-header--burger-box fas fa-bars"></i>
+        <a href="/" style="display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex">
+                        <div class="slider__administrator--img">
+                            <img src="../../../img/icon/logo.png" alt="">
+                        </div>
+                        <div class="slider__administrator--text">
+                            <p><span>web</span>widgets</p>
+                        </div>
+                    </a>
         </div>
         
     </div>
@@ -35,38 +33,6 @@
 
     <div class="admin">
 
-        <div class="slider-and-header--shadow"></div>
-
-        <div class="slider-and-header">
-            <div class="slider">
-
-                <div class="slider__administrator">
-                    <a href="#">
-                        <div class="slider__administrator--img">
-                            <img src="../../../img/icon/logo.png" alt="">
-                        </div>
-                        <div class="slider__administrator--text">
-                            <p><span>web</span>widgets</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="slider__menu">
-                    <div class="slider__menu--item">
-                        <a href="#">
-                            <div class="slider__menu--img">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="slider__menu--text">
-                                <p>Dashboard</p>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
 
         <div class="main">
             <div class="main__wrapper">
@@ -78,7 +44,7 @@
                 <div class="main__table">
 
                     <div class="main__table--table" style="margin-bottom: 20px;">
-                        <p>Регистрация пройдена, теперь можете <a href="/login">авторизоваться</a> </p>  
+                        <p>Регистрация пройдена, теперь можете <a href="/login" style="color:#2196f3">авторизоваться</a> </p>  
                     </div>
                 </div>
             </div>

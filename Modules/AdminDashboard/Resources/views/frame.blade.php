@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select name="gender" id="gender">
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
@@ -93,7 +93,7 @@
                         </table>
                         <div class="main__table--footer">
 
-
+                            
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <!-- <div class="main__table--footer--page">

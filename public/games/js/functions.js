@@ -8,25 +8,25 @@ function startGame() {
         preload: function () {
             this.setGameConfig();
             this.game.load.tilemap('map', BasicGame.tilemapURL, null, Phaser.Tilemap.TILED_JSON);
-            this.game.load.image('debug', 'images/debug-grid-1920x1920.png');
-            this.game.load.image('btn', 'images/btn.png');
-            this.game.load.image('restartBtn', 'images/restart-btn.png');
-            this.game.load.image('stopBtn', 'images/stop-btn.png');
-            this.game.load.image('demoBtn', 'images/demo-btn.png');
-            this.game.load.image('wall', 'images/wall.png');
-            this.game.load.image('level', 'images/wall.png');
-            this.game.load.image('path', 'images/path.png');
-            this.game.load.image('pathWin', 'images/pathWin.png');
-            this.game.load.image('wallFinish', 'images/wallFinish.png');
-            this.game.load.image('wallStart', 'images/wallStart.png');
-            this.game.load.image('pathFinish', 'images/pathFinish.png');
-            this.game.load.image('pathPreFinish', 'images/pathPreFinish.png');
-            this.game.load.image('pathStart', 'images/pathStart.png');
-            this.game.load.image('pathPreStart', 'images/pathPreStart.png');
-            this.game.load.image('men', 'images/men4.png');
-            this.game.load.image('enemy', 'images/enemy.png');
-            this.game.load.image('healthItem', 'images/health-item.png');
-            this.game.load.image('heart', 'images/heart.png');
+            this.game.load.image('debug', '../games/images/debug-grid-1920x1920.png');
+            this.game.load.image('btn', '../games/images/btn.png');
+            this.game.load.image('restartBtn', '../games/images/restart-btn.png');
+            this.game.load.image('stopBtn', '../games/images/stop-btn.png');
+            this.game.load.image('demoBtn', '../games/images/demo-btn.png');
+            this.game.load.image('wall', '../games/images/wall.png');
+            this.game.load.image('level', '../games/images/wall.png');
+            this.game.load.image('path', '../games/images/path.png');
+            this.game.load.image('pathWin', '../games/images/pathWin.png');
+            this.game.load.image('wallFinish', '../games/images/wallFinish.png');
+            this.game.load.image('wallStart', '../games/images/wallStart.png');
+            this.game.load.image('pathFinish', '../games/images/pathFinish.png');
+            this.game.load.image('pathPreFinish', '../games/images/pathPreFinish.png');
+            this.game.load.image('pathStart', '../games/images/pathStart.png');
+            this.game.load.image('pathPreStart', '../games/images/pathPreStart.png');
+            this.game.load.image('men', '../games/images/men4.png');
+            this.game.load.image('enemy', '../games/images/enemy.png');
+            this.game.load.image('healthItem', '../games/images/health-item.png');
+            this.game.load.image('heart', '../games/images/heart.png');
         },
         create: function () {
         },
@@ -260,8 +260,12 @@ function startGame() {
                 this.healthBarGraphics.scale.x = this.menHealth / 100
             }
             if (this.menHealth <= 0) {
+                statusFailed = false;
+                setTimeout(() => messegeFinishGame("Вы проиграли. Время вышло. Можете закрыть окно"), 1000);
+                
                 this.menHealth = 0
                 this.endRound()
+                
             }
         },
         enemyStart() {
@@ -394,6 +398,13 @@ function startGame() {
                 this.menTween.stop();
                 // this.timeText.text = `Result: ${finishTimeSecond}.${finishTimeMS}s`;
                 this.timeWidget.innerHTML = `Result: ${finishTimeSecond}s`;
+
+                // В случае когда закончились жизни
+
+                statusFailed = false;
+                setTimeout(() => messegeFinishGame("Вы проиграли. У вас закончились жизни. Можете закрыть окно."), 1000);
+                
+
             }
             if (this.gameStatus && !THREE_MAN_LIFE) {
                 let curentTime = new Date();
@@ -405,8 +416,8 @@ function startGame() {
                 this.demoStatus = false;
                 this.enemyStatus = false
                 this.timeStatus = false;
-
                 this.time.stop();
+
                 this.menTween.stop();
                 // this.timeText.text = `Result: ${finishTimeSecond}.${finishTimeMS}s`;
                 this.timeWidget.innerHTML = `Result: ${finishTimeSecond}s`;
@@ -422,6 +433,7 @@ function startGame() {
             let endX = Math.floor(this.men.x / 32)
             let endY = Math.floor(this.men.y / 32)
             var path = finder.findPath(startX, startY, endX, endY, grid);
+
             return path.slice(0, 5)
         },
         enemyInit() {
@@ -538,6 +550,7 @@ function startGame() {
             // men.body.velocity.y = HERO_SPEED;
             let path = this.calculateWinPath();
             if (path[this.numPosition] == undefined) {
+                
                 this.endRound()
             }
             let x = (path[this.numPosition][0] * 32) + 12;
@@ -547,7 +560,9 @@ function startGame() {
             let diffY = Math.abs(men.y - y);
             if (diffX < 15
                 && diffY < 15) {
+                    
                 this.numPosition++
+                
             }
         },
         responseHandler(data) {
@@ -576,10 +591,12 @@ function startGame() {
             if (x !== currentX || y !== currentY) {
                 this.menProps.coordinate.x = currentX;
                 this.menProps.coordinate.y = currentY;
+            
                 switch (this.menProps.moveDirection) {
                     case "LEFT":
                         stopMen = verticalCheck(currentX, currentY, this.data)
                         if (stopMen) {
+                         
                             this.men.body.velocity.x = 0
                             this.men.body.velocity.y = 0
                             game.add.tween(this.men).to({ x: currentX * 32 + 16, y: currentY * 32 + 16 }, 2, Phaser.Easing.Linear.None, true)
@@ -803,20 +820,18 @@ function startGame() {
                 for (currentMenY; currentMenY < mazeHeight; currentMenY++) {
                     let cellData = +this.data[currentMenY][currentMenX];
                     if (currentMenY - 1 == y && cellData === 0) {
-                        return false
+                        return false;
                     } else if (cellData === 1) {
                         let checkResult = horizontallCheck(currentMenX, currentMenY, this.data)
                         if (checkResult || (finX == currentMenX && finY == currentMenY)) {
                             this.menProps.isMove = false;
                             return {
-
                                 x: currentMenX,
                                 y: currentMenY
                             }
                         }
                     } else if (cellData === 0) {
                         this.menProps.isMove = false;
-
                         return {
                             x: currentMenX,
                             y: currentMenY - 1
@@ -965,6 +980,9 @@ function startGame() {
                 this.time.stop();
                 // this.timeText.text = `Result: ${finishTimeSecond}.${finishTimeMS}s`;
                 this.timeWidget.innerHTML = `Result: ${finishTimeSecond}s`;
+                if(statusFailed){
+                    setTimeout(() => messegeFinishGame("Вы победили!"), 1000);
+                }
             }
         },
 
@@ -1013,6 +1031,7 @@ function startGame() {
             });
         },
         drawWinPath() {
+            console.log("drawWinPath")
             let groupPath = this.groupPath;
             let path = this.calculateWinPath()
             path.forEach(coordinate => {
@@ -1022,6 +1041,7 @@ function startGame() {
             })
         },
         hideWinPath() {
+            console.log("hideWinPath");
             let groupPath = this.groupPath;
             groupPath.children.forEach(child => {
                 child.kill()
@@ -1130,6 +1150,9 @@ function startGame() {
 
             }, false);
 
+
+            
+
             const healthReductionRateInput = document.querySelector('.speed-panel__health-reduction-rate');
             healthReductionRateInput.addEventListener('input', (e) => {
                 const { target: { value } } = e
@@ -1149,3 +1172,15 @@ function startGame() {
         game.state.start('Preloader');
     })();
 }
+
+var statusFailed = true;
+
+function messegeFinishGame(str){
+    document.getElementById('messege-game-wrapper').innerHTML = str;
+
+    document.getElementsByClassName('messege-game')[0].style.display = 'flex';
+
+    
+};
+
+// messegeFinishGame("good")

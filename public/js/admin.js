@@ -1,16 +1,15 @@
 $(document).ready(function(){
-    let popup = $('.popup-user');
+    var popup = $('.popup-user');
 
-    let slideMenu = false,
+    var slideMenu = false,
         mouseSlideMenu = true;
 
-    let speed = 100;
+    var speed = 100;
 
-    let slider = $('.slider'),
+    var slider = $('.slider'),
         burgerBox =  $('.js-header--burger-box');
 
     popup.mouseleave(function (){
-        console.log("gg")
 		popup.hide(speed);
     });
 
@@ -71,7 +70,7 @@ $(document).ready(function(){
 
     // Вместо ссылок стоят чекбоксы. При измении чекбокса. Отправляется ajax-запрос по ссылке.
 
-    let smsCheckbox = $('.sms-checkbox'),
+    var smsCheckbox = $('.sms-checkbox'),
         emailCheckbox = $('.email-checkbox'),
         complaintCheckbox = $('.complaint-checkbox');
 
@@ -118,5 +117,7 @@ $(document).ready(function(){
     })
 
     
+    $('#gender').SumoSelect();
+    $('#status').SumoSelect();
 
 });

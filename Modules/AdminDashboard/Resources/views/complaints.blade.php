@@ -30,14 +30,14 @@
                                 </div>
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select id="gender" name="gender">
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
                                 </div>
                                 <div class="main__filter--status">
                                     <p>Статус</p>
-                                    <select name="status">
+                                    <select id="status" name="status">
                                         <option value="moderation">На модерации</option>
                                         <option value="rejected">Отклонена администратором</option>
                                         <option value="accept">Забракована администратором</option>
@@ -113,7 +113,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="9">Сообщение:
+                                <td colspan="8">Сообщение:
                                     {{$lid->complaint->message}}
                                 </td>
                                 <td>
@@ -131,17 +131,8 @@
 
                         </table>
                         <div class="main__table--footer">
-
-                            @include('pagination.default', ['paginator' => $lids])
-
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
-                                <div class="main__footer--item main__footer--item--active"><p>1</p></div>
-                                <div class="main__footer--item"><p>2</p></div>
-                                <div class="main__footer--item"><p>3</p></div>
-                                <div class="main__footer--item"><p>4</p></div>
-                                <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            
                         </div>
 
 
