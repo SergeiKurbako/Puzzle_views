@@ -32,25 +32,37 @@ class LidSystemController extends Controller
         // проверка баланса юзера на возможность создания лида
         $user = User::find($frame->user_id);
         if (($user->balance - $frame->price) < 0) {
-            return 'Игра временно недоступна';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Игра временно недоступна'
+            ]);
         }
 
         $ip = gethostbyname(parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST));
         if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Нельзя открывать фрейм из данного места'
+            ]);
         }
         if ($frame->code !== $code) {
-            return 'Не верный код фрейма';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не верный код фрейма'
+            ]);
         }
         if ($frame->ip !== $ip) {
-            return 'Не верный ip у сайта';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не верный ip у сайта'
+            ]);
         }
 
         if ($frame->frame_status !== 'on') {
-            return 'Код работает. Ожидает подтверждения';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Код работает. Ожидает подтверждения'
+            ]);
         }
         if ($frame->status !== 'on') {
-            return 'Игра выключена';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Игра выключена'
+            ]);
         }
 
         return redirect('/lidsystem/step1?frame_id=' . $frameId . '&code=' . $code);
@@ -72,10 +84,14 @@ class LidSystemController extends Controller
 
         if ($frame->sms_confirm === 'on') {
             if (!isset($_SERVER['HTTP_REFERER'])) {
-                return 'Нельзя открывать фрейм из данного места';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Нельзя открывать фрейм из данного места'
+                ]);
             }
             if ($frame->code !== $code) {
-                return 'Не верный код фрейма';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Не верный код фрейма'
+                ]);
             }
 
             return view('lidsystem::step1',[
@@ -104,7 +120,9 @@ class LidSystemController extends Controller
     public function step1Create(Request $request)
     {
         if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Нельзя открывать фрейм из данного места'
+            ]);
         }
 
         $frameId = $request->input('frame_id');
@@ -117,7 +135,9 @@ class LidSystemController extends Controller
             $frame = GameFrame::find($frameId);
 
             if ($frame->code !== $code) {
-                return 'Не верный код фрейма';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Не верный код фрейма'
+                ]);
             }
 
             // создание лида
@@ -132,7 +152,9 @@ class LidSystemController extends Controller
 
             return redirect('/lidsystem/step2?frame_id=' . $frameId . '&code=' . $code .'&lid_id=' . $lid->id . '&sms_code=' . $lid->sms_code . '&phone=' . $request->input('phone'));
         } else {
-            return 'Пользователь с таким номером уже зарегистрирован';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Пользователь с таким номером уже зарегистрирован'
+            ]);
         }
 
     }
@@ -155,10 +177,14 @@ class LidSystemController extends Controller
 
         if ($frame->sms_confirm === 'on') {
             if (!isset($_SERVER['HTTP_REFERER'])) {
-                return 'Нельзя открывать фрейм из данного места';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Нельзя открывать фрейм из данного места'
+                ]);
             }
             if ($frame->code !== $code) {
-                return 'Не верный код фрейма';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Не верный код фрейма'
+                ]);
             }
 
             $lid = Lid::find($lidId);
@@ -193,7 +219,9 @@ class LidSystemController extends Controller
         $frame = GameFrame::find($frameId);
 
         if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Нельзя открывать фрейм из данного места'
+            ]);
         }
 
         // получение лида
@@ -201,11 +229,15 @@ class LidSystemController extends Controller
 
         // проверка соответсвия sms-кода
         if ($lid->sms_code != $smsCode) {
-            return 'Не правильный sms-код';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не правильный sms-код'
+            ]);
         }
 
         if ($lid === null) {
-            return 'Не существующий лид';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не существующий лид'
+            ]);
         }
 
         return redirect('/lidsystem/step3?frame_id=' . $frameId . '&code=' . $code . '&lid_id=' . $lidId . '&phone=' . $phone);
@@ -228,10 +260,14 @@ class LidSystemController extends Controller
         $frame = GameFrame::find($frameId);
 
         if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Нельзя открывать фрейм из данного места'
+            ]);
         }
         if ($frame->code !== $code) {
-            return 'Не верный код фрейма';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не верный код фрейма'
+            ]);
         }
 
         return view('lidsystem::step3',[
@@ -259,17 +295,23 @@ class LidSystemController extends Controller
         $frame = GameFrame::find($frameId);
 
         if (!isset($_SERVER['HTTP_REFERER'])) {
-            return 'Нельзя открывать фрейм из данного места';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Нельзя открывать фрейм из данного места'
+            ]);
         }
         if ($frame->code !== $code) {
-            return 'Не верный код фрейма';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не верный код фрейма'
+            ]);
         }
 
         // проверка наличия лида с таким email
         if ($frame->email_confirm === 'on') {
             $oldLid = Lid::where('email', $request->input('email'))->first();
             if ($oldLid !== null) {
-                return 'Уже есть пользователь с таким email';
+                return view('lidsystem::error-message',[
+                    'error-message' => 'Уже есть пользователь с таким email'
+                ]);
             }
         }
 
@@ -277,7 +319,9 @@ class LidSystemController extends Controller
         $lid = Lid::find($lidId);
 
         if ($lid === null) {
-            return 'Не правильный lid';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Не правильный lid'
+            ]);
         }
 
         // снятие с юзера денег за лид
