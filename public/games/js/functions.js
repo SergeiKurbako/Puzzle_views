@@ -1192,10 +1192,10 @@ function requestWinUser(str){
 
     if(statusFailed){
         console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
-        req.open('GET', location.hostname+'/lidsystem/save-game-result?game_result=win&'+str, false);
+        req.open('GET', '/lidsystem/save-game-result?game_result=win&'+str, false);
     }else{
         console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
-        req.open('GET', location.hostname+'/lidsystem/save-game-result?game_result=lose&'+str, false);
+        req.open('GET', '/lidsystem/save-game-result?game_result=lose&'+str, false);
     }
     req.send();
 }
