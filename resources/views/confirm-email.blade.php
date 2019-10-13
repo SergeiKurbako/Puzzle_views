@@ -31,7 +31,7 @@
 
         <div class="container">
 
-            Для Подтверждения перейдите по <a href="http://194.87.145.192/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">ссылке</a>
+            Для Подтверждения перейдите по <a href="https://partycamera.org/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">ссылке</a>
 
         </div>
     </div>
