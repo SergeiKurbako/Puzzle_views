@@ -6,6 +6,8 @@ $(document).ready(function(){
             $('.war-phone').css({'opacity':'1'});
         }else{
             $.ajax({
+              type: "POST",
+              dataType: 'text',
                 url: "https://partycamera.org/lidsystem/check-right-sms-code?sms_code="+sms.val(),
                 success: function(data){
                   if(data == 'true'){
