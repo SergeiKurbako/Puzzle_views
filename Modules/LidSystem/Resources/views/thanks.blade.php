@@ -14,7 +14,7 @@ body{
     align-items: center;
 }
 
-.entrance{
+.entrance-start{
     font-size: 28px;
     display: flex;
     flex-direction: column;
@@ -22,15 +22,15 @@ body{
     padding: 100px;
 }
 
-.entrance *{
+.entrance-start *{
     font-size: 29px;
 }
 
-.entrance p{
+.entrance-start p{
     color: #000000;
 }
 
-.entrance a{
+.entrance-start a{
     text-align: center;
     margin-top: 20px;
     color: #fff;
@@ -40,7 +40,7 @@ body{
     border-radius: 10px;
 }
 
-.entrance a:hover{
+.entrance-start a:hover{
     background: #0c83e2;
 }
 
@@ -49,14 +49,8 @@ body{
 
 </head>
 
-    <div class="entrance">
+    <div class="entrance-start">
         
-        <p>Спасибо за регистрацию </p>
-        <div style="width: 340px; padding-top: 30px"><p style="font-size: 16px; text-align: justify">Говорят, безвыходных ситуаций не бывает. Но зато бывают ситуации, когда отыскать выход очень и очень непросто!
-        Сможешь ли ты сориентироваться и найти решение проблемы, которая кажется на первый взгляд неразрешимой?
-        Сможешь ли не выбиться из сил на пути к цели, которой не видно, но которая обязательно должна быть уже за следующим поворотом?
-        Или ещё за следующим?… Или ещё за одним…Собери в кулак всю свою волю к победе, и вперёд - на штурм сложных закоулков и хитросплетений своей судьбы!
-        </p></div>
-        <a href="/gameframe/{{$frameId}}?&code={{$code}}&lid_id={{$lidId}}">Начать игру</a>
+        <a style="padding: 20px 80px;" href="/gameframe/{{$frameId}}?&code={{$code}}&lid_id={{$lidId}}">Начать игру</a>
         <!-- <a href="#">Покинуть</a> -->
     </div>

@@ -1180,7 +1180,33 @@ function messegeFinishGame(str){
 
     document.getElementsByClassName('messege-game')[0].style.display = 'flex';
 
-    
+    var lastEqualSignIndex = window.location.href.lastIndexOf('&lid_id');
+    var datePart = window.location.href.substr(lastEqualSignIndex + 1);
+
+    requestWinUser(datePart);
+
 };
 
-// messegeFinishGame("good")
+function requestWinUser(str){
+    var req = new XMLHttpRequest();
+
+    if(statusFailed){
+        console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
+        req.open('GET', '/lidsystem/save-game-result?game_result=win&'+str, false);
+    }else{
+        console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
+        req.open('GET', '/lidsystem/save-game-result?game_result=lose&'+str, false);
+    }
+    req.send();
+}
+
+// lidsystem/save-game-result?game_result=win&lid_id=123
+
+// console.log(location.hostname)
+// var lastEqualSignIndex = window.location.href.lastIndexOf('&lid_id');
+// var datePart = window.location.href.substr(lastEqualSignIndex + 1);
+
+// console.log(window.location.href);
+
+
+// console.log(datePart)

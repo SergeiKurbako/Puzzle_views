@@ -48,10 +48,31 @@ $(document).ready(function(){
         if($('#email').val() == '' || $('#email').val().indexOf('@') == -1 || $('#email').val().indexOf('.') == -1){
             $('.war-email').css({'opacity':'1'});
         }else{
-            email = true;
-            $('.war-email').css({'opacity':'0'});
+             $.ajax({
+                url: "http://194.87.145.192/lidsystem/check-have-email?email=" + $('#email').val(),
+                success: function(data){
+                  if(data != 'true'){
+                    email = true;
+                  }else{
+                    $('.war-email').text('Данный email уже зарегистрирован');
+                    $('.war-email').css({'opacity':'1'});  
+                    return;
+                  }
+                }
+              });
+              
+              $('.war-email').css({'opacity':'0'});
         }
 
         if(name && second && patronymic && age && email)$('#btn-input').click();
     });
 });
+
+$(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
