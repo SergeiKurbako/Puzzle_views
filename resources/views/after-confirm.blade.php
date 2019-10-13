@@ -44,7 +44,7 @@
                 <div class="main__table">
 
                     <div class="main__table--table" style="margin-bottom: 20px;">
-                        <p>Регистрация пройдена, теперь можете <a href="/login">авторизоваться</a> </p>  
+                        <p>Регистрация пройдена, теперь можете <a href="/login" style="color:#2196f3">авторизоваться</a> </p>  
                     </div>
                 </div>
             </div>
