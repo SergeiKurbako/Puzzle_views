@@ -373,4 +373,29 @@ class LidSystemController extends Controller
         return json_encode(true);
     }
 
+    public function checkHaveEmail(Request $request)
+    {
+        $email = $request->input('email');
+
+        $result = 'true';
+        $user = User::where('email', $email)->first();
+        if ($user === null) {
+            $result = 'false';
+        }
+
+        return $result;
+    }
+
+    public function checkRightSmsCode(Request $request)
+    {
+        $smsCode = $request->input('sms_code');
+
+        $result = 'true';
+        $lid = Lid::where('sms_code', $smsCode)->first();
+        if ($lid === null) {
+            $result = 'false';
+        }
+
+        return $result;
+    }
 }
