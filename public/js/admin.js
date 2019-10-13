@@ -128,17 +128,37 @@ $(document).ready(function(){
         $('.fa-home').css({'color':'#2898F3'})
     }
 
-    // slider__menu--img i
 
-    $('#gender').SumoSelect();
-    $('#status').SumoSelect();
+    var sl;
+    var code;
 
     $('.code-frame').click(function(){
-        var code = $(this).text();
-        $(this).html("<textarea id='textareaText' cols='30' rows='10' focus>"+ code +"</textarea>");
-        
-        
+        sl = $(this);
+            code = $(this).text();
+            textSl = $(this).text();
+
+        $(this).html("<textarea id='textareaText' cols='40' rows='10'>"+ $.trim(code)+"</textarea>");
+        $('#textareaText').select();
     });
 
+    jQuery(function($){
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var div = sl; // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                    // div.hide(); // скрываем его
+                    div.html('<xmp>'+ $.trim(code) +'</xmp>');
+                    div.show();
+            }
+          });
+      });
 
+    // slider__menu--img i
+    if($('#gender') != undefined) $('#gender').SumoSelect();
+    if($('#status') != undefined) $('#status').SumoSelect();
+    
+
+
+    // Trigger
+    
 });

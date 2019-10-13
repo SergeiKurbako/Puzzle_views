@@ -704,6 +704,7 @@ a:focus{
 .code-frame{
     width: 300px;
     overflow: hidden;
+    color: #6b6969
 }
 
 /*  */
