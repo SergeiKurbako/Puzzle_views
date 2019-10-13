@@ -9,7 +9,7 @@ $(document).ready(function(){
               headers: { "Accept": "application/text"},
               type: "GET",
               dataType: 'text',
-                url: "https://partycamera.org/lidsystem/check-right-sms-code?sms_code="+sms.val(),
+                url: "http://partycamera.org/lidsystem/check-right-sms-code?sms_code="+sms.val(),
                 success: function(data){
                   if(data == 'true'){
                     $('#btn-input').click();

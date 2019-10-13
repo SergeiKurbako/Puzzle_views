@@ -52,7 +52,7 @@ $(document).ready(function(){
                 headers: { "Accept": "application/text"},
                 type: "GET",
                 dataType: 'text',
-                url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
                   if(data != 'true'){
                     email = true;
