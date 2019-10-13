@@ -44,7 +44,7 @@
 
                                    @if ($user->status === 'off')
                                     <a href="/admin-dashboard/user/{{$user->id}}/on" title="Запустить"><i class="fas fa-plus-circle"></i></a>
-                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="/admin-dashboard/user/{{$user->id}}/delete" title="Удалить"><i class="far fa-trash-alt"></i></a>
                                     @else
 
                                     
