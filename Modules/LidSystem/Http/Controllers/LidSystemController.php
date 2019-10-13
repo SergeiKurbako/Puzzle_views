@@ -398,4 +398,21 @@ class LidSystemController extends Controller
 
         return $result;
     }
+
+    public function checkHavePhone(Request $request)
+    {
+        $phone = $request->input('phone');
+
+        $phone = str_replace('+', '', $phone);
+
+        $result = 'true';
+        $lid = Lid::where('phone', $phone)->first();
+        if ($lid === null) {
+            $result = 'false';
+        }
+
+        return $result;
+    }
+
+
 }
