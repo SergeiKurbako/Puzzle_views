@@ -16,7 +16,7 @@
 <body>
     <div class="messege-game" id="messege-game">
         
-            <p class="messege-game-wrapper" id="messege-game-wrapper">dfdsfdkf;jdlkkl; jdklfjkldj klfj kdsjf kdsjklf jdkfj kldjskfkljv kdlj vkldf vkjfkljlkfjdklg m</p>
+            <p class="messege-game-wrapper" id="messege-game-wrapper"></p>
         
     </div>
     
@@ -28,7 +28,15 @@
         <div class="side-panel"></div>
     </div>
 
-
+    <script src="../games/js/phaser.min.js"></script>
+    <script src="../games/js/tilemapGen.js"></script>
+    <script src="../games/js/constants.js"></script>
+    <script src="../games/js/pathfinding.js"></script>
+    <script src="../games/js/ui.js"></script>
+    <script src="../games/js/detect.js"></script>
+    <script src="../games/js/functions.js"></script>
+    <script src="../games/js/exData.js"></script>
+    <script src="../games/js/socket.js"></script>
     <script>
          const box = document.querySelector('#game')
             box.style.height = `${window.innerWidth}px`
@@ -112,15 +120,7 @@
         }
         setTimeout(() => submitForm(), 50);
     </script>
-    <script src="../games/js/phaser.min.js"></script>
-    <script src="../games/js/tilemapGen.js"></script>
-    <script src="../games/js/constants.js"></script>
-    <script src="../games/js/pathfinding.js"></script>
-    <script src="../games/js/ui.js"></script>
-    <script src="../games/js/detect.js"></script>
-    <script src="../games/js/functions.js"></script>
-    <script src="../games/js/exData.js"></script>
-    <script src="../games/js/socket.js"></script>
+    
 </body>
 
 </html>

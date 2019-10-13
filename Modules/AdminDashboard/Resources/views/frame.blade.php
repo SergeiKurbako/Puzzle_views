@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select name="gender" id="gender">
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
@@ -67,6 +67,7 @@
                                 <td>E-mail</td>
                                 <td>Номер телефона</td>
                                 <td>Цена за лид</td>
+                                <td>Результат игры</td>
                             </tr>
                             @foreach($lids as $lid)
                             <tr>
@@ -78,6 +79,7 @@
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>
                                 <td>{{$lid->price}}</td>
+                                <td>{{$lid->game_result}}</td>
                             </tr>
                             @endforeach
 

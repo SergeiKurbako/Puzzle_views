@@ -260,9 +260,7 @@ function startGame() {
                 this.healthBarGraphics.scale.x = this.menHealth / 100
             }
             if (this.menHealth <= 0) {
-                statusFailed = false;
-                setTimeout(() => messegeFinishGame("Вы проиграли. Время вышло. Можете закрыть окно"), 1000);
-                
+                // messegeFinishGame("Время вышло, вы проиграли");
                 this.menHealth = 0
                 this.endRound()
                 
@@ -400,10 +398,7 @@ function startGame() {
                 this.timeWidget.innerHTML = `Result: ${finishTimeSecond}s`;
 
                 // В случае когда закончились жизни
-
-                statusFailed = false;
-                setTimeout(() => messegeFinishGame("Вы проиграли. У вас закончились жизни. Можете закрыть окно."), 1000);
-                
+                // messegeFinishGame("У вас кончились жизни. Вы проиграли!")
 
             }
             if (this.gameStatus && !THREE_MAN_LIFE) {
@@ -545,6 +540,7 @@ function startGame() {
             this.demoStatus = false;
         },
         demoRun() {
+            
             var men = this.men;
             // men.body.velocity.x = HERO_SPEED;
             // men.body.velocity.y = HERO_SPEED;
@@ -560,7 +556,6 @@ function startGame() {
             let diffY = Math.abs(men.y - y);
             if (diffX < 15
                 && diffY < 15) {
-                    
                 this.numPosition++
                 
             }
@@ -621,6 +616,7 @@ function startGame() {
                     case "UP":
                         stopMen = horizontallCheck(currentX, currentY, this.data)
                         if (stopMen) {
+                        
                             this.men.body.velocity.x = 0
                             this.men.body.velocity.y = 0
                             game.add.tween(this.men).to({ x: currentX * 32 + 16, y: currentY * 32 + 16 }, 2, Phaser.Easing.Linear.None, true)
@@ -826,12 +822,14 @@ function startGame() {
                         if (checkResult || (finX == currentMenX && finY == currentMenY)) {
                             this.menProps.isMove = false;
                             return {
+
                                 x: currentMenX,
                                 y: currentMenY
                             }
                         }
                     } else if (cellData === 0) {
                         this.menProps.isMove = false;
+
                         return {
                             x: currentMenX,
                             y: currentMenY - 1
@@ -966,10 +964,13 @@ function startGame() {
                 let finishTimeMS = (curentTime - this.timeStart) % 1000;
                 if (finishTimeMS < 100) {
                     finishTimeMS = '0' + finishTimeMS;
+                    console.log("endRound1")
                 } else if (finishTimeMS < 10) {
                     finishTimeMS = '00' + finishTimeMS;
+                    console.log("endRound2")
                 }
                 function stopMenMove() {
+                    console.log("endRound3")
                     this.men.move = false;
                 }
                 setTimeout(stopMenMove.bind(this), 100);
@@ -980,9 +981,7 @@ function startGame() {
                 this.time.stop();
                 // this.timeText.text = `Result: ${finishTimeSecond}.${finishTimeMS}s`;
                 this.timeWidget.innerHTML = `Result: ${finishTimeSecond}s`;
-                if(statusFailed){
-                    setTimeout(() => messegeFinishGame("Вы победили!"), 1000);
-                }
+                console.log("endRound4")
             }
         },
 
@@ -1173,14 +1172,11 @@ function startGame() {
     })();
 }
 
-var statusFailed = true;
+// function messegeFinishGame(str){
+//     var box = document.getElementsByClassName('messege-game');
+//     var textMessage = 
 
-function messegeFinishGame(str){
-    document.getElementById('messege-game-wrapper').innerHTML = str;
-
-    document.getElementsByClassName('messege-game')[0].style.display = 'flex';
-
-    
-};
+//     document.getElementById('messege-game-wrapper').innerHTML = 'Вы проиграли, можете закрыть игру';
+// };
 
 // messegeFinishGame("good")

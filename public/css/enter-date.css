@@ -37,9 +37,11 @@ select:focus{
 .bl-input__wrapper{
     display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
+            -webkit-justify-content: space-between;
             justify-content: space-between;
     width: 370px;
 }
