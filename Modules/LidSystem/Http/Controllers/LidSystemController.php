@@ -375,6 +375,9 @@ class LidSystemController extends Controller
 
     public function checkHaveEmail(Request $request)
     {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
         $email = $request->input('email');
 
         $result = 'true';
@@ -388,6 +391,9 @@ class LidSystemController extends Controller
 
     public function checkRightSmsCode(Request $request)
     {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
         $smsCode = $request->input('sms_code');
 
         $result = 'true';
@@ -401,6 +407,9 @@ class LidSystemController extends Controller
 
     public function checkHavePhone(Request $request)
     {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
         $phone = $request->input('phone');
 
         $phone = str_replace('+', '', $phone);
