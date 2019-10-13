@@ -378,8 +378,8 @@ class LidSystemController extends Controller
         $email = $request->input('email');
 
         $result = 'true';
-        $user = User::where('email', $email)->first();
-        if ($user === null) {
+        $lid = Lid::where('email', $email)->first();
+        if ($lid === null) {
             $result = 'false';
         }
 
