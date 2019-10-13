@@ -49,7 +49,7 @@ $(document).ready(function(){
             $('.war-email').css({'opacity':'1'});
         }else{
              $.ajax({
-                headers: { "Accept": "application/json"},
+                headers: { "Accept": "application/text"},
                 type: "GET",
                 dataType: 'text',
                 url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),

@@ -25,7 +25,7 @@ $(document).ready(function(){
             $('.war-phone').css({'opacity':'1'});
         }else{
             $.ajax({
-              headers: { "Accept": "application/json"},
+              headers: { "Accept": "application/text"},
               type: "GET",
               dataType: 'text',
                 url: "https://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
