@@ -26,7 +26,9 @@ class LidSystemController extends Controller
         $frame = GameFrame::find($frameId);
 
         if ($frame === null) {
-            return 'Пустой фрейм';
+            return view('lidsystem::error-message',[
+                'error-message' => 'Пустой фрейм'
+            ]);
         }
 
         // проверка баланса юзера на возможность создания лида
@@ -358,6 +360,7 @@ class LidSystemController extends Controller
             'gameResult' => $lid->game_result
         ]);
     }
+
     public function saveGameResult(Request $request)
     {
         $lidId = $request->input('lid_id');
