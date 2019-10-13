@@ -133,4 +133,12 @@ $(document).ready(function(){
     $('#gender').SumoSelect();
     $('#status').SumoSelect();
 
+    $('.code-frame').click(function(){
+        var code = $(this).text();
+        $(this).html("<textarea id='textareaText' cols='30' rows='10' focus>"+ code +"</textarea>");
+        
+        
+    });
+
+
 });
