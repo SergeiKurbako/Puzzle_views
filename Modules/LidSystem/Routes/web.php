@@ -13,6 +13,7 @@ Route::prefix('lidsystem')->group(function() {
 
     Route::get('/check-have-email', 'LidSystemController@checkHaveEmail');
     Route::get('/check-right-sms-code', 'LidSystemController@checkRightSmsCode');
+    Route::get('/check-have-phone', 'LidSystemController@checkHavePhone');
 
 
     Route::get('/{id}/complaint', 'ComplaintController@createComplaint');
