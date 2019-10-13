@@ -1,13 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
-
-<div class="container">
-    Регистрация пройдена
-</div>
-
-
-@endsection
 <!DOCTYPE html>
 <html lang="ru">
 <head>
