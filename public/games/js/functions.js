@@ -1189,13 +1189,20 @@ function messegeFinishGame(str){
 
 function requestWinUser(str){
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://www.mozilla.org/', false); 
+
+    if(statusFailed){
+        console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
+        req.open('GET', location.hostname+'/lidsystem/save-game-result?game_result=win&'+str, false);
+    }else{
+        console.log(location.hostname+'/lidsystem/save-game-result?game_result=win&'+str);
+        req.open('GET', location.hostname+'/lidsystem/save-game-result?game_result=lose&'+str, false);
+    }
     req.send();
 }
 
 // lidsystem/save-game-result?game_result=win&lid_id=123
 
-console.log(location.hostname)
+// console.log(location.hostname)
 // var lastEqualSignIndex = window.location.href.lastIndexOf('&lid_id');
 // var datePart = window.location.href.substr(lastEqualSignIndex + 1);
 
