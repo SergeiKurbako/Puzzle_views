@@ -102,7 +102,7 @@ class AdminDashboardController extends Controller
         }
 
         if ($request->input('to_date') !== null) {
-            $lids->whereDate('created_at', '=<', $request->input('to_date'));
+            $lids->whereDate('created_at', '<=', $request->input('to_date'));
         }
 
         if ($request->input('gender') !== null) {
@@ -114,7 +114,7 @@ class AdminDashboardController extends Controller
             $itemCount = $request->input('item_count');
         }
 
-        $lids = $lids->paginate($itemCount);
+        $lids = $lids->paginate(10);
 
         return view('admindashboard::frame', [
             'lids' => $lids,
