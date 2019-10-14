@@ -113,7 +113,7 @@ $(document).ready(function(){
         
     //     window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
         
-    // })Store
+    // })St
 
     if(window.location.pathname.indexOf('/user/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
