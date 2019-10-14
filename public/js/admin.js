@@ -155,6 +155,8 @@ $(document).ready(function(){
 
     if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
 
+    if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+
     $('.main__table--select .opt').click(function(){
         // console.log($(this).text());
         window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
