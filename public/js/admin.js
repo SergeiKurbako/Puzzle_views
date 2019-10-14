@@ -107,14 +107,13 @@ $(document).ready(function(){
           });
     }
 
-    $('.main__table--select select').click(function(){
-        $(".main__table--select select :selected").val();
+    // $('.main__table--select select').click(function(){
+    //     $(".main__table--select select :selected").val();
         
-        // console.log(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val())
         
-        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
+    //     window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
         
-    })
+    // })
 
     if(window.location.pathname.indexOf('/user/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
@@ -126,7 +125,13 @@ $(document).ready(function(){
         $('.fa-recycle').css({'color':'#2898F3'})
     }else if(window.location.pathname === '/admin-dashboard'){
         $('.fa-home').css({'color':'#2898F3'})
+    }else if(window.location.pathname === '/user-dashboard'){
+        $('.fa-home').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/frame/') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
     }
+
+    // Trigger
 
 
     var sl;
@@ -156,9 +161,8 @@ $(document).ready(function(){
     // slider__menu--img i
     if($('#gender') != undefined) $('#gender').SumoSelect();
     if($('#status') != undefined) $('#status').SumoSelect();
+
+    $('.main__table--select select').SumoSelect();
     
-
-
-    // Trigger
     
 });

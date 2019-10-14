@@ -122,10 +122,10 @@
                                 @else
 
                                 <div class="checkbox--user-nav table__content--center">
-                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}">
+                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
                                 </div>
 
-                                <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a>
+                                <!-- <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a> -->
                                 @endif
                                 
                                 

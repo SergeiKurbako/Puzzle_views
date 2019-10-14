@@ -709,6 +709,27 @@ a:focus{
 
 /*  */
 
+/* Select */
+
+
+.main__table--select .SumoSelect{
+    width: 62px !important;
+    font-size: 14px;
+    border: none;
+    padding: 10px 10px;
+    /* margin: 0 10px; */
+}
+
+.main__table--select .SumoSelect.open > .optWrapper{
+    top:50px;
+}
+
+
+.main__table--select .SumoSelect > .optWrapper > .options li.opt{
+    padding: 11px 25px;
+}
+
+
 @media screen and (max-width: 1470px){
     .main__table--table table td{
         padding: 15px 7px;

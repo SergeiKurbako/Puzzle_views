@@ -19,11 +19,11 @@
                                         <div class="main__filter--date-input-wrapper">
                                             <div>
                                                 <label>От</label>
-                                                <input name="from_date" type="date" />
+                                                <input id="filter--date" name="from_date" type="date" />
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input name="to_date" type="date" />
+                                                <input id="filter--date" name="to_date" type="date" />
                                             </div>
                                         </div>
 
@@ -140,4 +140,5 @@
                 </div>
             </div>
         </div>
+        
         @endsection

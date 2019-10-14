@@ -13,6 +13,8 @@ svg{
 	left: 0;
 	right: 0;
 	bottom: 0;
+	-webkit-transition: all 1s linear;
+	-o-transition: all 1s linear;
 	transition: all 1s linear;
 }
 
@@ -31,9 +33,18 @@ span{
 	height: 100vh;
 	position: fixed;
 	top:0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	background: rgba(0,0,0,.8);
 	opacity: 0;
 	
@@ -66,11 +77,15 @@ span{
     background-color: rgb(173, 173, 173);
 }
 .madalIframe--close:before {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .madalIframe--close:after {
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 img{

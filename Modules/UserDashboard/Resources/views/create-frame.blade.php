@@ -32,12 +32,6 @@
                             </tr>
                         </table>
                         </form>
-                        <script>
-                            var inp = document.getElementById('url');
-                            inp.oninput = function(){
-                                if('')
-                            }
-                        </script>
                     </div>
                 </div>
             </div>
