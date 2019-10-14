@@ -133,6 +133,7 @@ a:focus{
     border-bottom: 1px solid #e9ecef;
     padding-left: 0;
     padding-right: 0;
+    transition: .1s;
 }
 
 .slider__administrator a{
