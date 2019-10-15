@@ -204,7 +204,10 @@ function showMessage(selector) {
 
 }
 
-
+document.getElementById('trigger').onclick = function(){
+	showIframe();
+	document.body.classList.add('body-no-scroll')
+}
 
 function showIframe(){
 	svg.classList.add('disabled');
@@ -223,11 +226,12 @@ function showIframe(){
 		div.style.opacity = n;
 		div.style.filter = 'alpha(opacity=' + 100*n + ')';
 	}, 30);
-
-    
 }
 
+
+
 document.getElementById('js-close-modal').onclick = function(){
+	document.body.classList.remove('body-no-scroll');
 	var div = document.getElementById('wrapper-iframe');
 
 	var n = 1;
