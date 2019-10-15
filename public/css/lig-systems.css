@@ -132,6 +132,10 @@ input[type=checkbox]:checked + label:before {
 }
 
 @media screen and (max-width: 576px){
+    body{
+        height: auto;
+    }
+
     .entrance{
         width: 100%;
     }
@@ -148,6 +152,6 @@ input[type=checkbox]:checked + label:before {
         width: 100% !important;
     }
     .entrance .header_title{
-        margin-top: 85px;
+        /* margin-top: 85px; */
     }
 }
