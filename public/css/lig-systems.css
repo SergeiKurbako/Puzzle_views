@@ -151,6 +151,6 @@ input[type=checkbox]:checked + label:before {
         margin-top: 220px;
     }
     .entrance__btn{
-        margin-bottom: 35px;
+        margin-bottom: 80px;
     }
 }
