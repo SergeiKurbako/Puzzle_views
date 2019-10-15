@@ -1,4 +1,6 @@
 <head>
+
+</head>
 <style>
 *:root{
     font-family: 'Roboto','Nunito', 'Arial', 'sans-selif';
@@ -6,8 +8,15 @@
 
 .entrance-start{
     font-size: 28px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background: #fff;
     padding: 100px;
 }
@@ -37,6 +46,24 @@
 
 .entrance{
     display: none;
+}
+
+@media screen and (max-width: 576px){
+    .entrance-start{
+        padding: 60px 0;
+        width: 100%;
+    }
+    .entrance-start div{
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+    .entrance-start p{
+        padding: 13px;
+    }
+    .entrance-start a{
+        margin: 20px;
+    }
 }
 
 </style>  
@@ -84,5 +111,6 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     <script src="../js/number-phone-val.js"></script>

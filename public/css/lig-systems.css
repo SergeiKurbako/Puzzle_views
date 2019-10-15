@@ -130,3 +130,29 @@ input[type=checkbox]:checked + label:before {
     font-weight: 400;
     opacity: 0;
 }
+
+@media screen and (max-width: 576px){
+    body{
+        height: auto;
+    }
+
+    .entrance{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .bl-input__wrapper{
+        width: 100% !important;
+        flex-direction: column;
+    }
+
+    .bl-input__wrapper--item{
+        width: 100% !important;
+    }
+    .entrance input[type=tel], .entrance input[type=text], #phone{
+        width: 100% !important;
+    }
+    .entrance .header_title{
+        /* margin-top: 85px; */
+    }
+}

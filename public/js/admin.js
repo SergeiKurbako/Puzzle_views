@@ -107,14 +107,6 @@ $(document).ready(function(){
           });
     }
 
-    $('.main__table--select select').click(function(){
-        $(".main__table--select select :selected").val();
-        
-        // console.log(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val())
-        
-        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
-        
-    })
 
     if(window.location.pathname.indexOf('/user/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
@@ -125,12 +117,49 @@ $(document).ready(function(){
     }else if(window.location.pathname.indexOf('wallet') != -1){
         $('.fa-recycle').css({'color':'#2898F3'})
     }else if(window.location.pathname === '/admin-dashboard'){
-        $('.fa-home').css({'color':'#2898F3'})
+        $('.fa-user').css({'color':'#2898F3'})
+    }else if(window.location.pathname === '/user-dashboard'){
+        $('.fa-user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/frame/') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
     }
 
+    // Trigger
+    var sl;
+    var code;
+
+    $('.code-frame').click(function(){
+        sl = $(this);
+            code = $(this).text();
+            textSl = $(this).text();
+
+        $(this).html("<textarea id='textareaText' cols='40' rows='10'>"+ $.trim(code)+"</textarea>");
+        $('#textareaText').select();
+    });
+
+    jQuery(function($){
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var div = sl; // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                    // div.hide(); // скрываем его
+                    div.html('<xmp>'+ $.trim(code) +'</xmp>');
+                    div.show();
+            }
+          });
+      });
+
     // slider__menu--img i
+    if($('#gender') != undefined) $('#gender').SumoSelect();
+    if($('#status') != undefined) $('#status').SumoSelect();
 
-    $('#gender').SumoSelect();
-    $('#status').SumoSelect();
+    if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
 
+    if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+
+    $('.main__table--select .opt').click(function(){
+        // console.log($(this).text());
+        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
+    })
+    
 });

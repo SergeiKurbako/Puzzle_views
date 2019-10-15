@@ -3,7 +3,8 @@ $(document).ready(function(){
         second = false,
         patronymic = false,
         age = false,
-        email = false;
+        email = false,
+        emailCheck = false;
 
     let nameFor = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`=1234567890";
 
@@ -48,23 +49,37 @@ $(document).ready(function(){
         if($('#email').val() == '' || $('#email').val().indexOf('@') == -1 || $('#email').val().indexOf('.') == -1){
             $('.war-email').css({'opacity':'1'});
         }else{
-             $.ajax({
-                url: "http://194.87.145.192/lidsystem/check-have-email?email=" + $('#email').val(),
+            
+            $('.war-email').css({'opacity':'0'});
+            email = true;
+        }
+
+        if(email){
+            $.ajax({
+                headers: { "Accept": "application/text"},
+                type: "GET",
+                dataType: 'text',
+                // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
                   if(data != 'true'){
-                    email = true;
+                    emailCheck = true;
+                    if(name && second && patronymic && age && email && emailCheck)$('#btn-input').click();
                   }else{
                     $('.war-email').text('Данный email уже зарегистрирован');
                     $('.war-email').css({'opacity':'1'});  
                     return;
                   }
                 }
-              });
-              
-              $('.war-email').css({'opacity':'0'});
+            });
         }
 
-        if(name && second && patronymic && age && email)$('#btn-input').click();
+        
+          
+          
+
+        if(name && second && patronymic && age && email && emailCheck)$('#btn-input').click();
     });
 });
 

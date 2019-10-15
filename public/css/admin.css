@@ -133,6 +133,7 @@ a:focus{
     border-bottom: 1px solid #e9ecef;
     padding-left: 0;
     padding-right: 0;
+    transition: .1s;
 }
 
 .slider__administrator a{
@@ -701,7 +702,34 @@ a:focus{
     background-color: #0c83e2;
 }
 
+.code-frame{
+    width: 300px;
+    overflow: hidden;
+    color: #6b6969
+}
+
 /*  */
+
+/* Select */
+
+
+.main__table--select .SumoSelect{
+    width: 62px !important;
+    font-size: 14px;
+    border: none;
+    padding: 10px 10px;
+    /* margin: 0 10px; */
+}
+
+.main__table--select .SumoSelect.open > .optWrapper{
+    top:50px;
+}
+
+
+.main__table--select .SumoSelect > .optWrapper > .options li.opt{
+    padding: 11px 25px;
+}
+
 
 @media screen and (max-width: 1470px){
     .main__table--table table td{

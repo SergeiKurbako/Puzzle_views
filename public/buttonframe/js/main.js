@@ -1,4 +1,4 @@
-var svg = document.querySelector("svg");
+var svg = document.getElementById("game")
 var cursor = svg.createSVGPoint();
 var arrows = document.querySelector(".arrows");
 var randomAngle = 0;
@@ -204,7 +204,14 @@ function showMessage(selector) {
 
 }
 
+var trigger = document.createElement('div');
+	trigger.id = "trigger";
+	trigger.innerText = "Trigger";
+	document.body.prepend(trigger);
 
+	document.getElementById('trigger').onclick = function(){
+		showIframe();
+	}
 
 function showIframe(){
 	svg.classList.add('disabled');

@@ -1,12 +1,18 @@
 $(document).ready(function(){
-    let sms = $("#sms");
+    var sms = $("#sms");
 
     $('#btn').click(function(){
         if(sms.val() == ''){
             $('.war-phone').css({'opacity':'1'});
         }else{
             $.ajax({
-                url: "http://194.87.145.192/lidsystem/check-right-sms-code?sms_code="+sms.val(),
+              headers: { "Accept": "application/text"},
+              type: "GET",
+              dataType: 'text',
+                url: "http://partycamera.org/lidsystem/check-right-sms-code?sms_code="+sms.val(),
+                // url: "https://partycamera.org/lidsystem/check-right-sms-code?sms_code="+sms.val(),
+                // url: "http://127.0.0.2/lidsystem/check-right-sms-code?sms_code="+sms.val(),
+                
                 success: function(data){
                   if(data == 'true'){
                     $('#btn-input').click();
@@ -17,8 +23,6 @@ $(document).ready(function(){
               });
         }
     })
-
-
 });
 
 $(document).ready(function() {
