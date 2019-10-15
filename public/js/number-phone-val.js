@@ -18,7 +18,7 @@ $(document).ready(function(){
     $('.entrance').css({'display' : 'block'})
   })
 
-    let phone = $("#phone");
+    var phone = $("#phone");
     
     $('#btn').click(function(){
         if(phone.val() == ''){
@@ -28,7 +28,7 @@ $(document).ready(function(){
               headers: { "Accept": "application/text"},
               type: "GET",
               dataType: 'text',
-                url: "http://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
+                url: "https://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
                 // url: "https://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
                 // url: "http://127.0.0.2/lidsystem/check-have-phone?phone="+phone.val(),
                 
