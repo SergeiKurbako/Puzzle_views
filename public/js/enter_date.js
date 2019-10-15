@@ -59,8 +59,8 @@ $(document).ready(function(){
                 headers: { "Accept": "application/text"},
                 type: "GET",
                 dataType: 'text',
-                url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                // http://127.0.0.2
+                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
                   if(data != 'true'){
