@@ -87,7 +87,7 @@ class LidSystemController extends Controller
         if ($frame->sms_confirm === 'on') {
             if (!isset($_SERVER['HTTP_REFERER'])) {
                 return view('lidsystem::notification',[
-                    'notification' => '<div>Нельзя открывать фрейм из данного места<div>'
+                    'notification' => 'Нельзя открывать фрейм из данного места'
                 ]);
             }
             if ($frame->code !== $code) {
