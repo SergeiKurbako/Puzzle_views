@@ -9,6 +9,12 @@ $(document).ready(function(){
     let nameFor = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`=1234567890";
 
     $('#btn').click(function(){
+
+        // s = window.location.href.indexOf('frame_id');
+
+        
+
+
         for (let x = 0; x<$('.name').val().length; x++){
             if( nameFor.indexOf($('.name').val()[x]) != -1  || $('.name').val() == ''){
                 $('.war-name').css({'opacity':'1'});
@@ -55,12 +61,25 @@ $(document).ready(function(){
         }
 
         if(email){
+            var test_str = window.location.href;
+            var start_pos = test_str.indexOf('frame_id')+9;
+            var end_pos = test_str.indexOf('&code',start_pos);
+            var text_to_get = test_str.substring(start_pos,end_pos)
+        
+        
+        console.log(text_to_get);
+
             $.ajax({
                 headers: { "Accept": "application/text"},
                 type: "GET",
                 dataType: 'text',
                 // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                
+                
+                // url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                url: "http://partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                
+                
                 // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
                   if(data != 'true'){
@@ -80,8 +99,11 @@ $(document).ready(function(){
           
 
         if(name && second && patronymic && age && email && emailCheck)$('#btn-input').click();
+        
     });
 });
+
+
 
 $(document).ready(function() {
     $(window).keydown(function(event){
