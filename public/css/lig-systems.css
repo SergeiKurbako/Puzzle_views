@@ -148,9 +148,9 @@ input[type=checkbox]:checked + label:before {
         width: 100% !important;
     }
     .entrance .header_title{
-        margin-top: 220px;
+        margin-top: 85px;
     }
     .entrance__btn{
-        margin-bottom: 80px;
+        margin-bottom: 35px;
     }
 }
