@@ -206,13 +206,13 @@ function showMessage(selector) {
 
 document.getElementById('trigger').onclick = function(){
 	showIframe();
-	document.body.classList.add('body-no-scroll')
+	// document.body.classList.add('body-no-scroll')
 }
 
 function showIframe(){
 	svg.classList.add('disabled');
 
-	var div = document.getElementById('wrapper-iframe');
+	// var div = document.getElementById('wrapper-iframe');
 
 	div.classList.remove('disabled');
 
