@@ -60,6 +60,8 @@ $(document).ready(function(){
                 type: "GET",
                 dataType: 'text',
                 url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                // http://127.0.0.2
+                // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
                   if(data != 'true'){
                     emailCheck = true;

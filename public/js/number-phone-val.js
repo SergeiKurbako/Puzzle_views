@@ -29,6 +29,8 @@ $(document).ready(function(){
               type: "GET",
               dataType: 'text',
                 url: "https://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
+                // url: "http://127.0.0.2/lidsystem/check-have-phone?phone="+phone.val(),
+                
                 success: function(data){
                   if(data != 'true'){
                     $('#btn-input').click();

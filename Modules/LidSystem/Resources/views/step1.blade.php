@@ -1,4 +1,6 @@
 <head>
+
+</head>
 <style>
 *:root{
     font-family: 'Roboto','Nunito', 'Arial', 'sans-selif';
@@ -44,6 +46,24 @@
 
 .entrance{
     display: none;
+}
+
+@media screen and (max-width: 576px){
+    .entrance-start{
+        padding: 60px 0;
+        width: 100%;
+    }
+    .entrance-start div{
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+    .entrance-start p{
+        padding: 13px;
+    }
+    .entrance-start a{
+        margin: 20px;
+    }
 }
 
 </style>  

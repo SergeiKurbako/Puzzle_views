@@ -1,9 +1,10 @@
+<meta content="width=device-width, initial-scale=1" name="viewport" />
 <link rel="stylesheet" href="../css/reset.css">
 <link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="../css/lig-systems.css">
 <link rel="stylesheet" href="../css/enter-date.css">
 <div class="entrance">
-    <h1>Шаг 3/3</h1>
+    <h1 class="header_title">Шаг 3/3</h1>
     <form action="/lidsystem/step3/create" method="post">
     @csrf
         <div class="bl-input">
