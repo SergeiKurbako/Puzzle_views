@@ -204,7 +204,14 @@ function showMessage(selector) {
 
 }
 
+var trigger = document.createElement('div');
+	trigger.id = "trigger";
+	trigger.innerText = "Trigger";
+	document.body.prepend(trigger);
 
+	document.getElementById('trigger').onclick = function(){
+		showIframe();
+	}
 
 function showIframe(){
 	svg.classList.add('disabled');
