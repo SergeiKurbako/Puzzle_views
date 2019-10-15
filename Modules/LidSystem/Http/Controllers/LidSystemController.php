@@ -386,6 +386,11 @@ class LidSystemController extends Controller
             $result = 'false';
         }
 
+        $frame = GameFrame::where('code', $request->input('frame_id'))->first();
+        if (!is_null($frame) && $frame->email_confirm === 'off') {
+            $result = 'false';
+        }
+
         return $result;
     }
 
