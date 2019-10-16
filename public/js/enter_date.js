@@ -8,16 +8,14 @@ $(document).ready(function(){
 
     let nameFor = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`=1234567890";
 
+    if($('#phone').val() == ''){
+        $('#phone').val(0);
+    }
+
+
     $('#btn').click(function(){
 
-        // s = window.location.href.indexOf('frame_id');
-
         
-        
-        
-        //     console.log(text_to_get);
-
-
         for (let x = 0; x<$('.name').val().length; x++){
             if( nameFor.indexOf($('.name').val()[x]) != -1  || $('.name').val() == ''){
                 $('.war-name').css({'opacity':'1'});
@@ -76,8 +74,10 @@ $(document).ready(function(){
                 // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 
                 
-                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                // url: "http://partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                // url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                
+                
+                url: "http://partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
                 
                 
                 // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),

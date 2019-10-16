@@ -11,7 +11,7 @@
             <div class="bl-input__wrapper">
 
                 <div class="bl-input__wrapper--item">
-                    <input type="text" name="phone" value="{{$phone}}" hidden>
+                    <input id="phone" type="text" name="phone" value="{{$phone}}" hidden>
                     <input type="text" name="lid_id" value="{{$lidId}}" hidden>
                     <input type="text" name="code" value="{{$code}}" hidden>
                     <label for="first">Имя</label>
