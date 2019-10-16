@@ -17,13 +17,13 @@
                                 <div class="main__filter--date">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper">
-                                            <div>
+                                            <div id="date-example">
                                                 <label>От</label>
-                                                <input id="filter--date" name="from_date" type="date" />
+                                                <input id="from--filter--date" name="from_date" type="text" />
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input id="filter--date" name="to_date" type="date" />
+                                                <input id="to--filter--date" name="to_date" type="text" />
                                             </div>
                                         </div>
 
