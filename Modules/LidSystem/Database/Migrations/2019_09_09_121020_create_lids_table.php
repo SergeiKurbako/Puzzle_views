@@ -22,7 +22,7 @@ class CreateLidsTable extends Migration
             $table->enum('gender', ['man', 'women'])->default('man');
             $table->integer('age')->default(0);
             $table->string('email')->default('');
-            $table->string('phone');
+            $table->string('phone')->default('');
             $table->string('work_place')->default('');
             $table->string('sms_code')->default('');
             $table->enum('game_result', ['wait', 'win', 'lose'])->default('wait');
