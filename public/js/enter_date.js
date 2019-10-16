@@ -76,8 +76,8 @@ $(document).ready(function(){
                 // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 
                 
-                // url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                url: "http://partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
+                // url: "http://partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
                 
                 
                 // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
