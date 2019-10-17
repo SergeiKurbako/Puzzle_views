@@ -36,10 +36,16 @@
                                 </div>
                                 <div style="padding-left: 50px;" class="main__filter--price">
                                     <p>Цена за лид</p>
-                                    <label>От</label>
-                                    <input type="number" name="from_price" autocomplete="off"/>
-                                    <label>До</label>
-                                    <input type="number" name="to_price" autocomplete="off"/>
+                                    <div class="main__filter--price--wrapper">
+                                        <div class="main__filter--price--item">
+                                            <label>От</label>
+                                            <input type="number" name="from_price" autocomplete="off"/>
+                                        </div>
+                                        <div class="main__filter--price--item">
+                                            <label>До</label>
+                                            <input type="number" name="to_price" autocomplete="off"/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Результат игры</p>
@@ -50,11 +56,17 @@
                                         <option value="waman">Ожидание</option>
                                     </select>
                                 </div>
+                                
 
                             </div>
-
-                            <div class="main__filter--btn">
-                                <input type="submit" name=""  value="Применить" />
+                            <div style="display: flex; align-items: center;">
+                                <div class="main__filter--btn">
+                                    <input type="submit" name=""  value="Применить" />
+                                </div>
+                                <div class="main__filter--exel">
+                                    <input id="exel"  type="checkbox" name="exel">
+                                    <label for="exel">Выгрузить в exel</label>
+                                </div>
                             </div>
 
                         </form>

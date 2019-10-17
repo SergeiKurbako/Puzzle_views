@@ -68,7 +68,7 @@ input::-webkit-inner-spin-button {
 }
 
 .main__filter--date-input-wrapper{
-    width: 390px;
+    width: 400px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -86,7 +86,7 @@ input::-webkit-inner-spin-button {
 }
 
 .main__filter--date-input-wrapper--stas-user{
-    width: 390px;
+    width: 400px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -136,6 +136,13 @@ input::-webkit-inner-spin-button {
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
     -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
             box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.main__filter--price--wrapper{
+    display: flex;
+    width: 240px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main__filter--price input{
@@ -283,5 +290,14 @@ input[type=checkbox]:checked + label:before {
     }
     .main__filter--date--stat-user{
         width: 200px !important;
+    }
+    .main__filter--price--item{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .main__filter--price--item label{
+        padding-right: 5px;
     }
 }
