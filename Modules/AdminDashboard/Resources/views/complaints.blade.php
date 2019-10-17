@@ -19,11 +19,11 @@
                                         <div class="main__filter--date-input-wrapper">
                                             <div id="date-example">
                                                 <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" />
+                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" />
+                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
                                             </div>
                                         </div>
 
@@ -48,9 +48,9 @@
                                 <div class="main__filter--price">
                                     <p>Цена за лид</p>
                                     <label>От</label>
-                                    <input type="number" name="from_price" />
+                                    <input type="number" name="from_price" autocomplete="off"/>
                                     <label>До</label>
-                                    <input type="number" name="to_price" />
+                                    <input type="number" name="to_price" autocomplete="off"/>
                                 </div>
 
 
@@ -105,11 +105,11 @@
                                 <td>
                                     <span tooltip="{{$lid->complaint->message}}">
                                         @if ($lid->complaint->status === 'moderation')
-                                        Отправлена на модерацию
+                                        На модерации
                                         @elseif ($lid->complaint->status === 'rejected')
-                                        Отклонена
+                                        Отклонена. Лид корректный.
                                         @elseif ($lid->complaint->status === 'accept')
-                                        Одобрена
+                                        Одобрена. Лид некорректный.
                                         @endif
                                     </span>
                                 </td>

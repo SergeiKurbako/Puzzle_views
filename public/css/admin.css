@@ -708,10 +708,14 @@ a:focus{
     color: #6b6969
 }
 
-/*  */
-
 /* Select */
+.sumo_result_game{
+    width: 105px !important;
+}
 
+.moderation__off--lid{
+    opacity: .4;
+}
 
 .main__table--select .SumoSelect{
     width: 62px !important;

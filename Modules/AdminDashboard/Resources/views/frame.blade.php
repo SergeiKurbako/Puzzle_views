@@ -18,14 +18,13 @@
                                         <div class="main__filter--date-input-wrapper--stas-user">
                                             <div>
                                                 <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" />
+                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" />
+                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
                                             </div>
                                         </div>
-
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
@@ -33,6 +32,22 @@
                                         <option value="all">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
+                                    </select>
+                                </div>
+                                <div style="padding-left: 50px;" class="main__filter--price">
+                                    <p>Цена за лид</p>
+                                    <label>От</label>
+                                    <input type="number" name="from_price" autocomplete="off"/>
+                                    <label>До</label>
+                                    <input type="number" name="to_price" autocomplete="off"/>
+                                </div>
+                                <div class="main__filter--floor" style="margin-left: 40px;">
+                                    <p>Результат игры</p>
+                                    <select name="result_game" id="result_game">
+                                        <option value="all">Все</option>
+                                        <option value="man">Победа</option>
+                                        <option value="waman">Проигрыш</option>
+                                        <option value="waman">Ожидание</option>
                                     </select>
                                 </div>
 
