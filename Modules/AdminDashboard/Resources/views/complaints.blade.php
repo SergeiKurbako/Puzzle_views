@@ -60,7 +60,7 @@
                                     <input type="submit" name="" value="Применить" />
                                 </div>
                                 <div class="main__filter--exel">
-                                    <input id="exel"  type="checkbox" name="exel" checked>
+                                    <input id="exel"  type="checkbox" name="exel">
                                     <label for="exel">Выгрузить в exel</label>
                                 </div> 
                             </div>

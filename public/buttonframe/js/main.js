@@ -211,10 +211,12 @@ var trigger = document.createElement('div');
 
 	document.getElementById('trigger').onclick = function(){
 		showIframe();
+		trigger.classList.add('disabled');
 	}
 
 function showIframe(){
 	svg.classList.add('disabled');
+	var div = document.getElementById('wrapper-iframe');
 
 	var div = document.getElementById('wrapper-iframe');
 
