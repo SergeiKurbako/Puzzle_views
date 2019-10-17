@@ -1,7 +1,7 @@
 @extends('admindashboard::layouts.master')
 
 @section('content')
-
+<link rel="stylesheet" href="../../../css/tooltip.css">
 <div class="main">
             <div class="main__wrapper">
 
@@ -31,6 +31,7 @@
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
                                     <select id="gender" name="gender">
+                                        <option value="all">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
@@ -38,32 +39,31 @@
                                 <div class="main__filter--status">
                                     <p>Статус</p>
                                     <select id="status" name="status">
+                                        <option value="all">Все</option>
                                         <option value="moderation">На модерации</option>
-                                        <option value="rejected">Отклонена администратором</option>
-                                        <option value="accept">Забракована администратором</option>
+                                        <option value="rejected">Отклонена</option>
+                                        <option value="accept">Одобрена</option>
                                     </select>
                                 </div>
                                 <div class="main__filter--price">
                                     <p>Цена за лид</p>
                                     <label>От</label>
-                                    <input type="text" name="from_price" />
+                                    <input type="number" name="from_price" />
                                     <label>До</label>
-                                    <input type="text" name="to_price" />
+                                    <input type="number" name="to_price" />
                                 </div>
 
 
                             </div>
-                            <div class="main__filter--exel">
-
+                            <div style="display: flex; align-items: center;">
+                                <div class="main__filter--btn">
+                                    <input type="submit" name="" value="Применить" />
+                                </div>
+                                <div class="main__filter--exel">
                                     <input id="exel"  type="checkbox" name="exel" checked>
                                     <label for="exel">Выгрузить в exel</label>
-                                </div>
-
-
-                            <div class="main__filter--btn">
-                                <input type="submit" name="" value="Применить" />
+                                </div> 
                             </div>
-
                         </form>
                     </div>
 <!--  END ФИЛЬТР -->
@@ -103,29 +103,28 @@
                                 <td>{{$lid->phone}}</td>
                                 <td> {{$lid->price}}</td>
                                 <td>
-                                @if ($lid->complaint->status === 'moderation')
-                                Отправлена на модерацию
-                                @elseif ($lid->complaint->status === 'rejected')
-                                Отклонена администратором
-                                @elseif ($lid->complaint->status === 'accept')
-                                Лид забракован администратором
-                                @endif
+                                    <span tooltip="{{$lid->complaint->message}}">
+                                        @if ($lid->complaint->status === 'moderation')
+                                        Отправлена на модерацию
+                                        @elseif ($lid->complaint->status === 'rejected')
+                                        Отклонена
+                                        @elseif ($lid->complaint->status === 'accept')
+                                        Одобрена
+                                        @endif
+                                    </span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="8">Сообщение:
-                                    {{$lid->complaint->message}}
-                                </td>
+                            @if ($lid->complaint->status === 'moderation')
+                            <tr> 
+                                <td colspan="8"></td>
                                 <td>
-                                @if ($lid->complaint->status === 'moderation')
-
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
-                                @else
-                                @endif
-                                </td>
+                                    <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                    <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
+                                </td>  
                             </tr>
-                            @endforeach
+                            @else
+                            @endif 
+                        @endforeach
 
 
 

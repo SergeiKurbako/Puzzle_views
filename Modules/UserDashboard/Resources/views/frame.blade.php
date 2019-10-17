@@ -21,11 +21,11 @@
                                         <div class="main__filter--date-input-wrapper">
                                             <div>
                                                 <label>От</label>
-                                                <input name="from_date" type="date" />
+                                                <input id="from--filter--date" name="from_date" type="text" />
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input name="to_date" type="date" />
+                                                <input id="to--filter--date" name="to_date" type="text" />
                                             </div>
                                         </div>
 
@@ -33,6 +33,7 @@
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
                                     <select id="gender" name="gender">
+                                        <option value="all">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>

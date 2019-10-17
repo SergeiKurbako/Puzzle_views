@@ -60,6 +60,13 @@
     /* color: blue; */
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 .main__filter--date-input-wrapper{
     width: 390px;
     display: -webkit-box;
@@ -194,7 +201,7 @@ input[type=checkbox]:checked + label:before {
 .SumoSelect > .CaptionCont{
     font-weight: 500 !important;
     border: none !important;
-    padding: 10px 15px !important;
+    padding: 13px 15px !important;
     font-size: 16px !important;
     background: #ffffff !important;
     border: 1px solid #ced4da !important;
@@ -223,6 +230,13 @@ input[type=checkbox]:checked + label:before {
             box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
 }
 
+.sumo_gender{
+    max-width: 100px;
+}
+
+.sumo_status{
+    max-width: 150px;
+}
 /*  */
 
 @media screen and (max-width: 1435px){
@@ -253,6 +267,21 @@ input[type=checkbox]:checked + label:before {
     }
 }
 
-@media screen and (max-width: 1425px){
-    
+@media screen and (max-width: 1200px){
+    .main__filter--date{
+        width: auto;
+    }
+    .main__filter--date-input-wrapper{
+        flex-direction: column;
+    }
+    .filter--date--stat-user{
+        width: auto;
+    }
+    .main__filter--date-input-wrapper--stas-user{
+        width: 230px;
+        flex-direction: column;
+    }
+    .main__filter--date--stat-user{
+        width: 200px !important;
+    }
 }
