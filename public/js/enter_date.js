@@ -8,14 +8,23 @@ $(document).ready(function(){
 
     let nameFor = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`=1234567890";
 
+
     if($('#phone').val() == ''){
         $('#phone').val(0);
+        $('.entrance-start').removeClass('disabled');
+    }else{
+        $('.entrance').removeClass('disabled');
     }
 
+    console.log($("#phone").val())
+
+    $(".btn-start").click(function(){
+        $('.entrance-start').addClass('disabled');
+        $('.entrance').removeClass('disabled');
+    })
 
     $('#btn').click(function(){
 
-        
         for (let x = 0; x<$('.name').val().length; x++){
             if( nameFor.indexOf($('.name').val()[x]) != -1  || $('.name').val() == ''){
                 $('.war-name').css({'opacity':'1'});
@@ -99,15 +108,10 @@ $(document).ready(function(){
             });
         }
 
-        
-          
-          
-
         if(name && second && patronymic && age && email && emailCheck)$('#btn-input').click();
         
     });
 });
-
 
 
 $(document).ready(function() {
