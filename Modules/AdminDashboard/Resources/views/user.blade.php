@@ -50,8 +50,8 @@
                                     <script src="https://partycamera.org/buttonframe/js/mb.js" defer></script>
                                     <script src="https://partycamera.org/buttonframe/js/main.js" defer></script>
                                     <script>
-                                        var src = `{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}`;
-                                        document.getElementById('wrapper-iframe--wrapper').append(src);
+                                        var src = `{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code}}`;
+                                        document.getElementById('iframe').src = src;
                                     </script>
                                     </xmp>
                                     </div>
