@@ -708,6 +708,10 @@ a:focus{
     color: #6b6969
 }
 
+.code-frame xmp{
+    white-space: nowrap;
+}
+
 /* Select */
 .sumo_result_game{
     width: 105px !important;
