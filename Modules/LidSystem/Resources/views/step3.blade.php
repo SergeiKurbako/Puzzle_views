@@ -128,7 +128,7 @@
                     <label for="gender">Пол</label><br>
                     <select id="gender" name="gender">
                         <option value="man">мужской</option>
-                        <option value="waman">женский</option>
+                        <option value="women">женский</option>
                     </select>
                 </div>
                 
