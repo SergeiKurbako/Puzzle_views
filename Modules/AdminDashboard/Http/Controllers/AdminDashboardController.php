@@ -136,7 +136,7 @@ class AdminDashboardController extends Controller
         }
 
         if ($request->input('result_game') !== null) {
-            $lids->where('game_result', '=', $request->input('game_result'));
+            $lids->where('game_result', '=', $request->input('result_game'));
         }
 
         $itemCount = 10;
@@ -275,7 +275,7 @@ class AdminDashboardController extends Controller
         }
 
         if ($request->input('result_game') !== null) {
-            $lids->where('game_result', '=', $request->input('game_result'));
+            $lids->where('game_result', '=', $request->input('result_game'));
         }
 
         $itemCount = 10;
