@@ -116,10 +116,12 @@ class AdminDashboardController extends Controller
 
         $lids = $lids->paginate(10);
 
+        $lidsForSum = Lid::where('moderation_status', 'accept')->get();
+
         return view('admindashboard::frame', [
             'lids' => $lids,
             'lidCount' => count($lids),
-            'lidSum' => $lids->sum('price'),
+            'lidSum' => $lidsForSum->sum('price'),
             'frameId' => $id,
             'email' => Auth::user()->email,
             'itemCount' => $itemCount
