@@ -9,6 +9,9 @@ use Modules\LidSystem\Entities\Lid;
 use Modules\Games\Entities\V2GameRule;
 use Auth;
 use Modules\GameFrame\Entities\GameFrame;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Facades\Excel;
+use Modules\LidSystem\Exports\LidsExport;
 
 class UserDashboardController extends Controller
 {
@@ -90,6 +93,11 @@ class UserDashboardController extends Controller
         }
 
         $lids = $lids->paginate($itemCount);
+
+        if ($request->input('exel') !== null) {
+            $lidExport = new LidsExport($lids);
+            return Excel::download($lidExport, 'lids.xlsx');
+        }
 
         return view('userdashboard::frame', [
             'lids' => $lids,
