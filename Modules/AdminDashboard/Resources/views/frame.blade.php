@@ -29,7 +29,7 @@
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
                                     <select name="gender" id="gender">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
