@@ -237,6 +237,7 @@ a:focus{
 }
 
 .slider__menu--img{
+    display: flex;
     margin-right: 15px;
 }
 
@@ -252,6 +253,19 @@ a:focus{
             justify-content: center;
     font-size: 17px;
 }
+
+.slider__menu--img span{
+    font-size: 10px;
+    background: #2196f3;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
 
 .slider__menu--img .fa-home{
     /* color: #2898F3; */
@@ -708,10 +722,18 @@ a:focus{
     color: #6b6969
 }
 
-/*  */
+.code-frame xmp{
+    white-space: nowrap;
+}
 
 /* Select */
+.sumo_result_game{
+    width: 105px !important;
+}
 
+.moderation__off--lid{
+    opacity: .4;
+}
 
 .main__table--select .SumoSelect{
     width: 62px !important;

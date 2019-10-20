@@ -50,7 +50,7 @@ class AdminDashboardController extends Controller
             'countOfRequests' => $countOfRequests
         ]);
     }
-
+    
     public function showRequests(Request $request)
     {
         if (Auth::user()->role !== 'admin') {

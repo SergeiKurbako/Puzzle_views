@@ -152,6 +152,8 @@ $(document).ready(function(){
     // slider__menu--img i
     if($('#gender') != undefined) $('#gender').SumoSelect();
     if($('#status') != undefined) $('#status').SumoSelect();
+    if($('#result_game') != undefined) $('#result_game').SumoSelect();
+    
 
     if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
 
@@ -161,5 +163,14 @@ $(document).ready(function(){
         // console.log($(this).text());
         window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
     })
+    
+
+// Selected
+
+    // var urlSelect = window.location.href;
+    // var start_url_select = test_str.indexOf('?item_count=')+9;
+    // var end_url_select = test_str.indexOf('&code',start_url_select);
+    // var text_to_get = test_str.substring(start_pos,end_pos);
+    // console.log(text_to_get)
     
 });

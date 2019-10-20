@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ ('../../../css/reset.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/lib/all.min.css') }}">
@@ -12,6 +12,12 @@
     
     <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/filter.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <style>
+    
+    </style>
+
     <title>Admin</title>
 </head>
 <body>
@@ -98,6 +104,7 @@
                         <a href="/admin-dashboard/requests">
                             <div class="slider__menu--img">
                                 <i class="fas fa-recycle"></i>
+                                <span>{{$countOfRequests}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Запросы</p>
@@ -109,6 +116,7 @@
                         <a href="/admin-dashboard/complaints">
                             <div class="slider__menu--img">
                                 <i class="far fa-angry"></i>
+                                <span>{{$countOfComplaints}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Жалобы</p>
@@ -128,9 +136,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
     
-    <script src="../../../js/lib/jquery.sumoselect.min.js"></script>
+    <!-- <script src="../../../js/lib/jquery.sumoselect.min.js"></script> -->
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
+    <script>
+        $( function() {
+            $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+            $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
+        } );
+    </script>
 
     <script src="../../../js/admin.js"></script>
+
+    
     
 </body>
 </html>
