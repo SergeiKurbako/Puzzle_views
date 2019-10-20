@@ -109,6 +109,14 @@ class AdminDashboardController extends Controller
             $lids->where('gender', '=', $request->input('gender'));
         }
 
+        if ($request->input('from_price') !== null) {
+            $lids->where('price', '>=', $request->input('from_price'));
+        }
+
+        if ($request->input('to_price') !== null) {
+            $lids->where('price', '=<', $request->input('to_price'));
+        }
+
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
