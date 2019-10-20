@@ -70,6 +70,7 @@ class ComplaintController extends Controller
 
         $lid = Lid::find($complaint->lid_id);
         $lid->moderation_status = 'rejected';
+        $lid->price = 0;
 
         $message = 'Жалоба отклонена администратором. Лид корректный.';
         $user = User::find($complaint->user_id);
