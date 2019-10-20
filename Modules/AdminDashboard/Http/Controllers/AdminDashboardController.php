@@ -32,6 +32,9 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
@@ -42,7 +45,9 @@ class AdminDashboardController extends Controller
         return view('admindashboard::index', [
             'users' => $users,
             'email' => Auth::user()->email,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -51,6 +56,9 @@ class AdminDashboardController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
+
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
@@ -62,7 +70,9 @@ class AdminDashboardController extends Controller
         return view('admindashboard::requests', [
             'frames' => $frames,
             'email' => Auth::user()->email,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -71,6 +81,9 @@ class AdminDashboardController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
+
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
@@ -83,7 +96,9 @@ class AdminDashboardController extends Controller
             'frames' => $frames,
             'userId' => $id,
             'email' => Auth::user()->email,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -92,6 +107,9 @@ class AdminDashboardController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
+
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $frame = GameFrame::find($id);
 
@@ -117,6 +135,10 @@ class AdminDashboardController extends Controller
             $lids->where('price', '=<', $request->input('to_price'));
         }
 
+        if ($request->input('result_game') !== null) {
+            $lids->where('game_result', '=', $request->input('game_result'));
+        }
+
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
@@ -132,12 +154,17 @@ class AdminDashboardController extends Controller
             'lidSum' => $lidsForSum->sum('price'),
             'frameId' => $id,
             'email' => Auth::user()->email,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
     public function createFrame(Request $request)
     {
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
@@ -145,7 +172,9 @@ class AdminDashboardController extends Controller
         return view('admindashboard::create-frame',[
             'userId' => $request->input('user_id'),
             'error' => '',
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -220,6 +249,9 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
         $lids = Lid::where('have_complaint', 'yes');
 
         if ($request->input('from_date') !== null) {
@@ -261,7 +293,9 @@ class AdminDashboardController extends Controller
         return view('admindashboard::complaints',[
             'lids' => $lids,
             'email' => Auth::user()->email,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -271,11 +305,16 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
         $complaint = Complaint::find($id);
 
         return view('admindashboard::complaint',[
             'complaint' => $complaint,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
@@ -285,11 +324,16 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
         $frame = GameFrame::find($frameId);
 
         return view('admindashboard::update-frame',[
             'frame' => $frame,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
         ]);
     }
 
