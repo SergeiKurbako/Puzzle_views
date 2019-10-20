@@ -104,6 +104,7 @@
                         <a href="/admin-dashboard/requests">
                             <div class="slider__menu--img">
                                 <i class="fas fa-recycle"></i>
+                                <span>{{$countOfRequests}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Запросы</p>
@@ -115,6 +116,7 @@
                         <a href="/admin-dashboard/complaints">
                             <div class="slider__menu--img">
                                 <i class="far fa-angry"></i>
+                                <span>{{$countOfComplaints}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Жалобы</p>
@@ -141,8 +143,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
     <script>
         $( function() {
-            $("#from--filter--date" ).datepicker();
-            $("#to--filter--date").datepicker();
+            $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+            $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
         } );
     </script>
 
