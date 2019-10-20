@@ -13,4 +13,5 @@ Route::prefix('admin-dashboard')->group(function() {
     Route::get('/user/{id}/delete', 'AdminDashboardController@deleteUser');
     Route::get('/complaints', 'AdminDashboardController@showComplaints');
     Route::get('/complaints/{id}', 'AdminDashboardController@showComplaint');
+    Route::get('/billing', 'AdminDashboardController@showBilling');
 });

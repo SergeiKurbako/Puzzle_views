@@ -12,6 +12,7 @@ use Modules\GameFrame\Entities\GameFrame;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Facades\Excel;
 use Modules\LidSystem\Exports\LidsExport;
+use Modules\Billing\Entities\Payment;
 
 class UserDashboardController extends Controller
 {
@@ -245,5 +246,40 @@ class UserDashboardController extends Controller
         $frame->save();
 
         return \redirect()->back();
+    }
+
+    public function showBilling(Request $request)
+    {
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        $payments = Payment::where('id', '>', 0);
+
+        if ($request->input('from_date') !== null) {
+            $payments->whereDate('created_at', '>=', $request->input('from_date'));
+        }
+
+        if ($request->input('to_date') !== null) {
+            $payments->whereDate('created_at', '<=', $request->input('to_date'));
+        }
+
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $payments = $payments->paginate($itemCount);
+
+        // if ($request->input('exel') !== null) {
+        //     $lidExport = new LidsExport($lids);
+        //     return Excel::download($lidExport, 'lids.xlsx');
+        // }
+
+        return view('userdashboard::billing', [
+            'payments' => $payments,
+            'itemCount' => $itemCount
+        ]);
+
     }
 }

@@ -20,4 +20,5 @@ Route::prefix('user-dashboard')->group(function() {
     Route::get('/wallet', 'UserDashboardController@showWallet');
     Route::get('/frame/{id}/update', 'UserDashboardController@updateFrame');
     Route::post('/frame/{id}/update', 'UserDashboardController@storeFrame');
+    Route::get('/billing', 'UserDashboardController@showBilling');
 });
