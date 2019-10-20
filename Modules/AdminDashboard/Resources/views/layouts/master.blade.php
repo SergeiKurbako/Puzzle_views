@@ -82,6 +82,7 @@
                         <a href="#">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Dashboard</p>
@@ -93,6 +94,7 @@
                         <a href="/admin-dashboard">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Пользователи</p>
@@ -146,6 +148,7 @@
             $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
             $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
         } );
+        
     </script>
 
     <script src="../../../js/admin.js"></script>
