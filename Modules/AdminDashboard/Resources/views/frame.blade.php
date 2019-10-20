@@ -51,9 +51,9 @@
                                     <p>Результат игры</p>
                                     <select name="result_game" id="result_game">
                                         <option value="all">Все</option>
-                                        <option value="man">Победа</option>
-                                        <option value="waman">Проигрыш</option>
-                                        <option value="waman">Ожидание</option>
+                                        <option value="win">Победа</option>
+                                        <option value="lose">Проигрыш</option>
+                                        <option value="wait">Ожидание</option>
                                     </select>
                                 </div>
                                 
