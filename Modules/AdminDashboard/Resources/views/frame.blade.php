@@ -50,7 +50,7 @@
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Результат игры</p>
                                     <select name="result_game" id="result_game">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="win">Победа</option>
                                         <option value="lose">Проигрыш</option>
                                         <option value="wait">Ожидание</option>
