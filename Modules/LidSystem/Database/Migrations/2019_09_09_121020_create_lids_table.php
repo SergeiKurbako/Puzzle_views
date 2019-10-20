@@ -27,9 +27,10 @@ class CreateLidsTable extends Migration
             $table->string('sms_code')->default('');
             $table->enum('game_result', ['wait', 'win', 'lose'])->default('wait');
             $table->integer('session_id')->default(0);
-            $table->enum('status', ['on', 'off'])->default('off');
+            $table->enum('status', ['on', 'off'])->default('off'); // включен ли лид (игра у пользователя)
             $table->integer('price')->default(0);
             $table->enum('have_complaint', ['no', 'yes'])->default('no');
+            $table->enum('moderation_status', ['rejected', 'accept'])->default('accept'); // если ли была подана жалоба, то лид может получить статус отклоненного
             $table->timestamps();
         });
     }
