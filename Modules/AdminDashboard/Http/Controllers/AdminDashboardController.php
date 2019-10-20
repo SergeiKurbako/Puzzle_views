@@ -16,6 +16,7 @@ use Modules\Games\Entities\V2GameRule;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Facades\Excel;
 use Modules\LidSystem\Exports\LidsExport;
+use Modules\Billing\Entities\Payment;
 
 class AdminDashboardController extends Controller
 {
@@ -50,7 +51,7 @@ class AdminDashboardController extends Controller
             'countOfRequests' => $countOfRequests
         ]);
     }
-    
+
     public function showRequests(Request $request)
     {
         if (Auth::user()->role !== 'admin') {
@@ -354,5 +355,44 @@ class AdminDashboardController extends Controller
         $frame->save();
 
         return \redirect()->back();
+    }
+
+    public function showBilling(Request $request)
+    {
+        if (Auth::user()->role !== 'admin') {
+            return redirect('/login');
+        }
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
+        $payments = Payment::where('id', '>', 0);
+
+        if ($request->input('from_date') !== null) {
+            $payments->whereDate('created_at', '>=', $request->input('from_date'));
+        }
+
+        if ($request->input('to_date') !== null) {
+            $payments->whereDate('created_at', '<=', $request->input('to_date'));
+        }
+
+        $itemCount = 10;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $payments = $payments->paginate($itemCount);
+
+        // if ($request->input('exel') !== null) {
+        //     $lidExport = new LidsExport($lids);
+        //     return Excel::download($lidExport, 'lids.xlsx');
+        // }
+
+        return view('admindashboard::billing', [
+            'payments' => $payments,
+            'itemCount' => $itemCount,
+            'countOfComplaints' => $countOfComplaints,
+            'countOfRequests' => $countOfRequests
+        ]);
+
     }
 }
