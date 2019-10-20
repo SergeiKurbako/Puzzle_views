@@ -21,4 +21,7 @@ Route::prefix('gameframe')->group(function() {
     Route::post('/set-price/{id}', 'GameFrameController@setPrice');
     Route::get('/update-sms-confirm-status/{id}', 'GameFrameController@updateSmsConfirmStatus');
     Route::get('/update-email-confirm-status/{id}', 'GameFrameController@updateEmailConfirmStatus');
+
+    Route::get('/check-need-email-confirm', 'GameFrameController@checkNeedEmailConfirm');
+    Route::get('/check-need-sms-confirm', 'GameFrameController@checkNeedSmsConfirm');
 });
