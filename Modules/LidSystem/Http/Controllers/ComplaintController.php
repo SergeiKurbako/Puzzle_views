@@ -68,14 +68,16 @@ class ComplaintController extends Controller
         $complaint->status = $request->input('status');
         $complaint->save();
 
+        $message = 'Жалоба отклонена администратором. Лид корректный.';
         $user = User::find($complaint->user_id);
         if ($request->input('status') === 'accept') {
             $user->balance += $complaint->lid->price;
+            $message = 'Жалоба одобрена администратором. Лид некорректный. Средства возвращены Вам на счет';
             $user->save();
         }
 
         $this->email = $user->email;
-        Mail::send('admindashboard::notifier', ['messages' => 'Жалоба одобрена по лиду одобрена'], function ($m) {
+        Mail::send('admindashboard::notifier', ['messages' => $message], function ($m) {
             $m->subject('Жалоба одобрена');
             $m->from('partylivea@gmail.com', 'Puzzles');
             $m->to($this->email, $this->email);
