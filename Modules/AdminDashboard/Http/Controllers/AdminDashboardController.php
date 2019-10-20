@@ -199,6 +199,10 @@ class AdminDashboardController extends Controller
             $m->to($this->email, $this->email);
         });
 
+        if ($request->input('from_price') !== null) {
+            $lids->where('price', '>=', $request->input('from_price'));
+        }
+
         return \redirect()->back();
     }
 
@@ -228,6 +232,10 @@ class AdminDashboardController extends Controller
 
         if ($request->input('to_price') !== null) {
             $lids->where('price', '=<', $request->input('to_price'));
+        }
+
+        if ($request->input('result_game') !== null) {
+            $lids->where('game_result', '=', $request->input('game_result'));
         }
 
         $itemCount = 10;

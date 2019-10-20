@@ -316,4 +316,22 @@ class GameFrameController extends Controller
 
         return redirect()->back();
     }
+
+    public function checkNeedPhone(Request $request)
+    {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
+        $phone = $request->input('frame_id');
+
+        $phone = str_replace('+', '', $phone);
+
+        $result = 'true';
+        $lid = Lid::where('phone', $phone)->first();
+        if ($lid === null) {
+            $result = 'false';
+        }
+
+        return $result;
+    }
 }

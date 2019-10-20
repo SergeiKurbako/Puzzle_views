@@ -72,6 +72,10 @@ class UserDashboardController extends Controller
             $lids->where('gender', '=', $request->input('gender'));
         }
 
+        if ($request->input('result_game') !== null) {
+            $lids->where('game_result', '=', $request->input('game_result'));
+        }
+
         $itemCount = 10;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
