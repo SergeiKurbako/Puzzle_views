@@ -31,7 +31,7 @@
                                     <select name="gender" id="gender">
                                         <option value="">Все</option>
                                         <option value="man">Мужской</option>
-                                        <option value="waman">Женский</option>
+                                        <option value="women">Женский</option>
                                     </select>
                                 </div>
                                 <div style="padding-left: 50px;" class="main__filter--price">
@@ -102,7 +102,7 @@
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жун @endif</td>
+                                <td>@if($lid->gender === 'man') муж @else жен @endif</td>
                                 <td>{{$lid->age}}</td>
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>
