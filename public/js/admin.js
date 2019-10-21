@@ -44,7 +44,6 @@ $(document).ready(function(){
 
                 mouseSlideMenu = true;
             }
-
         }else{
             slideMenu = true;
 
@@ -54,7 +53,6 @@ $(document).ready(function(){
             
             if(actions == 'click'){
                 if (location.href.indexOf('/complaints') == '-1'){
-                    console.log("good")
                     $('.slider-and-header--shadow').animate({width:'280'}, speed);
                 }
 
@@ -62,12 +60,13 @@ $(document).ready(function(){
                 $('.header__icon').animate({paddingLeft:'285'}, speed);  
                 $('.main__wrapper').animate({paddingLeft:'70'}, speed);
                 
-
                 mouseSlideMenu = false;
             }
         }
     }
 
+
+    
     // Вместо ссылок стоят чекбоксы. При измении чекбокса. Отправляется ajax-запрос по ссылке.
 
     var smsCheckbox = $('.sms-checkbox'),
@@ -107,7 +106,6 @@ $(document).ready(function(){
           });
     }
 
-
     if(window.location.pathname.indexOf('/user/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('requests') != -1){
@@ -122,6 +120,8 @@ $(document).ready(function(){
         $('.fa-user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/frame/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/billing') != -1){
+        $('.fa-credit-card').css({'color':'#2898F3'})
     }
 
     // Trigger
@@ -130,18 +130,17 @@ $(document).ready(function(){
 
     $('.code-frame').click(function(){
         sl = $(this);
-            code = $(this).text();
-            textSl = $(this).text();
+        code = $(this).text();
 
         $(this).html("<textarea id='textareaText' cols='40' rows='10'>"+ $.trim(code)+"</textarea>");
         $('#textareaText').select();
     });
 
     jQuery(function($){
-        $(document).mouseup(function (e){ // событие клика по веб-документу
-            var div = sl; // тут указываем ID элемента
-            if (!div.is(e.target) // если клик был не по нашему блоку
-                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+        $(document).mouseup(function (e){
+            var div = sl;
+            if (!div.is(e.target)
+                && div.has(e.target).length === 0) {
                     // div.hide(); // скрываем его
                     div.html('<xmp>'+ $.trim(code) +'</xmp>');
                     div.show();
@@ -172,5 +171,13 @@ $(document).ready(function(){
     // var end_url_select = test_str.indexOf('&code',start_url_select);
     // var text_to_get = test_str.substring(start_pos,end_pos);
     // console.log(text_to_get)
+
+    if($('.menu_request').text() >= 1){
+        $('.menu_request').css("opacity","1");
+    }
+    if($('.menu__complaints').text() >= 1){
+        $('.menu__complaints').css("opacity","1");
+    }
+    
     
 });

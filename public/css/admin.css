@@ -238,7 +238,7 @@ a:focus{
 
 .slider__menu--img{
     display: flex;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .slider__menu--img i{
@@ -264,6 +264,7 @@ a:focus{
     align-items: center;
     border-radius: 50%;
     color: #ffffff;
+    opacity: 0;
 }
 
 
@@ -719,7 +720,8 @@ a:focus{
 .code-frame{
     width: 300px;
     overflow: hidden;
-    color: #6b6969
+    color: #6b6969;
+    letter-spacing: -1px;
 }
 
 .code-frame xmp{
@@ -756,5 +758,11 @@ a:focus{
 @media screen and (max-width: 1470px){
     .main__table--table table td{
         padding: 15px 7px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .td__code{
+        display: none;
     }
 }

@@ -391,7 +391,8 @@ class AdminDashboardController extends Controller
             'payments' => $payments,
             'itemCount' => $itemCount,
             'countOfComplaints' => $countOfComplaints,
-            'countOfRequests' => $countOfRequests
+            'countOfRequests' => $countOfRequests,
+            'email' => Auth::user()->email
         ]);
 
     }

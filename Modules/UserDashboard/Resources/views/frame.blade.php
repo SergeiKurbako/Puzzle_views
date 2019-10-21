@@ -21,11 +21,11 @@
                                         <div class="main__filter--date-input-wrapper">
                                             <div>
                                                 <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" />
+                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" />
+                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
                                             </div>
                                         </div>
 
@@ -35,7 +35,7 @@
                                     <select id="gender" name="gender">
                                         <option value="">Все</option>
                                         <option value="man">Мужской</option>
-                                        <option value="waman">Женский</option>
+                                        <option value="women">Женский</option>
                                     </select>
                                 </div>
                                 <div style="padding-left: 50px;" class="main__filter--price">
@@ -43,11 +43,11 @@
                                     <div class="main__filter--price--wrapper">
                                         <div class="main__filter--price--item">
                                             <label>От</label>
-                                            <input type="number" name="from_price" autocomplete="off"/>
+                                            <input type="number" id="from_price" name="from_price" autocomplete="off"/>
                                         </div>
                                         <div class="main__filter--price--item">
                                             <label>До</label>
-                                            <input type="number" name="to_price" autocomplete="off"/>
+                                            <input type="number" id="to_price" name="to_price" autocomplete="off"/>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жун @endif</td>
+                                <td>@if($lid->gender === 'man') муж @else жен @endif</td>
                                 <td>{{$lid->age}}</td>
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>

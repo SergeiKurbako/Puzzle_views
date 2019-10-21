@@ -48,9 +48,9 @@
                                 <div class="main__filter--price">
                                     <p>Цена за лид</p>
                                     <label>От</label>
-                                    <input type="number" name="from_price" autocomplete="off"/>
+                                    <input type="number" id="from_price" name="from_price" autocomplete="off"/>
                                     <label>До</label>
-                                    <input type="number" name="to_price" autocomplete="off"/>
+                                    <input type="number" id="to_price" name="to_price" autocomplete="off"/>
                                 </div>
 
 
@@ -97,7 +97,7 @@
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жун @endif</td>
+                                <td>@if($lid->gender === 'man') муж @else жен @endif</td>
                                 <td>{{$lid->age}}</td>
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>
