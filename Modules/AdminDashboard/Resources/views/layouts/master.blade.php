@@ -129,7 +129,7 @@
                     <div class="slider__menu--item">
                         <a href="/admin-dashboard/billing">
                             <div class="slider__menu--img">
-                                <i class="fas fa-wallet"></i>
+                            <i class="far fa-credit-card"></i>
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">

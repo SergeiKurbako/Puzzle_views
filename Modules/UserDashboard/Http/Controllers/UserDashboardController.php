@@ -278,7 +278,9 @@ class UserDashboardController extends Controller
 
         return view('userdashboard::billing', [
             'payments' => $payments,
-            'itemCount' => $itemCount
+            'itemCount' => $itemCount,
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
         ]);
 
     }
