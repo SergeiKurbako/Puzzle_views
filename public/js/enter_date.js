@@ -84,7 +84,7 @@ $(document).ready(function(){
                 dataType: 'text',
                 // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 // url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                url: http+"partycamera.org/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                url: http+"/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
 
                 // url: "http://194.87.145.192/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
     
