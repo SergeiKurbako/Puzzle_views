@@ -720,7 +720,8 @@ a:focus{
 .code-frame{
     width: 300px;
     overflow: hidden;
-    color: #6b6969
+    color: #6b6969;
+    letter-spacing: -1px;
 }
 
 .code-frame xmp{
@@ -757,5 +758,11 @@ a:focus{
 @media screen and (max-width: 1470px){
     .main__table--table table td{
         padding: 15px 7px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .td__code{
+        display: none;
     }
 }

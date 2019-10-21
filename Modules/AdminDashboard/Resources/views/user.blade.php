@@ -43,7 +43,7 @@
 
                                 <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
 
-                                <td>
+                                <td class="td__code">
                                     <div class="code-frame">
                                     <xmp><script src="http://partycamera.org/buttonframe/repack.js"></script>
                                     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
