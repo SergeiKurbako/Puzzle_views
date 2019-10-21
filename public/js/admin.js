@@ -120,6 +120,8 @@ $(document).ready(function(){
         $('.fa-user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/frame/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/billin/') != -1){
+        $('.fa-wallet').css({'color':'#2898F3'})
     }
 
     // Trigger

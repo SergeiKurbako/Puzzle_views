@@ -74,6 +74,7 @@
                         <a href="#">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Dashboard</p>
@@ -85,6 +86,7 @@
                         <a href="/admin-dashboard">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Фреймы</p>
@@ -93,7 +95,7 @@
                     </div>
 
 
-                    <div class="slider__menu--item">
+                    <!-- <div class="slider__menu--item">
                     <div></div>
                         <a href="/user-dashboard/wallet">
                             <div class="slider__menu--img">
@@ -101,6 +103,18 @@
                             </div>
                             <div class="slider__menu--text">
                                 <p>Баланс</p>
+                            </div>
+                        </a>
+                    </div> -->
+
+                    <div class="slider__menu--item">
+                        <a href="/user-dashboard/billing">
+                            <div class="slider__menu--img">
+                                <i class="fas fa-wallet"></i>
+                                <span style="opacity:0;"></span>
+                            </div>
+                            <div class="slider__menu--text">
+                                <p>Биллинг</p>
                             </div>
                         </a>
                     </div>

@@ -125,8 +125,21 @@
                             </div>
                         </a>
                     </div>
-                </div>
 
+                    <div class="slider__menu--item">
+                        <a href="/admin-dashboard/billing">
+                            <div class="slider__menu--img">
+                                <i class="fas fa-wallet"></i>
+                                <span style="opacity:0;"></span>
+                            </div>
+                            <div class="slider__menu--text">
+                                <p>Биллинг</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                
             </div>
         </div>
 
