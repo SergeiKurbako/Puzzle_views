@@ -21,11 +21,11 @@
                                         <div class="main__filter--date-input-wrapper">
                                             <div>
                                                 <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" />
+                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" />
+                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
                                             </div>
                                         </div>
 
