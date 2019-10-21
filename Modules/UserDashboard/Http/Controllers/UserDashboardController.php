@@ -69,7 +69,7 @@ class UserDashboardController extends Controller
         }
 
         if ($request->input('to_date') !== null) {
-            $lids->whereDate('created_at', '=<', $request->input('to_date'));
+            $lids->whereDate('created_at', '<=', $request->input('to_date'));
         }
 
         if ($request->input('gender') !== null) {
