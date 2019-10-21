@@ -106,7 +106,7 @@
                         <a href="/admin-dashboard/requests">
                             <div class="slider__menu--img">
                                 <i class="fas fa-recycle"></i>
-                                <span>{{$countOfRequests}}</span>
+                                <span class="menu_request">{{$countOfRequests}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Запросы</p>
@@ -118,7 +118,7 @@
                         <a href="/admin-dashboard/complaints">
                             <div class="slider__menu--img">
                                 <i class="far fa-angry"></i>
-                                <span>{{$countOfComplaints}}</span>
+                                <span class="menu__complaints">{{$countOfComplaints}}</span>
                             </div>
                             <div class="slider__menu--text">
                                 <p>Жалобы</p>
@@ -138,7 +138,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
     
-    <!-- <script src="../../../js/lib/jquery.sumoselect.min.js"></script> -->
+    <script src="../../../js/local-filter.js"></script>
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

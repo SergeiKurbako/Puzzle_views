@@ -264,6 +264,7 @@ a:focus{
     align-items: center;
     border-radius: 50%;
     color: #ffffff;
+    opacity: 0;
 }
 
 

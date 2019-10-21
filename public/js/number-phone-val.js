@@ -1,17 +1,6 @@
-// $(document).ready(function(){
-//     let phone = $("#phone");
-//     phone.mask("+999 99 99-99-999 ? 99");
-
-//     $('#btn').click(function(){
-//         if(phone.val() == ''){
-//             $('.war-phone').css({'opacity':'1'});
-//         }else{
-//             $('#btn-input').click();
-//         }
-//     })
-// });
-
 $(document).ready(function(){
+
+  var http = window.location.protocol;
 
   $('.btn-start').click(function(){
     $('.entrance-start').css({'display' : 'none'})
@@ -29,7 +18,7 @@ $(document).ready(function(){
               type: "GET",
               dataType: 'text',
                 // url: "http://194.87.145.192/lidsystem/check-have-phone?phone="+phone.val(),
-                url: "http://partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
+                url: http+"//partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
                 // url: "http://127.0.0.2/lidsystem/check-have-phone?phone="+phone.val(),
                 
                 success: function(data){

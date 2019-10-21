@@ -39,11 +39,11 @@
                                     <div class="main__filter--price--wrapper">
                                         <div class="main__filter--price--item">
                                             <label>От</label>
-                                            <input type="number" name="from_price" autocomplete="off"/>
+                                            <input type="number" id="from_price" name="from_price" autocomplete="off"/>
                                         </div>
                                         <div class="main__filter--price--item">
                                             <label>До</label>
-                                            <input type="number" name="to_price" autocomplete="off"/>
+                                            <input type="number" id="to_price" name="to_price" autocomplete="off"/>
                                         </div>
                                     </div>
                                 </div>
