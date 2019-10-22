@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\GameFrame\Entities\GameFrame;
 use Modules\LidSystem\Entities\Lid;
+use Modules\LidSystem\Entities\Complaint;
 use Auth;
 use Webpatser\Uuid\Uuid;
 use Modules\Games\Entities\V2GameRule;
@@ -112,6 +113,9 @@ class GameFrameController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
 
         $url = $request->input('url');
 
@@ -121,7 +125,9 @@ class GameFrameController extends Controller
             return view('admindashboard::create-frame', [
                 'error' => 'Введите url',
                 'userId' => $request->input('user_id'),
-                'email' => Auth::user()->email
+                'email' => Auth::user()->email,
+                'countOfComplaints' => $countOfComplaints,
+                'countOfRequests' => $countOfRequests
             ]);
         }
 
@@ -133,7 +139,9 @@ class GameFrameController extends Controller
             return view('admindashboard::create-frame', [
                 'error' => 'Фрейм с таким url уже есть',
                 'userId' => $request->input('user_id'),
-                'email' => $user->email
+                'email' => $user->email,
+                'countOfComplaints' => $countOfComplaints,
+                'countOfRequests' => $countOfRequests
             ]);
         }
 
@@ -158,7 +166,9 @@ class GameFrameController extends Controller
             } else {
                 return view('admindashboard::create-frame', [
                     'error' => 'Bad request',
-                    'userId' => $request->input('user_id')
+                    'userId' => $request->input('user_id'),
+                    'countOfComplaints' => $countOfComplaints,
+                    'countOfRequests' => $countOfRequests
                 ]);
             }
         } else {
