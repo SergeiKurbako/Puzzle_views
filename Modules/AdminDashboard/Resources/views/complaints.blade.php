@@ -131,7 +131,7 @@
                         </table>
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            
+                            @include('pagination', ['paginator' => $lids])
                         </div>
 
 
