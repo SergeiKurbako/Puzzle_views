@@ -55,6 +55,19 @@
     padding-right: 10px;
 }
 
+.main__filter--email{
+    margin-left: 40px;
+}
+
+.main__filter--email #email{
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #495057;
+    font-size: 16px;
+    font-family: 'Roboto','Courier New', Courier, monospace
+}
+
 ::-webkit-datetime-edit-month-field{
     font-size: 14px;
     /* color: blue; */

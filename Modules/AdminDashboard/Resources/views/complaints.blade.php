@@ -16,16 +16,16 @@
                             <div class="main__table--filter--wrapper" style="align-items:flex-start">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
-                                        <div class="main__filter--date-input-wrapper">
-                                            <div id="date-example">
-                                                <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
-                                            </div>
-                                            <div>
-                                                <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
-                                            </div>
+                                    <div class="main__filter--date-input-wrapper">
+                                        <div id="date-example">
+                                            <label>От</label>
+                                            <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                         </div>
+                                        <div>
+                                            <label>До</label>
+                                            <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="main__filter--floor">

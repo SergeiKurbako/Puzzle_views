@@ -1,15 +1,6 @@
 @extends('admindashboard::layouts.master')
 @section('content')
 
-    @foreach ($payments as $payment)
-        <hr>
-        {{$payment->id}}<br>
-        {{$payment->created_at}}<br>
-        {{$payment->payment_value}}
-    @endforeach
-
-
-
 <div class="main">
             <div class="main__wrapper">
 
@@ -35,6 +26,15 @@
                                             </div>
                                         </div>
                                 </div>
+                                <div class="main__filter--email">
+                                    <p>Email</p>
+                                    <input type="text" id="email" name="email" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div class="main__filter--btn">
+                                    <input type="submit" name="" value="Применить" />
+                                </div> 
                             </div>
                         </form>
                     </div>
