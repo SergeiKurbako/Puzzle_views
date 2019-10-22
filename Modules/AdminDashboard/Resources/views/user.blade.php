@@ -21,7 +21,7 @@
                         записей
                     </div>
 
-                    <div class="main__table--table">
+                    <div class="main__table--table" style="overflow-x: scroll;">
                         <table>
                             <tr>
                                 <td>№</td>

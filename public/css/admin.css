@@ -133,6 +133,8 @@ a:focus{
     border-bottom: 1px solid #e9ecef;
     padding-left: 0;
     padding-right: 0;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
     transition: .1s;
 }
 
@@ -237,6 +239,9 @@ a:focus{
 }
 
 .slider__menu--img{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 5px;
 }
@@ -259,9 +264,18 @@ a:focus{
     background: #2196f3;
     width: 12px;
     height: 12px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 50%;
     color: #ffffff;
     opacity: 0;
