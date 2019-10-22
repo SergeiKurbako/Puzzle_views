@@ -13,7 +13,7 @@
                     <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="/admin-dashboard/complaints" method="get">
-                            <div class="main__table--filter--wrapper" style="align-items:flex-start">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
                                     <div class="main__filter--date-input-wrapper">
@@ -55,7 +55,7 @@
 
 
                             </div>
-                            <div style="display: flex; align-items: center;">
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center;">
                                 <div class="main__filter--btn">
                                     <input type="submit" name="" value="Применить" />
                                 </div>

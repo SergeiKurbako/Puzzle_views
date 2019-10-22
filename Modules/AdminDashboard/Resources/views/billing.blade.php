@@ -12,7 +12,7 @@
                 <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;">
                                 <div class="main__filter--date main__filter--date--stat-user">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper--stas-user">
@@ -31,7 +31,7 @@
                                     <input type="text" id="email" name="email" autocomplete="off"/>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center;">
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center;">
                                 <div class="main__filter--btn">
                                     <input type="submit" name="" value="Применить" />
                                 </div> 

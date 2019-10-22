@@ -15,7 +15,7 @@
                 <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form  action="/user-dashboard/frame/{{$frameId}}" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper">
