@@ -235,7 +235,11 @@ a:focus{
 }
 
 .slider__menu--item:hover .slider__menu--text{
-    color: #000000c0; 
+    color: #2196f3; 
+}
+
+.slider__menu--item:hover i{
+    color: #2196f3; 
 }
 
 .slider__menu--img{

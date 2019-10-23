@@ -63,6 +63,9 @@
                                 <div class="main__filter--btn">
                                     <input type="submit" name=""  value="Применить" />
                                 </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
+                                </div>
                                 <div class="main__filter--exel">
                                     <input id="exel"  type="checkbox" name="exel">
                                     <label for="exel">Выгрузить в exel</label>
