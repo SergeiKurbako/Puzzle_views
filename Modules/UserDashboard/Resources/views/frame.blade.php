@@ -106,7 +106,7 @@
                                 <td>Пожаловаться модератору</td>
                             </tr>
                             @foreach($lids as $lid)
-                            <tr class="@if($lid->moderation_status == 'accept') moderation__off--lid @else @endif">
+                            <tr class="@if($lid->moderation_status == 'accept')  @else @endif">
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
