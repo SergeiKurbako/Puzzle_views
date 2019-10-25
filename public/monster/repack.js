@@ -1,7 +1,7 @@
 function repack(){
     var div = document.createElement("div");
     div.innerHTML = `
-    <link rel="stylesheet" href="http://webwidgets/monster/css/style.css">
+    <link rel="stylesheet" href="http://admin.webwidgets/monster/css/style.css">
     
     <div class="disabled modalIframe" id="wrapper-iframe"><div class="wrapper-iframe--wrapper"><a id="js-close-modal" class="madalIframe--close" href="#"></a><iframe id="iframe" src='' width='1000' height='600'></iframe></div></div>
     
