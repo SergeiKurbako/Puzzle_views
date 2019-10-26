@@ -1,12 +1,12 @@
-var trigger = document.createElement('div');
-	trigger.id = "trigger";
-	trigger.innerText = "Trigger";
-	document.body.prepend(trigger);
+// var trigger = document.createElement('div');
+// 	trigger.id = "trigger";
+// 	trigger.innerText = "Trigger";
+// 	document.body.prepend(trigger);
 
-	document.getElementById('trigger').onclick = function(){
-		showIframe();
-		trigger.classList.add('disabled');
-	}
+// 	document.getElementById('trigger').onclick = function(){
+// 		showIframe();
+// 		trigger.classList.add('disabled');
+// 	}
 
 function showIframe(){
 	var div = document.getElementById('wrapper-iframe');

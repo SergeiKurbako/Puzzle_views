@@ -194,12 +194,12 @@ iframe{
 } */
 
 @media screen and (max-width: 576px){
-	#trigger{
+	/* #trigger{
 		display: block;
-	}
-	svg{
+	} */
+	/* svg{
 		display: none;
-	}
+	} */
 	.wrapper-iframe--wrapper{
 		width: 100%;
 		height: 95vh;
