@@ -75,6 +75,5 @@ function onMouseMove(event, end) {
   function monsterDown(){
     document.getElementById('lil-monster').style.animation = 'monsterDown 2s ease-in-out';
 	setTimeout(()=> document.getElementById('lil-monster').style.display = 'none', 2000);
-	showIframe();
 	setTimeout(()=> showIframe(), 1000);
   }
