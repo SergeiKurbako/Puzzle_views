@@ -15,7 +15,10 @@ btnReset.onclick = function(e){
 
 function resetFilter(){
     sessionStorage.clear();
-    location.reload()
+
+    var urlReload = window.location.href.split('?')[0];
+
+    window.open(urlReload, '_parent');
 }
 
 function urlDistribution(){
