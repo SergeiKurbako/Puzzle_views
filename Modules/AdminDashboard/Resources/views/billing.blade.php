@@ -61,9 +61,10 @@
                             </tr>
                             @foreach ($payments as $payment)
                             <tr>
-                                <td>{{$lid->id}}</td>
-                                <td>{{$lid->created_at}}</td>
-                                <td>{{$payment->payment_value}}</td>
+                                <td>{{$payments->id}}</td>
+                                <td>{{$payments->created_at}}</td>
+                                <td>{{$payments->payment_value}}</td>
+                                <td>none</td>
                             </tr>
                             @endforeach
 
