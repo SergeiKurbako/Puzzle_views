@@ -13,19 +13,19 @@
                     <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="/admin-dashboard/complaints" method="get">
-                            <div class="main__table--filter--wrapper" style="align-items:flex-start">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
-                                        <div class="main__filter--date-input-wrapper">
-                                            <div id="date-example">
-                                                <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
-                                            </div>
-                                            <div>
-                                                <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
-                                            </div>
+                                    <div class="main__filter--date-input-wrapper">
+                                        <div id="date-example">
+                                            <label>От</label>
+                                            <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                         </div>
+                                        <div>
+                                            <label>До</label>
+                                            <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="main__filter--floor">
@@ -55,9 +55,12 @@
 
 
                             </div>
-                            <div style="display: flex; align-items: center;">
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center;">
                                 <div class="main__filter--btn">
                                     <input type="submit" name="" value="Применить" />
+                                </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
                                 </div>
                                 <div class="main__filter--exel">
                                     <input id="exel"  type="checkbox" name="exel">
@@ -131,7 +134,7 @@
                         </table>
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            
+                            @include('pagination', ['paginator' => $lids])
                         </div>
 
 

@@ -15,7 +15,7 @@
                 <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form  action="/user-dashboard/frame/{{$frameId}}" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper">
@@ -67,6 +67,9 @@
                                 <div class="main__filter--btn">
                                     <input type="submit" name=""  value="Применить" />
                                 </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
+                                </div>
                                 <div class="main__filter--exel">
                                         <input id="exel"  type="checkbox" name="exel">
                                         <label for="exel">Выгрузить в exel</label>
@@ -103,7 +106,7 @@
                                 <td>Пожаловаться модератору</td>
                             </tr>
                             @foreach($lids as $lid)
-                            <tr class="@if($lid->moderation_status != 'accept') moderation__off--lid @else @endif">
+                            <tr class="@if($lid->moderation_status == 'accept')  @else @endif">
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
@@ -127,11 +130,11 @@
                                     </a>
                                 @else
                                 @if ($lid->complaint->status === 'moderation')
-                                    Отправлена на модерацию
+                                    На модерации
                                 @elseif ($lid->complaint->status === 'rejected')
-                                    Отклонена администратором
+                                    Отклонена. Лид корректный.
                                 @elseif ($lid->complaint->status === 'accept')
-                                    Лид забракован администратором
+                                    Одобрена. Лид некорректный.
                                 @endif
                                 @endif
                                 </td>

@@ -11,28 +11,17 @@
                 </div>
 
                 <div class="main__table">
-                <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
-                                <div class="main__filter--date main__filter--date--stat-user">
-                                    <p>Дата</p>
-                                        <div class="main__filter--date-input-wrapper--stas-user">
-                                            <div>
-                                                <label>От</label>
-                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
-                                            </div>
-                                            <div>
-                                                <label>До</label>
-                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
+                            
+                                <div class="main__filter--btn">
+                                    <input type="submit" name="" value="Пополнить баланс" />
+                                </div> 
+                            
                         </form>
                     </div>
 
-                <div class="main__table">
+                <div class="main__table" style="margin-top: 0;">
                     <div class="main__table--select">
                         Показать
                         <select>
@@ -50,7 +39,7 @@
                                 <td>№</td>
                                 <td>Дата</td>
                                 <td>Сумма</td>
-                                <td>Email</td>
+                                <td>Баланс</td>
                             </tr>
                             @foreach ($payments as $payment)
                             <tr>

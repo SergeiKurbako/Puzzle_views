@@ -89,7 +89,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Фреймы</p>
+                                <p class="slider__menu--user">Фреймы</p>
                             </div>
                         </a>
                     </div>
@@ -114,7 +114,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Биллинг</p>
+                                <p class="slider__menu--billing">Биллинг</p>
                             </div>
                         </a>
                     </div>

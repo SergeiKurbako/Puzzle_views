@@ -20,7 +20,7 @@
                         записей
                     </div>
                     
-                    <div class="main__table--table">
+                    <div class="main__table--table" style="overflow-x: scroll;">
                         <table>
                             <tr>
                                 <td>№</td>
@@ -44,10 +44,9 @@
 
                                 <td class="td__code">
                                     <div class="code-frame">
-                                        <xmp><script src="http://partycamera.org/buttonframe/repack.js"></script>
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
-                                        <script src="https://partycamera.org/buttonframe/js/mb.js" defer></script>
-                                        <script src="https://partycamera.org/buttonframe/js/main.js" defer></script>
+                                        <xmp>
+                                        <script src="http://admin.webwidgets.ru/monster/repack.js"></script>
+                                        <script src="http://admin.webwidgets.ru/monster/js/main.js" defer></script>
                                         <script>
                                             var src = `{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code}}`;
                                             document.getElementById('iframe').src = src;
