@@ -43,8 +43,8 @@
                             </tr>
                             @foreach ($payments as $payment)
                             <tr>
-                                <td>{{$lid->id}}</td>
-                                <td>{{$lid->created_at}}</td>
+                                <td>{{$payment->id}}</td>
+                                <td>{{$payment->created_at}}</td>
                                 <td>{{$payment->payment_value}}</td>
                             </tr>
                             @endforeach
