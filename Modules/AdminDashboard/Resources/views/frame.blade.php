@@ -12,7 +12,7 @@
                 <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="/admin-dashboard/frame/{{$frameId}}" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;">
                                 <div class="main__filter--date main__filter--date--stat-user">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper--stas-user">
@@ -63,6 +63,9 @@
                                 <div class="main__filter--btn">
                                     <input type="submit" name=""  value="Применить" />
                                 </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
+                                </div>
                                 <div class="main__filter--exel">
                                     <input id="exel"  type="checkbox" name="exel">
                                     <label for="exel">Выгрузить в exel</label>
@@ -98,7 +101,7 @@
                                 <td>Результат игры</td>
                             </tr>
                             @foreach($lids as $lid)
-                            <tr class="@if($lid->moderation_status != 'accept') moderation__off--lid @else @endif">
+                            <tr class="@if($lid->moderation_status == 'accept')  @else @endif">
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>

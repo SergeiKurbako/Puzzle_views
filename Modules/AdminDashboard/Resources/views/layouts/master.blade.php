@@ -97,7 +97,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Пользователи</p>
+                                <p class="slider__menu--user">Пользователи</p>
                             </div>
                         </a>
                     </div>
@@ -109,7 +109,7 @@
                                 <span class="menu_request">{{$countOfRequests}}</span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Запросы</p>
+                                <p class="slider__menu--request">Запросы</p>
                             </div>
                         </a>
                     </div>
@@ -121,7 +121,7 @@
                                 <span class="menu__complaints">{{$countOfComplaints}}</span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Жалобы</p>
+                                <p class="slider__menu--complaints">Жалобы</p>
                             </div>
                         </a>
                     </div>
@@ -133,7 +133,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Биллинг</p>
+                                <p class="slider__menu--billing">Биллинг</p>
                             </div>
                         </a>
                     </div>

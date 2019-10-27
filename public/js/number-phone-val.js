@@ -18,7 +18,7 @@ $(document).ready(function(){
               type: "GET",
               dataType: 'text',
                 // url: "http://194.87.145.192/lidsystem/check-have-phone?phone="+phone.val(),
-                url: http+"//partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
+                url: http+"//admin.webwidgets.ru/lidsystem/check-have-phone?phone="+phone.val(),
                 // url: "http://127.0.0.2/lidsystem/check-have-phone?phone="+phone.val(),
                 
                 success: function(data){

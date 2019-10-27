@@ -4,6 +4,23 @@ var fromDate = document.getElementById('from--filter--date'),
     fromPrice = document.getElementById('from_price'),
     toPrice = document.getElementById('to_price');
 
+
+var btnReset = document.getElementById('btn--reset-filter');
+
+btnReset.onclick = function(e){
+    e.preventDefault();
+
+    resetFilter();
+}
+
+function resetFilter(){
+    sessionStorage.clear();
+
+    var urlReload = window.location.href.split('?')[0];
+
+    window.open(urlReload, '_parent');
+}
+
 function urlDistribution(){
     if(window.location.pathname.indexOf('/frame') != -1) lidsFilter();
     else if(window.location.pathname.indexOf('/complaints') != -1) complaintsFilter();

@@ -108,22 +108,29 @@ $(document).ready(function(){
 
     if(window.location.pathname.indexOf('/user/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('requests') != -1){
         $('.fa-recycle').css({'color':'#2898F3'})
+        $('.slider__menu--request').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('complaints') != -1){
         $('.fa-angry').css({'color':'#2898F3'})
+        $('.slider__menu--complaints').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('wallet') != -1){
         $('.fa-recycle').css({'color':'#2898F3'})
     }else if(window.location.pathname === '/admin-dashboard'){
         $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname === '/user-dashboard'){
         $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/frame/') != -1){
         $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/billing') != -1){
         $('.fa-credit-card').css({'color':'#2898F3'})
+        $('.slider__menu--billing').css({'color':'#2898F3'})
     }
-
+    
     // Trigger
     var sl;
     var code;

@@ -133,6 +133,8 @@ a:focus{
     border-bottom: 1px solid #e9ecef;
     padding-left: 0;
     padding-right: 0;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
     transition: .1s;
 }
 
@@ -233,10 +235,17 @@ a:focus{
 }
 
 .slider__menu--item:hover .slider__menu--text{
-    color: #000000c0; 
+    color: #2196f3; 
+}
+
+.slider__menu--item:hover i{
+    color: #2196f3; 
 }
 
 .slider__menu--img{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 5px;
 }
@@ -259,9 +268,18 @@ a:focus{
     background: #2196f3;
     width: 12px;
     height: 12px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 50%;
     color: #ffffff;
     opacity: 0;
@@ -753,6 +771,77 @@ a:focus{
 .main__table--select .SumoSelect > .optWrapper > .options li.opt{
     padding: 11px 25px;
 }
+
+
+
+.main__table--toll{
+    width: 700px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toll__item{
+    width: 208px;
+    height: 275px;
+    border: .5px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: .5s;
+}
+
+.toll__item:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.toll__item--active{
+    border: 2px solid #3496F3 !important;
+}
+
+.toll__item--active *{
+    opacity: 0.7;
+}
+
+
+.toll__item--img{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.toll__item--img img{
+    max-width: 100%;
+}
+
+.toll__item--title p{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+    padding: 5px 0;
+}
+
+.toll__item--name p{
+    font-weight: 500;
+    font-size: 11px;
+    text-align: center;
+    color: #3496F3;
+    padding: 5px 0;
+}
+
+.toll__item--desc p{
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #000000;
+    padding: 5px 0;
+    padding-bottom: 15px;
+}
+
+
+
 
 
 @media screen and (max-width: 1470px){

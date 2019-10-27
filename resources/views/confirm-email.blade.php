@@ -23,7 +23,7 @@
         <tr>
             <td>
                 <p style="text-align: center;  margin: 100px;">
-                    <a style="text-align: center; font-size: 25px; color:#ffffff; background-color: #0178BF; border: 30px solid #0178BF; text-decoration: none;" href="https://partycamera.org/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">Подтвердить</a>
+                    <a style="text-align: center; font-size: 25px; color:#ffffff; background-color: #0c83e2; border: 30px solid #0178BF; text-decoration: none;" href="https://partycamera.org/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">Подтвердить</a>
                 </p>
             </td>
         </tr>
