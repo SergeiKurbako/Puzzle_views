@@ -37,17 +37,27 @@
     height: 200px;
     bottom: 28px;
     right: 0px;
-    animation: monster 2s ease-in-out infinite;
+    -webkit-animation: monster 2s ease-in-out infinite;
+            animation: monster 2s ease-in-out infinite;
     z-index: 99999;
 }
 
+@-webkit-keyframes monster{
+    0%,100%{ -webkit-transform:translateY(0); transform:translateY(0); }
+    50%{ -webkit-transform:translateY(-10px); transform:translateY(-10px); }
+}
+
 @keyframes monster{
-    0%,100%{ transform:translateY(0); }
-    50%{ transform:translateY(-10px); }
+    0%,100%{ -webkit-transform:translateY(0); transform:translateY(0); }
+    50%{ -webkit-transform:translateY(-10px); transform:translateY(-10px); }
+}
+
+@-webkit-keyframes monsterDown{
+    100%{-webkit-transform:translateY(400px) rotate(40deg);transform:translateY(400px) rotate(40deg);}
 }
 
 @keyframes monsterDown{
-    100%{transform:translateY(400px) rotate(40deg);}
+    100%{-webkit-transform:translateY(400px) rotate(40deg);transform:translateY(400px) rotate(40deg);}
 }
   
 
@@ -206,9 +216,18 @@ iframe{
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
-    	justify-content: center;
-    	align-items: center;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
 	}
 	iframe{
 		width: 100%;
