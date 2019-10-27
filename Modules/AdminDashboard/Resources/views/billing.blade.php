@@ -64,6 +64,7 @@
                                 <td>{{$payments->id}}</td>
                                 <td>{{$payments->created_at}}</td>
                                 <td>{{$payments->payment_value}}</td>
+                                <td>none</td>
                             </tr>
                             @endforeach
 
