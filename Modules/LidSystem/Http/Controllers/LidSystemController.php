@@ -150,7 +150,7 @@ class LidSystemController extends Controller
             $lid->save();
 
             // отправка sms
-            file_get_contents('https://smsc.ru/sys/send.php?login=webwidgets&psw=12345Qaz&phones=' . $lid->phone . '&mes=' . $lid->sms_code);
+            file_get_contents('https://smsc.ru/sys/send.php?login=webwidgets&psw=12345Qaz&phones=' . $lid->phone . '&mes=SMS-+code+verification%3A+' . $lid->sms_code);
 
             return redirect('/lidsystem/step2?frame_id=' . $frameId . '&code=' . $code .'&lid_id=' . $lid->id . '&sms_code=' . $lid->sms_code . '&phone=' . $request->input('phone'));
         } else {
