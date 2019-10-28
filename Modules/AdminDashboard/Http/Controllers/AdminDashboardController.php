@@ -382,6 +382,11 @@ class AdminDashboardController extends Controller
 
         $payments = $payments->paginate($itemCount);
 
+        // if ($request->input('exel') !== null) {
+        //     $lidExport = new LidsExport($lids);
+        //     return Excel::download($lidExport, 'lids.xlsx');
+        // }
+
         return view('admindashboard::billing', [
             'payments' => $payments,
             'itemCount' => $itemCount,
