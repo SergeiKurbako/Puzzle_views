@@ -138,12 +138,6 @@
     <script src="../../../js/admin.js"></script>
     <script>
         $( function() {
-            $("#from--filter--date" ).datepicker();
-            $("#to--filter--date").datepicker();
-        } );
-    </script>
-    <script>
-        $( function() {
             $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
             $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
         } );
