@@ -106,7 +106,7 @@
                                 <td>{{$lid->phone}}</td>
                                 <td> {{$lid->price}}</td>
                                 <td>
-                                    <span tooltip="">
+                                    <span tooltip="{{$lid->complaint->message}}">
                                         @if ($lid->complaint->status === 'moderation')
                                         На модерации
                                         @elseif ($lid->complaint->status === 'rejected')
