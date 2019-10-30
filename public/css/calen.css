@@ -102,6 +102,11 @@
     /* background: #ffffff !important; */
 }
 
+.ui-state-default:hover{
+    background: #2196F3;
+    color: #ffffff;
+}
+
 .ui-datepicker-next-hover{
     border: none;
     background: #ffffff !important;
