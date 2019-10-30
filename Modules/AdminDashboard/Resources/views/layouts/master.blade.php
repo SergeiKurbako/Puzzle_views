@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/filter.css') }}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ ('../../../css/calen.css') }}">
     
     <style>
     

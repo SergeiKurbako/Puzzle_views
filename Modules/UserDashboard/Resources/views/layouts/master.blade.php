@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ ('../../../css/frame-fules.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ ('../../../css/calen.css') }}">
     <title>Admin</title>
 </head>
 <body>
@@ -132,7 +133,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../../../js/lib/jquery-ui.js"></script>
     <script src="../../../js/local-filter.js"></script>
     <script src="../../../js/lib/jquery.sumoselect.min.js"></script>
     <script src="../../../js/admin.js"></script>
