@@ -44,6 +44,34 @@ class UserDashboardController extends Controller
         ]);
     }
 
+    public function showMain(Request $request)
+    {
+        if (Auth::user()->role === 'wait_confirm') {
+            return redirect('/wait-confirm');
+        }
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        if (Auth::user()->status !== 'on') {
+            return view('userdashboard::wait-access');
+        }
+
+        $itemCount = 50;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $frames = GameFrame::where('user_id', Auth::user()->id)->paginate($itemCount);
+
+        return view('userdashboard::main', [
+            'frames' => $frames,
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
@@ -228,9 +256,10 @@ class UserDashboardController extends Controller
 
         $frame = GameFrame::find($frameId);
 
-        return view('admindashboard::update-frame',[
+        return view('userdashboard::update-frame',[
             'frame' => $frame,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'balance' => Auth::user()->balance
         ]);
     }
 
