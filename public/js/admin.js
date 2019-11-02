@@ -120,7 +120,11 @@ $(document).ready(function(){
     }else if(window.location.pathname === '/admin-dashboard'){
         $('.fa-user').css({'color':'#2898F3'})
         $('.slider__menu--user').css({'color':'#2898F3'})
+
     }else if(window.location.pathname === '/user-dashboard'){
+        $('.fa-home').css({'color':'#2898F3'})
+        $('.slider__menu--dash').css({'color':'#2898F3'})
+    }else if(window.location.pathname === '/user-dashboard/users'){
         $('.fa-user').css({'color':'#2898F3'})
         $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/frame/') != -1){

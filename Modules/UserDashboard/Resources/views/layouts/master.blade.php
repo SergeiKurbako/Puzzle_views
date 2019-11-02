@@ -78,7 +78,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p class="slider__menu--dash">Dashboard</p>
                             </div>
                         </a>
                     </div>
