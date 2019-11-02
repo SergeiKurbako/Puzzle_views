@@ -72,7 +72,7 @@
 
                 <div class="slider__menu">
                     <div class="slider__menu--item">
-                        <a href="#">
+                        <a href="/admin-dashboard">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
                                 <span style="opacity:0;"></span>
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="slider__menu--item">
-                        <a href="/admin-dashboard">
+                        <a href="/admin-dashboard/users">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
                                 <span style="opacity:0;"></span>
