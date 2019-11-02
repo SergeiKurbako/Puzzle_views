@@ -31,7 +31,7 @@
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
                                     <select id="gender" name="gender">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
@@ -39,7 +39,7 @@
                                 <div class="main__filter--status">
                                     <p>Статус</p>
                                     <select id="status" name="status">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="moderation">На модерации</option>
                                         <option value="rejected">Отклонена</option>
                                         <option value="accept">Одобрена</option>
