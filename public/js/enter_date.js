@@ -84,9 +84,9 @@ $(document).ready(function(){
                 dataType: 'text',
                 // url: "https://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
                 // url: "http://partycamera.org/lidsystem/check-have-email?email=" + $('#email').val(),
-                url: http+"//admin.webwidgets.ru/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                // url: http+"//admin.webwidgets.ru/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
 
-                // url: "http://194.87.145.192/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
+                url: http+"//194.87.145.192/lidsystem/check-have-email?email="+ $('#email').val()+"&frame_id="+text_to_get,
     
                 // url: "http://127.0.0.2/lidsystem/check-have-email?email=" + $('#email').val(),
                 success: function(data){
