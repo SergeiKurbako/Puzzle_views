@@ -33,7 +33,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $itemCount = 10;
@@ -58,7 +58,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $itemCount = 10;
@@ -83,7 +83,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $itemCount = 10;
@@ -109,7 +109,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $frame = GameFrame::find($id);
@@ -168,7 +168,7 @@ class AdminDashboardController extends Controller
 
     public function createFrame(Request $request)
     {
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         if (Auth::user()->role !== 'admin') {
@@ -255,7 +255,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $lids = Lid::where('have_complaint', 'yes');
@@ -297,7 +297,7 @@ class AdminDashboardController extends Controller
         }
 
         foreach($lids as $key => $lid) {
-            if (!$lid->complaint) {
+            if ($lid->complaint === null) {
                 unset($lids[$key]);
             }
         }
@@ -317,7 +317,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $complaint = Complaint::find($id);
@@ -336,7 +336,7 @@ class AdminDashboardController extends Controller
             return redirect('/login');
         }
 
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $frame = GameFrame::find($frameId);
@@ -368,7 +368,7 @@ class AdminDashboardController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
-        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfComplaints = $this->getCountOfComplaints();
         $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
 
         $payments = Payment::where('id', '>', 0);
@@ -401,5 +401,18 @@ class AdminDashboardController extends Controller
             'email' => Auth::user()->email
         ]);
 
+    }
+
+    protected function getCountOfComplaints() {
+        $lids = Lid::where('have_complaint', 'yes')->get();
+        $countOfComplaints = 0;
+        foreach($lids as $key => $lid) {
+            if ($lid->complaint !== null) {
+                if ($lid->complaint->status === 'moderation') {
+                    $countOfComplaints +=1;
+                }
+            }
+        }
+        return $countOfComplaints;
     }
 }
