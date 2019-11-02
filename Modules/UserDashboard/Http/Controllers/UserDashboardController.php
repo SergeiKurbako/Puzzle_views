@@ -254,7 +254,7 @@ class UserDashboardController extends Controller
             return redirect('/login');
         }
 
-        $payments = Payment::where('id', '>', 0)->where('user_id', Auth::user()->id);
+        $payments = Payment::where('id', '>', 0);
 
         if ($request->input('from_date') !== null) {
             $payments->whereDate('created_at', '>=', $request->input('from_date'));
@@ -270,6 +270,11 @@ class UserDashboardController extends Controller
         }
 
         $payments = $payments->paginate($itemCount);
+
+        // if ($request->input('exel') !== null) {
+        //     $lidExport = new LidsExport($lids);
+        //     return Excel::download($lidExport, 'lids.xlsx');
+        // }
 
         return view('userdashboard::billing', [
             'payments' => $payments,

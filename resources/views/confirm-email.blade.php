@@ -13,7 +13,7 @@
         <tr>
             <td style="width: 50%;">
                 <p style="text-align: center;">
-                    <img style="width: 40%;" src="https://partycamera.org/img/icon/logo_email.png" alt="">
+                    <img style="width: 40%;" src="http://admin.webwidgets.ru/img/icon/logo_email.png" alt="">
                 </p>
             </td>
         </tr>
@@ -23,7 +23,7 @@
         <tr>
             <td>
                 <p style="text-align: center;  margin: 100px;">
-                    <a style="text-align: center; font-size: 25px; color:#ffffff; background-color: #0c83e2; border: 30px solid #0178BF; text-decoration: none;" href="https://partycamera.org/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">Подтвердить</a>
+                    <a style="text-align: center; font-size: 25px; color:#ffffff; background-color: #0c83e2; border: 30px solid #0178BF; text-decoration: none;" href="http://admin.webwidgets.ru/confirm-email/?confirm_code={{$confirmCode}}&user_id={{$userId}}">Подтвердить</a>
                 </p>
             </td>
         </tr>

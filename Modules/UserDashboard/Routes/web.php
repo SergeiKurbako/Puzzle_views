@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', 'UserDashboardController@showWallet');
-
 Route::prefix('user-dashboard')->group(function() {
     Route::get('/', 'UserDashboardController@index');
     Route::get('/create-frame', 'UserDashboardController@createFrame');

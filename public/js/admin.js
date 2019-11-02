@@ -161,14 +161,15 @@ $(document).ready(function(){
     if($('#result_game') != undefined) $('#result_game').SumoSelect();
     
 
-    if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+    // if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
 
-    if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+    // if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
 
-    $('.main__table--select .opt').click(function(){
-        // console.log($(this).text());
-        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
-    })
+
+    // $('.main__table--select .opt').click(function(){
+    //     sessionStorage.setItem(window.location.pathname, s.val());
+    //     window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
+    // })
     
 
 // Selected

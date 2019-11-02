@@ -15,6 +15,10 @@ function showIframe(){
 
 	div.classList.remove('disabled');
 
+	document.body.style.overflow = 'hidden';
+	document.body.setAttribute('scroll', 'no');
+
+
 	var n = 0;
 	int = setInterval(function () {
 		if (n >= 1) {
@@ -44,6 +48,9 @@ document.getElementById('js-close-modal').onclick = function(){
 
 
 	div.classList.add('disabled');
+
+	document.body.style.overflow = 'auto';
+	document.body.setAttribute('scroll', 'yes');
 }
 
 
