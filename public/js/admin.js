@@ -124,10 +124,10 @@ $(document).ready(function(){
     }else if(window.location.pathname === '/user-dashboard'){
         $('.fa-home').css({'color':'#2898F3'})
         $('.slider__menu--dash').css({'color':'#2898F3'})
-    }else if(window.location.pathname === '/user-dashboard/create-frame'){
+    }else if(window.location.pathname.indexOf('/user-dashboard/create-frame') != -1){
         $('.fa-user').css({'color':'#2898F3'})
         $('.slider__menu--user').css({'color':'#2898F3'})
-    }else if(window.location.pathname === '/user-dashboard/users'){
+    }else if(window.location.pathname.indexOf('/user-dashboard/users') != -1){
         $('.fa-user').css({'color':'#2898F3'})
         $('.slider__menu--user').css({'color':'#2898F3'})
     }else if(window.location.pathname.indexOf('/frame/') != -1){
