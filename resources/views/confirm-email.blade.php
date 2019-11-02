@@ -13,7 +13,7 @@
         <tr>
             <td style="width: 50%;">
                 <p style="text-align: center;">
-                    <img style="width: 40%;" src="http://admin.webwidgets.ru/img/icon/logo_email.png" alt="">
+                    <img style="width: 40%;" src="http://partycamera.org/img/icon/logo_email.png" alt="">
                 </p>
             </td>
         </tr>
