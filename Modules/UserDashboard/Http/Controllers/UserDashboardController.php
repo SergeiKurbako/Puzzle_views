@@ -29,7 +29,7 @@ class UserDashboardController extends Controller
             return view('userdashboard::wait-access');
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
@@ -88,7 +88,7 @@ class UserDashboardController extends Controller
             $lids->where('price', '=<', $request->input('to_price'));
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
@@ -264,7 +264,7 @@ class UserDashboardController extends Controller
             $payments->whereDate('created_at', '<=', $request->input('to_date'));
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
