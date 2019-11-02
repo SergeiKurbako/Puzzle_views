@@ -65,7 +65,7 @@
                                 <div class="main__filter--exel">
                                     <input id="exel"  type="checkbox" name="exel">
                                     <label for="exel">Выгрузить в exel</label>
-                                </div> 
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -95,38 +95,43 @@
                                 <td>Цена за лид</td>
                                 <td>Статус заявки</td>
                             </tr>
-                            @foreach ($lids as $lid)
-                            <tr>
-                                <td>{{$lid->id}}</td>
-                                <td>{{$lid->created_at}}</td>
-                                <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жен @endif</td>
-                                <td>{{$lid->age}}</td>
-                                <td>{{$lid->email}}</td>
-                                <td>{{$lid->phone}}</td>
-                                <td> {{$lid->price}}</td>
-                                <td>
-                                    <span tooltip="{{$lid->complaint->message}}">
-                                        @if ($lid->complaint->status === 'moderation')
-                                        На модерации
-                                        @elseif ($lid->complaint->status === 'rejected')
-                                        Отклонена. Лид корректный.
-                                        @elseif ($lid->complaint->status === 'accept')
-                                        Одобрена. Лид некорректный.
-                                        @endif
-                                    </span>
-                                </td>
-                            </tr>
-                            @if ($lid->complaint->status === 'moderation')
-                            <tr> 
-                                <td colspan="8"></td>
-                                <td>
-                                    <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
-                                    <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
-                                </td>  
-                            </tr>
-                            @else
-                            @endif 
+                        @foreach ($lids as $lid)
+                            @if ($lid->complaint)
+                                <tr>
+                                    <td>{{$lid->id}}</td>
+                                    <td>{{$lid->created_at}}</td>
+                                    <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
+                                    <td>@if($lid->gender === 'man') муж @else жен @endif</td>
+                                    <td>{{$lid->age}}</td>
+                                    <td>{{$lid->email}}</td>
+                                    <td>{{$lid->phone}}</td>
+                                    <td> {{$lid->price}}</td>
+                                    <td>
+
+                                        <span tooltip="{{$lid->complaint->message}}">
+                                            @if ($lid->complaint->status === 'moderation')
+                                            На модерации
+                                            @elseif ($lid->complaint->status === 'rejected')
+                                            Отклонена. Лид корректный.
+                                            @elseif ($lid->complaint->status === 'accept')
+                                            Одобрена. Лид некорректный.
+                                            @endif
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                @if ($lid->complaint->status === 'moderation')
+                                <tr>
+                                    <td colspan="8"></td>
+                                    <td>
+                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
+                                    </td>
+                                </tr>
+                                @else
+                                @endif
+                            @endif
+
                         @endforeach
 
 
@@ -142,5 +147,5 @@
                 </div>
             </div>
         </div>
-        
+
         @endsection
