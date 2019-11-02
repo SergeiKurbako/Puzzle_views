@@ -284,7 +284,7 @@ class AdminDashboardController extends Controller
             $lids->where('game_result', '=', $request->input('result_game'));
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
@@ -294,6 +294,12 @@ class AdminDashboardController extends Controller
         if ($request->input('exel') !== null) {
             $lidExport = new LidsExport($lids);
             return Excel::download($lidExport, 'lids.xlsx');
+        }
+
+        foreach($lids as $key => $lid) {
+            if (!$lid->complaint) {
+                unset($lids[$key]);
+            }
         }
 
         return view('admindashboard::complaints',[
@@ -375,7 +381,7 @@ class AdminDashboardController extends Controller
             $payments->whereDate('created_at', '<=', $request->input('to_date'));
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
