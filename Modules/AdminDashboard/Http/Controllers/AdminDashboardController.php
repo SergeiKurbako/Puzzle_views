@@ -152,7 +152,7 @@ class AdminDashboardController extends Controller
             return Excel::download($lidExport, 'lids.xlsx');
         }
 
-        $lidsForSum = Lid::where('moderation_status', 'accept')->get();
+        $lidsForSum = Lid::where('frame_id', $id)->where('moderation_status', 'accept')->get();
 
         return view('admindashboard::frame', [
             'lids' => $lids,
