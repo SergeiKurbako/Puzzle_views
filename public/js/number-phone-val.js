@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
   var http = window.location.protocol;
+  
   console.log('number-phone');
+
   $('.btn-start').click(function(){
     $('.entrance-start').css({'display' : 'none'})
     $('.entrance').css({'display' : 'block'})
