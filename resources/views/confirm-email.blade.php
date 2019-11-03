@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="format-detection" content="telephone=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Puzzles') }}</title>
+    <title>{{ config('app.name', 'Webwidgets.ru') }}</title>
 </head>
 <body style="background-color: #444">
     <table style="border: 10px solid #0178BF; width: 100%; background-color: #ffffff;" border="0" cellpadding="0" cellspacing="0">
