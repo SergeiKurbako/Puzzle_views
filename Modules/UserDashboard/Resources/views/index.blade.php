@@ -31,7 +31,7 @@
                                 <td>email подтв.</td>
                                 <td>Правила</td>
                                 <td>Статус игры</td>
-                                <td>Статистика</td>
+                                <td>Лиды</td>
                                 <td>Цена за лид</td>
                             </tr>
                             @foreach($frames as $frame)
