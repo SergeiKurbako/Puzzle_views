@@ -86,7 +86,7 @@
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p>Главная</p>
                             </div>
                         </a>
                     </div>
