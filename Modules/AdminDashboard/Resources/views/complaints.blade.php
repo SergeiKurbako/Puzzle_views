@@ -110,7 +110,8 @@
 
                                         <span tooltip="{{$lid->complaint->message}}">
                                             @if ($lid->complaint->status === 'moderation')
-                                            На модерации
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
                                             @elseif ($lid->complaint->status === 'rejected')
                                             Отклонена. Лид корректный.
                                             @elseif ($lid->complaint->status === 'accept')
@@ -120,16 +121,7 @@
 
                                     </td>
                                 </tr>
-                                @if ($lid->complaint->status === 'moderation')
-                                <tr>
-                                    <td colspan="8"></td>
-                                    <td>
-                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
-                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
-                                    </td>
-                                </tr>
-                                @else
-                                @endif
+                                
                             @endif
 
                         @endforeach
