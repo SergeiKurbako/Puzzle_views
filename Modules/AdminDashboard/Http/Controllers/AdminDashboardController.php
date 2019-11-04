@@ -211,7 +211,7 @@ class AdminDashboardController extends Controller
 
         Mail::send('admindashboard::notifier', ['messages' => 'Аккаунт остановлен'], function ($m) {
             $m->subject('Аккаунт остановлен');
-            $m->from('partylivea@gmail.com', 'Puzzles');
+            $m->from('partylivea@gmail.com', 'webwidgets.ru');
             $m->to($this->email, $this->email);
         });
 
@@ -238,7 +238,7 @@ class AdminDashboardController extends Controller
 
         Mail::send('admindashboard::notifier', ['messages' => 'Аккаунт удален'], function ($m) {
             $m->subject('Аккаунт удален');
-            $m->from('partylivea@gmail.com', 'Puzzles');
+            $m->from('partylivea@gmail.com', 'webwidgets.ru');
             $m->to($this->email, $this->email);
         });
 
