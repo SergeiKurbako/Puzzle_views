@@ -47,7 +47,7 @@ class GameFrameController extends Controller
         $checkIsUrl = filter_var($url, FILTER_VALIDATE_URL);
         if ($checkIsUrl === false) {
             return view('userdashboard::create-frame', [
-                'error' => 'Введите url',
+                'error' => 'Введите URL с http или https',
                 'balance' => Auth::user()->balance,
                 'email' => Auth::user()->email
                 ]);
@@ -123,7 +123,7 @@ class GameFrameController extends Controller
         $checkIsUrl = filter_var($url, FILTER_VALIDATE_URL);
         if ($checkIsUrl === false) {
             return view('admindashboard::create-frame', [
-                'error' => 'Введите url',
+                'error' => 'Введите URL с http или https',
                 'userId' => $request->input('user_id'),
                 'email' => Auth::user()->email,
                 'countOfComplaints' => $countOfComplaints,
