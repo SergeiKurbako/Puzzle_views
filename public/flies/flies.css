@@ -1,0 +1,94 @@
+html {
+    font-size: 1vw;
+}
+
+.wrapper__svg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.swatter {
+    -webkit-transform: perspective(500px);
+    -moz-transform: perspective(500px);
+    -o-transform: perspective(500px);
+    -ms-transform: perspective(500px);
+    transform: perspective(500px);
+    z-index: 100;
+}
+
+.counter {
+    width: 100%;
+    height: 20%;
+    top: 0;
+    position: fixed;
+}
+
+.close_svg {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    transform-origin: 50% 50%;
+}
+
+.close_svg img {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 1vw;
+}
+
+body {
+    margin: 0;
+    cursor: none;
+    overflow-x: hidden;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    pointer-events: none;
+}
+
+.swatter {
+    -webkit-transform: perspective(500px);
+    -moz-transform: perspective(500px);
+    -o-transform: perspective(500px);
+    -ms-transform: perspective(500px);
+    transform: perspective(500px);
+    position: absolute !important;
+    z-index: 9;
+}
+
+.swatter-container {
+    position: absolute;
+    z-index: 100;
+}
+
+.counter {
+    width: 100%;
+    height: 20%;
+    top: 0;
+    position: fixed;
+}
