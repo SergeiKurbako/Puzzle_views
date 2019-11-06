@@ -68,6 +68,7 @@ window.onload = function () {
     </div>
     `
     document.body.appendChild(div);
+    let closeCount = false;
 
     const buttonClose = document.querySelector('.close_svg');
     const swatter = document.querySelector(".swatter");
@@ -119,12 +120,6 @@ window.onload = function () {
     closeSvgImgStyles.style.height = '100%';
     closeSvgImgStyles.style.zIndex = '1000';
 
-// if (isMobile) {
-//     buttonClose.style.width = '60px';
-//     buttonClose.style.height = '60px';
-//     buttonClose.style.fontSize = '12px';
-// }
-
     let isRemove = false;
 
     window.addEventListener("mousemove", onMove);
@@ -141,10 +136,19 @@ window.onload = function () {
     });
 
     function onMove(e) {
-        TweenMax.set(".swatter-container", {
-            x: e.pageX,
-            y: e.pageY - window.pageYOffset,
-        });
+        if (!closeCount) {
+            TweenMax.set(".swatter-container", {
+                x: e.pageX,
+                y: e.pageY - window.pageYOffset,
+                autoAlpha: 1
+            });
+        } else {
+            TweenMax.set(".swatter-container", {
+                x: e.pageX,
+                y: e.pageY - window.pageYOffset,
+                autoAlpha: 0
+            });
+        }
     }
 
     function onMouseOut(e) {
@@ -190,8 +194,6 @@ window.onload = function () {
     var gnats = [];
     var swatThreshold = 45;
     var swatCount = 0;
-
-    let closeCount = false;
 
     buttonClose.style.zIndex = 100;
 
@@ -482,7 +484,8 @@ window.onload = function () {
         const buttonHeight = parseInt(getComputedStyle(buttonClose).height)
 
         TweenMax.set(swatterButton, {
-            x: document.documentElement.clientWidth - 152,
+            x: document.documentElement.clientWidth - 145,
+            x: document.documentElement.clientWidth - 145,
             y: document.documentElement.clientHeight - 110
         })
 
@@ -499,10 +502,8 @@ window.onload = function () {
         if (!isRemove) {
             if (closeCount) {
                 document.body.style.cursor = 'auto';
-                swatter.style.visibility = 'hidden';
             } else {
                 document.body.style.cursor = 'none';
-                swatter.style.visibility = 'visible';
             }
 
             if (e.clientX > buttonX && e.clientX < buttonX + buttonWidth && e.clientY > buttonY && e.clientY < buttonY + buttonHeight) {
