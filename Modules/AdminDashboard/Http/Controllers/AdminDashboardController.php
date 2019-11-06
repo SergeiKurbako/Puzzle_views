@@ -289,6 +289,8 @@ class AdminDashboardController extends Controller
             $itemCount = $request->input('item_count');
         }
 
+        $lids->orderBy('id', 'DESC');
+
         $lids = $lids->paginate($itemCount);
 
         if ($request->input('exel') !== null) {
