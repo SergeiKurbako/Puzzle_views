@@ -5,7 +5,7 @@ window.onload = function () {
 <link rel="stylesheet" href="http://admin.webwidgets.ru/monster/css/style.css">
     <div class="wrapper-iframe--wrapper">
     <a id="js-close-modal" class="madalIframe--close" href="#"></a>
-    <iframe id="iframe" src='' width='1000' height='600'> </iframe>
+    <iframe id="iframe" src='https://partycamera.org/lidsystem/?frame_id=16&code=5c491550-ff10-11e9-8624-0de7bc30d08d' width='1000' height='600'> </iframe>
     </div>
     </div>
     <div class="wrapper__svg" id="wrapper__svg">
