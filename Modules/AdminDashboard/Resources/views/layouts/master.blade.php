@@ -79,14 +79,14 @@
                 </div>
 
                 <div class="slider__menu">
-                    <div class="slider__menu--item">
+                    <div class="slider__menu--item" style="display: none">
                         <a href="#">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p>Главная</p>
                             </div>
                         </a>
                     </div>

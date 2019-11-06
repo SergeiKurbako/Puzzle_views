@@ -72,19 +72,19 @@
 
                 <div class="slider__menu">
                     <div class="slider__menu--item">
-                        <a href="#">
+                        <a href="/user-dashboard">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
                                 <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p class="slider__menu--dash">Главная</p>
                             </div>
                         </a>
                     </div>
 
                     <div class="slider__menu--item">
-                        <a href="/admin-dashboard">
+                        <a href="/user-dashboard/users">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
                                 <span style="opacity:0;"></span>

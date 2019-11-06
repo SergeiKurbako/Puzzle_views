@@ -31,7 +31,7 @@
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
                                     <select id="gender" name="gender">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
@@ -39,7 +39,7 @@
                                 <div class="main__filter--status">
                                     <p>Статус</p>
                                     <select id="status" name="status">
-                                        <option value="all">Все</option>
+                                        <option value="">Все</option>
                                         <option value="moderation">На модерации</option>
                                         <option value="rejected">Отклонена</option>
                                         <option value="accept">Одобрена</option>
@@ -110,7 +110,8 @@
 
                                         <span tooltip="{{$lid->complaint->message}}">
                                             @if ($lid->complaint->status === 'moderation')
-                                            На модерации
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
                                             @elseif ($lid->complaint->status === 'rejected')
                                             Отклонена. Лид корректный.
                                             @elseif ($lid->complaint->status === 'accept')
@@ -120,16 +121,7 @@
 
                                     </td>
                                 </tr>
-                                @if ($lid->complaint->status === 'moderation')
-                                <tr>
-                                    <td colspan="8"></td>
-                                    <td>
-                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
-                                        <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
-                                    </td>
-                                </tr>
-                                @else
-                                @endif
+                                
                             @endif
 
                         @endforeach

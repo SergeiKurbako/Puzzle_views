@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
   var http = window.location.protocol;
+  
+  console.log('number-phone');
 
   $('.btn-start').click(function(){
     $('.entrance-start').css({'display' : 'none'})
@@ -17,8 +19,8 @@ $(document).ready(function(){
               headers: { "Accept": "application/text"},
               type: "GET",
               dataType: 'text',
-                // url: "http://194.87.145.192/lidsystem/check-have-phone?phone="+phone.val(),
-                url: http+"//admin.webwidgets.ru/lidsystem/check-have-phone?phone="+phone.val(),
+                url: http+"//partycamera.org/lidsystem/check-have-phone?phone="+phone.val(),
+                // url: http+"//admin.webwidgets.ru/lidsystem/check-have-phone?phone="+phone.val(),
                 // url: "http://127.0.0.2/lidsystem/check-have-phone?phone="+phone.val(),
                 
                 success: function(data){

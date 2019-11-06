@@ -84,7 +84,7 @@ class ComplaintController extends Controller
 
         $this->email = $user->email;
         Mail::send('admindashboard::notifier', ['messages' => $message], function ($m) {
-            $m->subject('Жалоба одобрена');
+            $m->subject('Жалоба рассмотрена');
             $m->from('partylivea@gmail.com', 'Puzzles');
             $m->to($this->email, $this->email);
         });
