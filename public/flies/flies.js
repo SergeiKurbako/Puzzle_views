@@ -10,7 +10,7 @@ window.onload = function() {
     </div>
     <div class="wrapper__svg" id="wrapper__svg">
     <div class="close_svg">
-        <img src='http://partycamera.org/flies/stop.png'/>
+        <img src='stop.png'/>
     </div>
         <svg class="game SVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
@@ -71,6 +71,7 @@ window.onload = function() {
 
     const buttonClose = document.querySelector('.close_svg');
     const swatter = document.querySelector(".swatter");
+    swatter.style.transformOrigin = '0px 0px';
     const deviceAgent = navigator.userAgent.toLowerCase();
     const isMobile = ("ontouchstart" in document.documentElement) ? true : false;
     const touchMenuEvent = (isMobile) ? "touchstart" : "click";
@@ -97,6 +98,7 @@ window.onload = function() {
     swatterStyles.style.transform = 'perspective(500px)';
     swatterStyles.style.position = 'absolute';
     swatterStyles.style.zIndex = '1000';
+    swatterStyles.style.overflow = 'visible';
 
     const swatterContainerStyles = document.querySelector('.swatter-container');
     swatterContainerStyles.style.position = 'absolute';
@@ -141,7 +143,7 @@ window.onload = function() {
     function onMove(e) {
         TweenMax.set(".swatter-container", {
             x: e.pageX,
-            y: e.pageY - window.pageYOffset
+            y: e.pageY - window.pageYOffset,
         });
     }
 
@@ -501,5 +503,4 @@ window.onload = function() {
             }
         }
     })
-
 }
