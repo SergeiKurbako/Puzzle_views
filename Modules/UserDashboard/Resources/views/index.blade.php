@@ -48,8 +48,8 @@
                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
                                             <script src="http://partycamera.org/flies/flies.js"></script>
                                             <script>
-                                            setTimeout(()=>document.getElementById('iframe').src = `http://partycamera.org/lidsystem/?frame_id=1&code=531523517`, 2000)
-                                            </script>
+                                            setTimeout(()=>document.getElementById('iframe').src = `{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code}}`, 2000)
+                                        </script>
                                     </xmp>
                                     </div>
                                 </td>
