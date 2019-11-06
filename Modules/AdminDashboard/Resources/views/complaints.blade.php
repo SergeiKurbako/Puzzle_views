@@ -1,7 +1,7 @@
 @extends('admindashboard::layouts.master')
 
 @section('content')
-
+<link rel="stylesheet" href="../../../css/tooltip.css">
 <div class="main">
             <div class="main__wrapper">
 
@@ -13,57 +13,60 @@
                     <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="/admin-dashboard/complaints" method="get">
-                            <div class="main__table--filter--wrapper" style="align-items:flex-start">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-align:start;-webkit-align-items:flex-start;-ms-flex-align:start;align-items:flex-start">
                                 <div class="main__filter--date">
                                     <p>Дата</p>
-                                        <div class="main__filter--date-input-wrapper">
-                                            <div>
-                                                <label>От</label>
-                                                <input name="from_date" type="date" />
-                                            </div>
-                                            <div>
-                                                <label>До</label>
-                                                <input name="to_date" type="date" />
-                                            </div>
+                                    <div class="main__filter--date-input-wrapper">
+                                        <div id="date-example">
+                                            <label>От</label>
+                                            <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                         </div>
+                                        <div>
+                                            <label>До</label>
+                                            <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="main__filter--floor">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select id="gender" name="gender">
+                                        <option value="">Все</option>
                                         <option value="man">Мужской</option>
                                         <option value="waman">Женский</option>
                                     </select>
                                 </div>
                                 <div class="main__filter--status">
                                     <p>Статус</p>
-                                    <select name="status">
+                                    <select id="status" name="status">
+                                        <option value="">Все</option>
                                         <option value="moderation">На модерации</option>
-                                        <option value="rejected">Отклонена администратором</option>
-                                        <option value="accept">Забракована администратором</option>
+                                        <option value="rejected">Отклонена</option>
+                                        <option value="accept">Одобрена</option>
                                     </select>
                                 </div>
                                 <div class="main__filter--price">
                                     <p>Цена за лид</p>
                                     <label>От</label>
-                                    <input type="text" name="from_price" />
+                                    <input type="number" id="from_price" name="from_price" autocomplete="off"/>
                                     <label>До</label>
-                                    <input type="text" name="to_price" />
+                                    <input type="number" id="to_price" name="to_price" autocomplete="off"/>
                                 </div>
 
 
                             </div>
-                            <div class="main__filter--exel">
-
-                                    <input id="exel"  type="checkbox" name="exel" checked>
+                            <div style="display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center;">
+                                <div class="main__filter--btn">
+                                    <input type="submit" name="" value="Применить" />
+                                </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
+                                </div>
+                                <div class="main__filter--exel">
+                                    <input id="exel"  type="checkbox" name="exel">
                                     <label for="exel">Выгрузить в exel</label>
                                 </div>
-
-
-                            <div class="main__filter--btn">
-                                <input type="submit" name="" value="Применить" />
                             </div>
-
                         </form>
                     </div>
 <!--  END ФИЛЬТР -->
@@ -92,56 +95,43 @@
                                 <td>Цена за лид</td>
                                 <td>Статус заявки</td>
                             </tr>
-                            @foreach ($lids as $lid)
-                            <tr>
-                                <td>{{$lid->id}}</td>
-                                <td>{{$lid->created_at}}</td>
-                                <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жун @endif</td>
-                                <td>{{$lid->age}}</td>
-                                <td>{{$lid->email}}</td>
-                                <td>{{$lid->phone}}</td>
-                                <td> {{$lid->price}}</td>
-                                <td>
-                                @if ($lid->complaint->status === 'moderation')
-                                Отправлена на модерацию
-                                @elseif ($lid->complaint->status === 'rejected')
-                                Отклонена администратором
-                                @elseif ($lid->complaint->status === 'accept')
-                                Лид забракован администратором
-                                @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="9">Сообщение:
-                                    {{$lid->complaint->message}}
-                                </td>
-                                <td>
-                                @if ($lid->complaint->status === 'moderation')
+                        @foreach ($lids as $lid)
+                            @if ($lid->complaint)
+                                <tr>
+                                    <td>{{$lid->id}}</td>
+                                    <td>{{$lid->created_at}}</td>
+                                    <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
+                                    <td>@if($lid->gender === 'man') муж @else жен @endif</td>
+                                    <td>{{$lid->age}}</td>
+                                    <td>{{$lid->email}}</td>
+                                    <td>{{$lid->phone}}</td>
+                                    <td> {{$lid->price}}</td>
+                                    <td>
 
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
-                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
-                                @else
-                                @endif
-                                </td>
-                            </tr>
-                            @endforeach
+                                        <span tooltip="{{$lid->complaint->message}}">
+                                            @if ($lid->complaint->status === 'moderation')
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=rejected">Отклонить</a>
+                                                <a href="/lidsystem/complaints/{{$lid->complaint->id}}/update?status=accept">Подтвердить</a>
+                                            @elseif ($lid->complaint->status === 'rejected')
+                                            Отклонена. Лид корректный.
+                                            @elseif ($lid->complaint->status === 'accept')
+                                            Одобрена. Лид некорректный.
+                                            @endif
+                                        </span>
+
+                                    </td>
+                                </tr>
+                                
+                            @endif
+
+                        @endforeach
 
 
 
                         </table>
                         <div class="main__table--footer">
-
-                            @include('pagination.default', ['paginator' => $lids])
-
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <div class="main__table--footer--page">
-                                <div class="main__footer--item main__footer--item--active"><p>1</p></div>
-                                <div class="main__footer--item"><p>2</p></div>
-                                <div class="main__footer--item"><p>3</p></div>
-                                <div class="main__footer--item"><p>4</p></div>
-                                <div class="main__footer--item"><p>next</p></div>
-                            </div>
+                            @include('pagination', ['paginator' => $lids])
                         </div>
 
 
@@ -149,4 +139,5 @@
                 </div>
             </div>
         </div>
+
         @endsection

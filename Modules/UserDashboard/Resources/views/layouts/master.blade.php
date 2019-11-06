@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ ('../../../css/reset.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/lib/all.min.css') }}">
@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ ('../../../css/admin.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/filter.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/frame-fules.css') }}">
+    <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ ('../../../css/calen.css') }}">
     <title>Admin</title>
 </head>
 <body>
@@ -69,29 +72,31 @@
 
                 <div class="slider__menu">
                     <div class="slider__menu--item">
-                        <a href="#">
+                        <a href="/user-dashboard">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p class="slider__menu--dash">Главная</p>
                             </div>
                         </a>
                     </div>
 
                     <div class="slider__menu--item">
-                        <a href="/admin-dashboard">
+                        <a href="/user-dashboard/users">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Фреймы</p>
+                                <p class="slider__menu--user">Фреймы</p>
                             </div>
                         </a>
                     </div>
 
 
-                    <div class="slider__menu--item">
+                    <!-- <div class="slider__menu--item">
                     <div></div>
                         <a href="/user-dashboard/wallet">
                             <div class="slider__menu--img">
@@ -99,6 +104,18 @@
                             </div>
                             <div class="slider__menu--text">
                                 <p>Баланс</p>
+                            </div>
+                        </a>
+                    </div> -->
+
+                    <div class="slider__menu--item">
+                        <a href="/user-dashboard/billing">
+                            <div class="slider__menu--img">
+                            <i class="far fa-credit-card"></i>
+                                <span style="opacity:0;"></span>
+                            </div>
+                            <div class="slider__menu--text">
+                                <p class="slider__menu--billing">Биллинг</p>
                             </div>
                         </a>
                     </div>
@@ -114,6 +131,18 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+    <script src="../../../js/lib/jquery-ui.js"></script>
+    <script src="../../../js/local-filter.js"></script>
+    <script src="../../../js/lib/jquery.sumoselect.min.js"></script>
     <script src="../../../js/admin.js"></script>
+    <script>
+        $( function() {
+            $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+            $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
+        } );
+        
+    </script>
 </body>
 </html>

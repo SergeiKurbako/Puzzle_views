@@ -5,9 +5,18 @@
 body{
     width: 100%;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
     background: #2196f3;
 }
 
@@ -55,13 +64,20 @@ body{
 
 .entrance input:focus{
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
 }
 
 .entrance__btn{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     /* justify-content: space-between; */
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
     margin-top: 20px;
 }
 
@@ -97,6 +113,8 @@ input[type=checkbox]+ label:before {
     text-align: center;
     vertical-align: middle;
     border-radius: 50%;
+    -webkit-transition: color ease .3s;
+    -o-transition: color ease .3s;
     transition: color ease .3s;
     border: .5px solid #ced4da;
 }
@@ -111,4 +129,34 @@ input[type=checkbox]:checked + label:before {
     font-size: 14px;
     font-weight: 400;
     opacity: 0;
+}
+
+@media screen and (max-width: 576px){
+    body{
+        height: auto;
+    }
+
+    .entrance{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .bl-input__wrapper{
+        width: 100% !important;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
+    .bl-input__wrapper--item{
+        width: 100% !important;
+    }
+    .entrance input[type=tel], .entrance input[type=text], #phone{
+        width: 100% !important;
+    }
+    .entrance .header_title{
+        /* margin-top: 85px; */
+    }
 }

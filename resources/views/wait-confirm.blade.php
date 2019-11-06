@@ -14,22 +14,9 @@
     <title>Admin</title>
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <div class="header__icon">
-            <i class="js-header--burger-box fas fa-bars"></i>
-        </div>
-        
-    </div>
-
-    <div class="admin">
-
-        <div class="slider-and-header--shadow"></div>
-
-        <div class="slider-and-header">
-            <div class="slider">
-
-                <div class="slider__administrator">
-                    <a href="#">
+        <a href="/" style="display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex">
                         <div class="slider__administrator--img">
                             <img src="../../../img/icon/logo.png" alt="">
                         </div>
@@ -37,24 +24,11 @@
                             <p><span>web</span>widgets</p>
                         </div>
                     </a>
-                </div>
-
-                <div class="slider__menu">
-                    <div class="slider__menu--item">
-                        <a href="#">
-                            <div class="slider__menu--img">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="slider__menu--text">
-                                <p>Dashboard</p>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
+        
+    </div>
+
+    <div class="admin">
 
         <div class="main">
             <div class="main__wrapper">

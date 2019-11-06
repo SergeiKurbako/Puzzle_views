@@ -12,33 +12,64 @@
                 <h2>Фильтр</h2>
                     <div class="main__table--filter">
                         <form action="/admin-dashboard/frame/{{$frameId}}" method="get">
-                            <div class="main__table--filter--wrapper" style="justify-content: flex-start;">
+                            <div class="main__table--filter--wrapper" style="-webkit-box-pack: start;-webkit-justify-content: flex-start;-ms-flex-pack: start;justify-content: flex-start;">
                                 <div class="main__filter--date main__filter--date--stat-user">
                                     <p>Дата</p>
                                         <div class="main__filter--date-input-wrapper--stas-user">
                                             <div>
                                                 <label>От</label>
-                                                <input name="from_date" type="date" />
+                                                <input id="from--filter--date" name="from_date" type="text" autocomplete="off"/>
                                             </div>
                                             <div>
                                                 <label>До</label>
-                                                <input name="to_date" type="date" />
+                                                <input id="to--filter--date" name="to_date" type="text" autocomplete="off"/>
                                             </div>
                                         </div>
-
                                 </div>
                                 <div class="main__filter--floor" style="margin-left: 40px;">
                                     <p>Пол</p>
-                                    <select name="gender">
+                                    <select name="gender" id="gender">
+                                        <option value="">Все</option>
                                         <option value="man">Мужской</option>
-                                        <option value="waman">Женский</option>
+                                        <option value="women">Женский</option>
                                     </select>
                                 </div>
+                                <div style="padding-left: 50px;" class="main__filter--price">
+                                    <p>Цена за лид</p>
+                                    <div class="main__filter--price--wrapper">
+                                        <div class="main__filter--price--item">
+                                            <label>От</label>
+                                            <input type="number" id="from_price" name="from_price" autocomplete="off"/>
+                                        </div>
+                                        <div class="main__filter--price--item">
+                                            <label>До</label>
+                                            <input type="number" id="to_price" name="to_price" autocomplete="off"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main__filter--floor" style="margin-left: 40px;">
+                                    <p>Результат игры</p>
+                                    <select name="result_game" id="result_game">
+                                        <option value="">Все</option>
+                                        <option value="win">Победа</option>
+                                        <option value="lose">Проигрыш</option>
+                                        <option value="wait">Ожидание</option>
+                                    </select>
+                                </div>
+                                
 
                             </div>
-
-                            <div class="main__filter--btn">
-                                <input type="submit" name=""  value="Применить" />
+                            <div style="display: flex; align-items: center;">
+                                <div class="main__filter--btn">
+                                    <input type="submit" name=""  value="Применить" />
+                                </div>
+                                <div class="main__filter--btn">
+                                    <input id="btn--reset-filter" type="submit" name=""  value="Сбросить" />
+                                </div>
+                                <div class="main__filter--exel">
+                                    <input id="exel"  type="checkbox" name="exel">
+                                    <label for="exel">Выгрузить в exel</label>
+                                </div>
                             </div>
 
                         </form>
@@ -70,11 +101,11 @@
                                 <td>Результат игры</td>
                             </tr>
                             @foreach($lids as $lid)
-                            <tr>
+                            <tr class="@if($lid->moderation_status == 'accept')  @else @endif">
                                 <td>{{$lid->id}}</td>
                                 <td>{{$lid->created_at}}</td>
                                 <td>{{$lid->second_name}} {{$lid->first_name}} {{$lid->patronymic_name}}</td>
-                                <td>@if($lid->gender === 'man') муж @else жун @endif</td>
+                                <td>@if($lid->gender === 'man') муж @else жен @endif</td>
                                 <td>{{$lid->age}}</td>
                                 <td>{{$lid->email}}</td>
                                 <td>{{$lid->phone}}</td>
@@ -93,7 +124,7 @@
                         </table>
                         <div class="main__table--footer">
 
-
+                            
 
                             <p>Показано от 1 до 10 из 10 записей </p>
                             <!-- <div class="main__table--footer--page">

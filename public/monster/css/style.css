@@ -1,0 +1,254 @@
+#balloon {
+    cursor: crosshair;
+  }
+  
+  .eye {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    bottom: 88px;
+    left: 57px;
+    overflow: hidden;
+  }
+  
+  .eye.right {
+    bottom: 89px;
+    left: 77px;
+  }
+  
+  .eye:after {
+    /*pupil*/
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    width: 9px;
+    height: 9px;
+    background: #000;
+    border-radius: 50%;
+    content: "";
+  }
+  
+  #lil-monster {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    bottom: 28px;
+    right: 0px;
+    -webkit-animation: monster 2s ease-in-out infinite;
+            animation: monster 2s ease-in-out infinite;
+    z-index: 99999;
+}
+
+@-webkit-keyframes monster{
+    0%,100%{ -webkit-transform:translateY(0); transform:translateY(0); }
+    50%{ -webkit-transform:translateY(-10px); transform:translateY(-10px); }
+}
+
+@keyframes monster{
+    0%,100%{ -webkit-transform:translateY(0); transform:translateY(0); }
+    50%{ -webkit-transform:translateY(-10px); transform:translateY(-10px); }
+}
+
+@-webkit-keyframes monsterDown{
+    100%{-webkit-transform:translateY(400px) rotate(40deg);transform:translateY(400px) rotate(40deg);}
+}
+
+@keyframes monsterDown{
+    100%{-webkit-transform:translateY(400px) rotate(40deg);transform:translateY(400px) rotate(40deg);}
+}
+  
+
+.disabled{
+	display: none !important;
+}
+
+span{
+	color:white;
+	font-family:sans-serif;
+	opacity:.3;
+}
+
+.modalIframe{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top:0;
+	left: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	background: rgba(0,0,0,.8);
+	opacity: 0;
+	z-index: 9999999 !important;
+	
+}
+
+.wrapper-iframe--wrapper{
+	height: 600px;
+	position: relative;
+	background: #2196f3;
+}
+
+.madalIframe--close{
+    position: absolute;
+    right: -36px;
+    top: -44px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.madalIframe--close:hover {
+    opacity: 1;
+}
+
+.madalIframe--close:before, .madalIframe--close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 5px;
+    background-color: rgb(173, 173, 173);
+}
+.madalIframe--close:before {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.madalIframe--close:after {
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+
+/* img{
+	max-width: 100%;
+} */
+
+iframe{
+	border: none !important;
+}
+
+#trigger{
+	padding: 10px 10px;
+	text-align: center;
+	font-size: 26px;
+	background: #2196f3;
+	color: #fff;
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	bottom: 50px;
+	-webkit-transition: all 1s linear;
+	-o-transition: all 1s linear;
+	transition: all 1s linear;
+
+}
+
+.body-no-scroll{
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* @media screen and (max-width:1100px){
+	.madalIframe--close{
+		right: 4px;
+	}
+	.wrapper-iframe--wrapper{
+		width: 100%;
+		height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+	.entrance{
+		width: 70%;
+	}
+	.entrance h1{
+		font-size: 2rem;
+	}
+	.entrance label{
+		font-size: 24px;
+	}
+	.entrance input[type=tel], .entrance input[type=text], .entrance input[type=number]{
+		width: 80%;
+	}
+	.entrance__btn-login span{
+		width: 24px;
+	}
+}
+
+
+@media screen and (max-width:800px){
+} */
+
+@media screen and (max-width: 576px){
+	/* #trigger{
+		display: block;
+	} */
+	/* svg{
+		display: none;
+	} */
+	.wrapper-iframe--wrapper{
+		width: 100%;
+		height: 95vh;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+    	-webkit-box-pack: center;
+    	-webkit-justify-content: center;
+    	    -ms-flex-pack: center;
+    	        justify-content: center;
+    	-webkit-box-align: center;
+    	-webkit-align-items: center;
+    	    -ms-flex-align: center;
+    	        align-items: center;
+	}
+	iframe{
+		width: 100%;
+		height: 100%;
+	}
+	.madalIframe--close{
+		right: 4px;
+		top: -32px;
+	}
+	
+	.wrapper-iframe--wrapper h1{
+		font-size: 35px !important;
+	}
+	.entrance-start p{
+		font-size: 25px !important;
+	}
+	.entrance-start p{
+		font-size: 23px !important;
+	}
+}
+
+@media screen and (max-width: 415px){
+
+}

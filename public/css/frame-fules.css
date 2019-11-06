@@ -1,47 +1,51 @@
 .wrapper_input_label form div:not(.wrapper-input){
-   width: 270px; 
-}
-
-.wrapper_input_label form div{
-    margin-right: 40px;
-}
-
-.wrapper_input_label .wrapper-input{
-    display: flex;
-}
-
-.wrapper_input_label label{
-    color: #343a40;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.wrapper_input_label input{
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400;
-    width: 200px;
-    padding: 7.5px 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-}
-
-.wrapper_input_label input:focus{
-    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
-}
-
-.wrapper_input_label input[type=submit]{
-    color: #fff;
-    font-size: 18px;
-    background-color: #2196f3;
-    /* border-color: #2196f3; */
-    padding: 10px 15px;
-    border-radius: 7px;
-    border: none;
-}
-
-.wrapper_input_label input[type=submit]:hover{
-    background-color: #0c83e2;
-}
+    width: 270px; 
+ }
+ 
+ .wrapper_input_label form div{
+     margin-right: 40px;
+ }
+ 
+ .wrapper_input_label .wrapper-input{
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: -webkit-flex;
+     display: flex;
+ }
+ 
+ .wrapper_input_label label{
+     color: #343a40;
+     font-size: 14px;
+     font-weight: 400;
+ }
+ 
+ .wrapper_input_label input{
+     margin-top: 10px;
+     font-size: 18px;
+     font-weight: 400;
+     width: 200px;
+     padding: 7.5px 15px;
+     margin-bottom: 10px;
+     border: 1px solid #ced4da;
+     border-radius: 5px;
+ }
+ 
+ .wrapper_input_label input:focus{
+     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+     -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+             box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+ }
+ 
+ .wrapper_input_label input[type=submit]{
+     color: #fff;
+     font-size: 18px;
+     background-color: #2196f3;
+     /* border-color: #2196f3; */
+     padding: 10px 15px;
+     border-radius: 7px;
+     border: none;
+ }
+ 
+ .wrapper_input_label input[type=submit]:hover{
+     background-color: #0c83e2;
+ }

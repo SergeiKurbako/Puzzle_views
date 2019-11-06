@@ -9,6 +9,10 @@ use Modules\LidSystem\Entities\Lid;
 use Modules\Games\Entities\V2GameRule;
 use Auth;
 use Modules\GameFrame\Entities\GameFrame;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Facades\Excel;
+use Modules\LidSystem\Exports\LidsExport;
+use Modules\Billing\Entities\Payment;
 
 class UserDashboardController extends Controller
 {
@@ -25,7 +29,7 @@ class UserDashboardController extends Controller
             return view('userdashboard::wait-access');
         }
 
-        $itemCount = 10;
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
@@ -33,6 +37,34 @@ class UserDashboardController extends Controller
         $frames = GameFrame::where('user_id', Auth::user()->id)->paginate($itemCount);
 
         return view('userdashboard::index', [
+            'frames' => $frames,
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email,
+            'itemCount' => $itemCount
+        ]);
+    }
+
+    public function showMain(Request $request)
+    {
+        if (Auth::user()->role === 'wait_confirm') {
+            return redirect('/wait-confirm');
+        }
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        if (Auth::user()->status !== 'on') {
+            return view('userdashboard::wait-access');
+        }
+
+        $itemCount = 50;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $frames = GameFrame::where('user_id', Auth::user()->id)->paginate($itemCount);
+
+        return view('userdashboard::main', [
             'frames' => $frames,
             'balance' => Auth::user()->balance,
             'email' => Auth::user()->email,
@@ -65,19 +97,36 @@ class UserDashboardController extends Controller
         }
 
         if ($request->input('to_date') !== null) {
-            $lids->whereDate('created_at', '=<', $request->input('to_date'));
+            $lids->whereDate('created_at', '<=', $request->input('to_date'));
         }
 
         if ($request->input('gender') !== null) {
             $lids->where('gender', '=', $request->input('gender'));
         }
 
-        $itemCount = 10;
+        if ($request->input('result_game') !== null) {
+            $lids->where('game_result', '=', $request->input('result_game'));
+        }
+
+        if ($request->input('from_price') !== null) {
+            $lids->where('price', '>=', $request->input('from_price'));
+        }
+
+        if ($request->input('to_price') !== null) {
+            $lids->where('price', '=<', $request->input('to_price'));
+        }
+
+        $itemCount = 50;
         if ($request->input('item_count') !== null) {
             $itemCount = $request->input('item_count');
         }
 
         $lids = $lids->paginate($itemCount);
+
+        if ($request->input('exel') !== null) {
+            $lidExport = new LidsExport($lids);
+            return Excel::download($lidExport, 'lids.xlsx');
+        }
 
         return view('userdashboard::frame', [
             'lids' => $lids,
@@ -207,9 +256,10 @@ class UserDashboardController extends Controller
 
         $frame = GameFrame::find($frameId);
 
-        return view('admindashboard::update-frame',[
+        return view('userdashboard::update-frame',[
             'frame' => $frame,
-            'email' => Auth::user()->email
+            'email' => Auth::user()->email,
+            'balance' => Auth::user()->balance
         ]);
     }
 
@@ -225,5 +275,42 @@ class UserDashboardController extends Controller
         $frame->save();
 
         return \redirect()->back();
+    }
+
+    public function showBilling(Request $request)
+    {
+        if (Auth::user()->role !== 'user') {
+            return redirect('/login');
+        }
+
+        $payments = Payment::where('id', '>', 0);
+
+        if ($request->input('from_date') !== null) {
+            $payments->whereDate('created_at', '>=', $request->input('from_date'));
+        }
+
+        if ($request->input('to_date') !== null) {
+            $payments->whereDate('created_at', '<=', $request->input('to_date'));
+        }
+
+        $itemCount = 50;
+        if ($request->input('item_count') !== null) {
+            $itemCount = $request->input('item_count');
+        }
+
+        $payments = $payments->paginate($itemCount);
+
+        // if ($request->input('exel') !== null) {
+        //     $lidExport = new LidsExport($lids);
+        //     return Excel::download($lidExport, 'lids.xlsx');
+        // }
+
+        return view('userdashboard::billing', [
+            'payments' => $payments,
+            'itemCount' => $itemCount,
+            'balance' => Auth::user()->balance,
+            'email' => Auth::user()->email
+        ]);
+
     }
 }

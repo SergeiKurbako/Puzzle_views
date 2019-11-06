@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/lig-systems.css">
     <link rel="stylesheet" href="../css/number-phone.css">
@@ -13,8 +13,9 @@
                 <input type="text" name="code" value="{{$code}}" hidden>
                 <input type="text" name="frame_id" value="{{$frameId}}" hidden>
                 <input type="text" name="lid_id" value="{{$lidId}}" hidden>
-                <input id="sms" type="text" />
-
+                <input type="text" name="phone" value="{{$phone}}" hidden>
+                <input id="sms" name="sms_code" type="text" />
+                
                 <span class="war-phone">Неверный код</span>
             </div>
             <div class="entrance__btn">
@@ -24,7 +25,9 @@
                 </div>
             </div>
         </form>
-        {{$smsCode}}
+        <p style="padding-top: 20px;">{{$smsCode}}</p>
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../js/number-sms-val.js"></script>

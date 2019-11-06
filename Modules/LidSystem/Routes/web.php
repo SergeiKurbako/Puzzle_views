@@ -11,6 +11,11 @@ Route::prefix('lidsystem')->group(function() {
     Route::get('/step5', 'LidSystemController@step5');
     Route::get('/save-game-result', 'LidSystemController@saveGameResult');
 
+    Route::get('/check-have-email', 'LidSystemController@checkHaveEmail');
+    Route::get('/check-right-sms-code', 'LidSystemController@checkRightSmsCode');
+    Route::get('/check-have-phone', 'LidSystemController@checkHavePhone');
+
+
     Route::get('/{id}/complaint', 'ComplaintController@createComplaint');
     Route::post('/{id}/complaint', 'ComplaintController@storeComplaint');
 

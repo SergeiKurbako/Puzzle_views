@@ -21,7 +21,7 @@
                         записей
                     </div>
 
-                    <div class="main__table--table">
+                    <div class="main__table--table" style="overflow-x: scroll;">
                         <table>
                             <tr>
                                 <td>№</td>
@@ -31,9 +31,9 @@
                                 <td>SMS подтв.</td>
                                 <td>email подтв.</td>
                                 <td>Статус игры</td>
-                                <td>Статистика</td>
+                                <td>Лиды</td>
                                 <td colspan="2">Цена за лид</td>
-                                <td>Статус</td>
+                                
                             </tr>
                             @foreach($frames as $frame)
                             <tr>
@@ -43,10 +43,20 @@
 
                                 <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
 
-                                <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
+                                <td class="td__code">
+                                    <div class="code-frame">
+                                    <xmp>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+                                    <script src="http://partycamera.org/flies/flies.js"></script>
+                                    <script>
+                                        setTimeout(()=>document.getElementById('iframe').src = `{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code}}`, 5000)
+                                    </script>
+                                    </xmp>
+                                    </div>
+                                </td>
 
                                 <td class="main__table--table--last-child--icon">
-                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update">
+                                    <a href="/admin-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
                                     </a>
                                 </td>
@@ -72,8 +82,9 @@
 
                                             @endif
                                         @else
-
-                                        Выкл
+                                        <div class="checkbox--user-nav">
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
@@ -98,22 +109,45 @@
                                         @endif
 
                                         @else
-                                        Выкл
+                                        <div class="checkbox--user-nav">
+                                            <input class="email-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
+                                        </div>
                                         @endif
                                     </div>
                                 </td>
-                                <td>@if($frame->status === 'on') Вкл <br> (<a href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>) @else Выкл <br>  @endif</td>
+                                <td>
+                                
+                                @if($frame->status === 'on')
+
+                                <div class="checkbox--user-nav table__content--center">
+                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" checked>
+                                    </div>
+
+                                <a class="complaint-check-off complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=off">Выкл</a>
+
+                                @else
+
+                                <div class="checkbox--user-nav table__content--center">
+                                    <input class="complaint-checkbox" type="checkbox" id="{{$frame->id}}" disabled>
+                                </div>
+
+                                <!-- <a class="complaint-check-on complaint-check-{{$frame->id}}" href="/gameframe/update-game-status/{{$frame->id}}/?status=on">Вкл</a> -->
+                                @endif
+                                
+                                
+                                </td>
 
                                 <td class="main__table--table--last-child--icon" style="text-align: center;">
                                     <a href="/admin-dashboard/frame/{{$frame->id}}">
                                         <i style="color: #2196f3" class="far fa-eye"></i>
-                                    </a></td>
+                                    </a>
+                                </td>
                                 <form class="" action="/gameframe/set-price/{{$frame->id}}" method="post">
                                     @csrf
                                 <td><input class="input-prim-price input-prim" type="text" name="price" value="{{$frame->price}}"></td>
                                 <td><input class="btn-prim" type="submit" name="" value="Задать"></td>
                                 </form>
-                                <td>Активен</td>
+                                
                             </tr>
                             @endforeach
                             <tr>
@@ -127,7 +161,7 @@
 
                         </table>
                         <div class="main__table--footer">
-
+                            <p>Показано от 1 до 10 из 10 записей </p>
                             @include('pagination', ['paginator' => $frames])
                         </div>
 

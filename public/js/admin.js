@@ -1,16 +1,15 @@
 $(document).ready(function(){
-    let popup = $('.popup-user');
+    var popup = $('.popup-user');
 
-    let slideMenu = false,
+    var slideMenu = false,
         mouseSlideMenu = true;
 
-    let speed = 100;
+    var speed = 100;
 
-    let slider = $('.slider'),
+    var slider = $('.slider'),
         burgerBox =  $('.js-header--burger-box');
 
     popup.mouseleave(function (){
-        console.log("gg")
 		popup.hide(speed);
     });
 
@@ -45,7 +44,6 @@ $(document).ready(function(){
 
                 mouseSlideMenu = true;
             }
-
         }else{
             slideMenu = true;
 
@@ -55,7 +53,6 @@ $(document).ready(function(){
             
             if(actions == 'click'){
                 if (location.href.indexOf('/complaints') == '-1'){
-                    console.log("good")
                     $('.slider-and-header--shadow').animate({width:'280'}, speed);
                 }
 
@@ -63,15 +60,16 @@ $(document).ready(function(){
                 $('.header__icon').animate({paddingLeft:'285'}, speed);  
                 $('.main__wrapper').animate({paddingLeft:'70'}, speed);
                 
-
                 mouseSlideMenu = false;
             }
         }
     }
 
+
+    
     // Вместо ссылок стоят чекбоксы. При измении чекбокса. Отправляется ajax-запрос по ссылке.
 
-    let smsCheckbox = $('.sms-checkbox'),
+    var smsCheckbox = $('.sms-checkbox'),
         emailCheckbox = $('.email-checkbox'),
         complaintCheckbox = $('.complaint-checkbox');
 
@@ -108,15 +106,93 @@ $(document).ready(function(){
           });
     }
 
-    $('.main__table--select select').click(function(){
-        $(".main__table--select select :selected").val();
-        
-        // console.log(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val())
-        
-        window.open(window.location.origin + window.location.pathname+'?item_count='+ $(".main__table--select select :selected").val(),'_parent');
-        
-    })
+    if(window.location.pathname.indexOf('/user/') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('requests') != -1){
+        $('.fa-recycle').css({'color':'#2898F3'})
+        $('.slider__menu--request').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('complaints') != -1){
+        $('.fa-angry').css({'color':'#2898F3'})
+        $('.slider__menu--complaints').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('wallet') != -1){
+        $('.fa-recycle').css({'color':'#2898F3'})
+    }else if(window.location.pathname === '/admin-dashboard'){
+        $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
 
+    }else if(window.location.pathname === '/user-dashboard'){
+        $('.fa-home').css({'color':'#2898F3'})
+        $('.slider__menu--dash').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/user-dashboard/create-frame') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/user-dashboard/users') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/frame/') != -1){
+        $('.fa-user').css({'color':'#2898F3'})
+        $('.slider__menu--user').css({'color':'#2898F3'})
+    }else if(window.location.pathname.indexOf('/billing') != -1){
+        $('.fa-credit-card').css({'color':'#2898F3'})
+        $('.slider__menu--billing').css({'color':'#2898F3'})
+    }
+    
+    // Trigger
+    var sl;
+    var code;
+
+    $('.code-frame').click(function(){
+        sl = $(this);
+        code = $(this).text();
+
+        $(this).html("<textarea id='textareaText' cols='40' rows='10'>"+ $.trim(code)+"</textarea>");
+        $('#textareaText').select();
+    });
+
+    jQuery(function($){
+        $(document).mouseup(function (e){
+            var div = sl;
+            if (!div.is(e.target)
+                && div.has(e.target).length === 0) {
+                    // div.hide(); // скрываем его
+                    div.html('<xmp>'+ $.trim(code) +'</xmp>');
+                    div.show();
+            }
+          });
+      });
+
+    // slider__menu--img i
+    if($('#gender') != undefined) $('#gender').SumoSelect();
+    if($('#status') != undefined) $('#status').SumoSelect();
+    if($('#result_game') != undefined) $('#result_game').SumoSelect();
     
 
+    // if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+
+    // if($('.main__table--select select') != undefined) $('.main__table--select select').SumoSelect();
+
+
+    // $('.main__table--select .opt').click(function(){
+    //     sessionStorage.setItem(window.location.pathname, s.val());
+    //     window.open(window.location.origin + window.location.pathname+'?item_count='+ $(this).text(),'_parent');
+    // })
+    
+
+// Selected
+
+    // var urlSelect = window.location.href;
+    // var start_url_select = test_str.indexOf('?item_count=')+9;
+    // var end_url_select = test_str.indexOf('&code',start_url_select);
+    // var text_to_get = test_str.substring(start_pos,end_pos);
+    // console.log(text_to_get)
+
+    if($('.menu_request').text() >= 1){
+        $('.menu_request').css("opacity","1");
+    }
+    if($('.menu__complaints').text() >= 1){
+        $('.menu__complaints').css("opacity","1");
+    }
+    
+    
 });

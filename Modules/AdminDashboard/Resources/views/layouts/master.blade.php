@@ -2,14 +2,23 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ ('../../../css/reset.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/lib/all.min.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/lib/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/fonts.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/admin.css') }}">
+    
+    <link rel="stylesheet" href="{{ ('../../../css/lib/sumoselect.css') }}">
     <link rel="stylesheet" href="{{ ('../../../css/filter.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ ('../../../css/calen.css') }}">
+    
+    <style>
+    
+    </style>
+
     <title>Admin</title>
 </head>
 <body>
@@ -70,13 +79,14 @@
                 </div>
 
                 <div class="slider__menu">
-                    <div class="slider__menu--item">
+                    <div class="slider__menu--item" style="display: none">
                         <a href="#">
                             <div class="slider__menu--img">
                                 <i class="fas fa-home"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Dashboard</p>
+                                <p>Главная</p>
                             </div>
                         </a>
                     </div>
@@ -85,9 +95,10 @@
                         <a href="/admin-dashboard">
                             <div class="slider__menu--img">
                                 <i class="far fa-user"></i>
+                                <span style="opacity:0;"></span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Пользователи</p>
+                                <p class="slider__menu--user">Пользователи</p>
                             </div>
                         </a>
                     </div>
@@ -96,9 +107,10 @@
                         <a href="/admin-dashboard/requests">
                             <div class="slider__menu--img">
                                 <i class="fas fa-recycle"></i>
+                                <span class="menu_request">{{$countOfRequests}}</span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Запросы</p>
+                                <p class="slider__menu--request">Запросы</p>
                             </div>
                         </a>
                     </div>
@@ -107,14 +119,28 @@
                         <a href="/admin-dashboard/complaints">
                             <div class="slider__menu--img">
                                 <i class="far fa-angry"></i>
+                                <span class="menu__complaints">{{$countOfComplaints}}</span>
                             </div>
                             <div class="slider__menu--text">
-                                <p>Жалобы</p>
+                                <p class="slider__menu--complaints">Жалобы</p>
                             </div>
                         </a>
                     </div>
-                </div>
 
+                    <div class="slider__menu--item">
+                        <a href="/admin-dashboard/billing">
+                            <div class="slider__menu--img">
+                            <i class="far fa-credit-card"></i>
+                                <span style="opacity:0;"></span>
+                            </div>
+                            <div class="slider__menu--text">
+                                <p class="slider__menu--billing">Биллинг</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                
             </div>
         </div>
 
@@ -123,6 +149,25 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"></script>
+    
+    <script src="../../../js/local-filter.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="../../../js/lib/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sumoselect/3.0.2/jquery.sumoselect.min.js"></script>
+    <script>
+        $( function() {
+            $("#from--filter--date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+            $("#to--filter--date").datepicker({ dateFormat: 'yy-mm-dd' });
+        } );
+        
+    </script>
+
     <script src="../../../js/admin.js"></script>
+
+    
+    
 </body>
 </html>

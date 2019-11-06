@@ -9,8 +9,15 @@
 }
 
 .main__table--filter form .main__table--filter--wrapper{
+    max-width: 1000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -38,7 +45,8 @@
 
 .main__table--filter form input:focus{
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
 }
 
 .main__filter--price input{
@@ -47,15 +55,41 @@
     padding-right: 10px;
 }
 
+.main__filter--email{
+    margin-left: 40px;
+}
+
+.main__filter--email #email{
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #495057;
+    font-size: 16px;
+    font-family: 'Roboto','Courier New', Courier, monospace
+}
+
 ::-webkit-datetime-edit-month-field{
     font-size: 14px;
     /* color: blue; */
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 .main__filter--date-input-wrapper{
-    width: 390px;
+    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
 }
 
 /* Filter frame.blade.css */
@@ -65,9 +99,15 @@
 }
 
 .main__filter--date-input-wrapper--stas-user{
-    width: 390px;
+    width: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
 }
 
 /*  */
@@ -93,19 +133,38 @@
 }
 
 .main__table--filter--wrapper select{
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    background: #ffffff;
-    border: 1px solid #ced4da;
-    color:#495057;
-    border-radius: .35rem;
-    transition: .2s;
+    border: none !important;
+    padding: 10px 15px !important;
+    font-size: 16px !important;
+    background: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    color:#495057 !important;
+    border-radius: .35rem !important;
+    -webkit-transition: .2s !important;
+    -o-transition: .2s !important;
+    transition: .2s !important;
 }
 
 .main__table--filter--wrapper select:focus{
     webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
-    box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5); 
+}
+
+.main__filter--price--wrapper{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 240px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .main__filter--price input{
@@ -137,6 +196,8 @@ input[type=checkbox]+ label:before {
     width: 20px;
     text-align: center;
     vertical-align: middle;
+    -webkit-transition: color ease .3s;
+    -o-transition: color ease .3s;
     transition: color ease .3s;
     border: .5px solid #ced4da;
 }
@@ -163,6 +224,50 @@ input[type=checkbox]:checked + label:before {
     background: #227fcc;
 }
 
+
+/* Style lib sumoselect */
+
+.SumoSelect > .CaptionCont{
+    font-weight: 500 !important;
+    border: none !important;
+    padding: 13px 15px !important;
+    font-size: 16px !important;
+    background: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    color: #495057 !important;
+    border-radius: .35rem !important;
+    -webkit-transition: .2s !important;
+    -o-transition: .2s !important;
+    transition: .2s !important;
+}
+
+.SumoSelect > .optWrapper > .options li.opt{
+    padding: 11px 15px;
+}
+
+.SumoSelect > .optWrapper > .options li.opt:hover {
+    background-color: #6abbfd;  
+}
+
+.SumoSelect > .optWrapper > .options li.opt label, .SumoSelect > .CaptionCont, .SumoSelect .select-all > label{
+    color: #000000;
+}
+
+.SumoSelect:focus > .CaptionCont, .SumoSelect.open > .CaptionCont {
+    webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+            box-shadow: 0 0 0 0.2rem rgba(33,150,243,.5);
+}
+
+.sumo_gender{
+    max-width: 100px;
+}
+
+.sumo_status{
+    max-width: 150px;
+}
+/*  */
+
 @media screen and (max-width: 1435px){
     /* .main__table--filter form .main__table--filter--wrapper{
         padding-right: 15px;
@@ -179,12 +284,59 @@ input[type=checkbox]:checked + label:before {
     }
     .main__filter--date-input-wrapper{
         width: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
         display: flex;
         /* flex-direction: column; */
-        align-items: flex-end;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                -webkit-align-items: flex-end;
+                align-items: flex-end;
     }
 }
 
-@media screen and (max-width: 1425px){
-    
+@media screen and (max-width: 1200px){
+    .main__filter--date{
+        width: auto;
+    }
+    .main__filter--date-input-wrapper{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .filter--date--stat-user{
+        width: auto;
+    }
+    .main__filter--date-input-wrapper--stas-user{
+        width: 230px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .main__filter--date--stat-user{
+        width: 200px !important;
+    }
+    .main__filter--price--item{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-bottom: 10px;
+    }
+    .main__filter--price--item label{
+        padding-right: 5px;
+    }
 }

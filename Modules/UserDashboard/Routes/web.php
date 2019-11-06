@@ -12,7 +12,8 @@
 */
 
 Route::prefix('user-dashboard')->group(function() {
-    Route::get('/', 'UserDashboardController@index');
+    Route::get('/users', 'UserDashboardController@index');
+    Route::get('/', 'UserDashboardController@showMain');
     Route::get('/create-frame', 'UserDashboardController@createFrame');
     Route::get('/frame/{id}', 'UserDashboardController@showFrame');
     Route::get('/frame-rules/{id}', 'UserDashboardController@showFrameRules');
@@ -20,4 +21,5 @@ Route::prefix('user-dashboard')->group(function() {
     Route::get('/wallet', 'UserDashboardController@showWallet');
     Route::get('/frame/{id}/update', 'UserDashboardController@updateFrame');
     Route::post('/frame/{id}/update', 'UserDashboardController@storeFrame');
+    Route::get('/billing', 'UserDashboardController@showBilling');
 });

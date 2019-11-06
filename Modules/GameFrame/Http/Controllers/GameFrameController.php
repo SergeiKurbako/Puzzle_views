@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\GameFrame\Entities\GameFrame;
 use Modules\LidSystem\Entities\Lid;
+use Modules\LidSystem\Entities\Complaint;
 use Auth;
 use Webpatser\Uuid\Uuid;
 use Modules\Games\Entities\V2GameRule;
@@ -45,13 +46,21 @@ class GameFrameController extends Controller
         // определение является ли url
         $checkIsUrl = filter_var($url, FILTER_VALIDATE_URL);
         if ($checkIsUrl === false) {
-            return view('userdashboard::create-frame', ['error' => 'Введите url']);
+            return view('userdashboard::create-frame', [
+                'error' => 'Введите URL с http или https',
+                'balance' => Auth::user()->balance,
+                'email' => Auth::user()->email
+                ]);
         }
 
         // проверка наличия фрейма для данного сайта
         $frame = GameFrame::where('url', $url)->first();
         if ($frame !== null) {
-            return view('userdashboard::create-frame', ['error' => 'Фрейм с таким url уже есть']);
+            return view('userdashboard::create-frame', [
+                'error' => 'Фрейм с таким url уже есть',
+                'balance' => Auth::user()->balance,
+                'email' => Auth::user()->email
+                ]);
         }
 
         // определение ip
@@ -104,6 +113,9 @@ class GameFrameController extends Controller
         if (Auth::user()->role !== 'admin') {
             return redirect('/login');
         }
+        $countOfComplaints = Complaint::where('status', '=', 'moderation')->get()->count();
+        $countOfRequests = GameFrame::where('frame_status', '=', 'off')->get()->count();
+
 
         $url = $request->input('url');
 
@@ -111,8 +123,11 @@ class GameFrameController extends Controller
         $checkIsUrl = filter_var($url, FILTER_VALIDATE_URL);
         if ($checkIsUrl === false) {
             return view('admindashboard::create-frame', [
-                'error' => 'Введите url',
-                'userId' => $request->input('user_id')
+                'error' => 'Введите URL с http или https',
+                'userId' => $request->input('user_id'),
+                'email' => Auth::user()->email,
+                'countOfComplaints' => $countOfComplaints,
+                'countOfRequests' => $countOfRequests
             ]);
         }
 
@@ -124,7 +139,9 @@ class GameFrameController extends Controller
             return view('admindashboard::create-frame', [
                 'error' => 'Фрейм с таким url уже есть',
                 'userId' => $request->input('user_id'),
-                'email' => $user->email
+                'email' => $user->email,
+                'countOfComplaints' => $countOfComplaints,
+                'countOfRequests' => $countOfRequests
             ]);
         }
 
@@ -149,7 +166,9 @@ class GameFrameController extends Controller
             } else {
                 return view('admindashboard::create-frame', [
                     'error' => 'Bad request',
-                    'userId' => $request->input('user_id')
+                    'userId' => $request->input('user_id'),
+                    'countOfComplaints' => $countOfComplaints,
+                    'countOfRequests' => $countOfRequests
                 ]);
             }
         } else {
@@ -306,5 +325,41 @@ class GameFrameController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function checkNeedSmsConfirm(Request $request)
+    {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
+        $frame_id = $request->input('frame_id');
+
+        $result = 'false';
+        $gameFrame = GameFrame::find($frame_id);
+        if ($gameFrame !== null) {
+            if ($gameFrame->sms_confirm === 'on') {
+                $result = 'true';
+            }
+        }
+
+        return $result;
+    }
+
+    public function checkNeedEmailConfirm(Request $request)
+    {
+        header('Access-Control-Allow-Origin: ' . $_SERVER['REQUEST_SCHEME'] . '//:' . $_SERVER['HTTP_HOST']);
+        header('Access-Control-Allow-Credentials: true');
+
+        $frame_id = $request->input('frame_id');
+
+        $result = 'false';
+        $gameFrame = GameFrame::find($frame_id);
+        if ($gameFrame !== null) {
+            if ($gameFrame->email_confirm === 'on') {
+                $result = 'true';
+            }
+        }
+
+        return $result;
     }
 }

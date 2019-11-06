@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
 <div class="main">
             <div class="main__wrapper">
 
@@ -11,7 +9,7 @@
                     <h1>Пользователи</h1>
                 </div>
                 <div class="main__table">
-                    <div class="main__table--select">
+                <div class="main__table--select">
                         Показать
                         <select>
                             <option value="10">10</option>
@@ -21,8 +19,8 @@
                         </select>
                         записей
                     </div>
-
-                    <div class="main__table--table">
+                    
+                    <div class="main__table--table" style="overflow-x: scroll;">
                         <table>
                             <tr>
                                 <td>№</td>
@@ -33,7 +31,7 @@
                                 <td>email подтв.</td>
                                 <td>Правила</td>
                                 <td>Статус игры</td>
-                                <td>Статистика</td>
+                                <td>Лиды</td>
                                 <td>Цена за лид</td>
                             </tr>
                             @foreach($frames as $frame)
@@ -44,8 +42,24 @@
 
                                 <td><a href="{{$frame->url}}" target="_blank">{{$frame->url}}</a></td>
 
-                                <td>{{'<iframe src=\''}}{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code . "' width='1000' height='600'></iframe>"}}</td>
-                                <!-- <td><a href="/user-dashboard/frame/{{$frame->id}}/update">Редактировать</a></td> -->
+                                <td class="td__code">
+                                    <div class="code-frame">
+                                        <xmp>
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+                                            <script src="http://partycamera.org/flies/flies.js"></script>
+                                            <script>
+                                            setTimeout(()=>document.getElementById('iframe').src = `{{stripos($_SERVER["SERVER_PROTOCOL"],"https") === 0 ? "https://" : "http://" . $_SERVER['HTTP_HOST'] . "/lidsystem/?frame_id=" . $frame->id . "&code=" . $frame->code}}`, 5000)
+                                        </script>
+                                    </xmp>
+                                    </div>
+                                </td>
+                                
+                                
+                                
+                                
+                                
+                                
+                                    <!-- <td><a href="/user-dashboard/frame/{{$frame->id}}/update">Редактировать</a></td> -->
                                 <td class="main__table--table--last-child--icon">
                                     <a href="/user-dashboard/frame/{{$frame->id}}/update" title="Редактировать">
                                         <i style="color: #2196f3;" class="fas fa-pencil-alt"></i>
@@ -166,14 +180,7 @@
 
                         <div class="main__table--footer">
                             <p>Показано от 1 до 10 из 10 записей </p>
-                            <!-- <div class="main__table--footer--page">
-                                <div class="main__footer--item main__footer--item--active"><p>1</p></div>
-                                <div class="main__footer--item"><p>2</p></div>
-                                <div class="main__footer--item"><p>3</p></div>
-                                <div class="main__footer--item"><p>4</p></div>
-                                <div class="main__footer--item"><p>next</p></div>
-                            </div> -->
-                            {{ $frames->links() }}
+                            @include('pagination', ['paginator' => $frames])
                         </div>
 
 
