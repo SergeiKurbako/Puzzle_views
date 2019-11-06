@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
     const div = document.createElement('div');
     div.innerHTML = `
 <div class="disabled modalIframe" id="wrapper-iframe">
@@ -10,7 +10,7 @@ window.onload = function() {
     </div>
     <div class="wrapper__svg" id="wrapper__svg">
     <div class="close_svg">
-        <img src='http://partycamera.org/flies/stop.png'/>
+        <img src='stop.png'/>
     </div>
         <svg class="game SVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
@@ -108,7 +108,7 @@ window.onload = function() {
     closeSvgStyles.style.width = '75px';
     closeSvgStyles.style.height = '75px';
     closeSvgStyles.style.position = 'fixed';
-    closeSvgStyles.style.zIndex = '500';
+    // closeSvgStyles.style.zIndex = '500';
     closeSvgStyles.style.display = 'flex';
     closeSvgStyles.style.alignItems = 'center';
     closeSvgStyles.style.justifyContent = 'center';
@@ -117,7 +117,7 @@ window.onload = function() {
     const closeSvgImgStyles = closeSvgStyles.querySelector('img');
     closeSvgImgStyles.style.width = '100%';
     closeSvgImgStyles.style.height = '100%';
-    closeSvgImgStyles.style.zIndex = '500';
+    closeSvgImgStyles.style.zIndex = '1000';
 
 // if (isMobile) {
 //     buttonClose.style.width = '60px';
@@ -184,6 +184,8 @@ window.onload = function() {
     var gnatTemplate = document.querySelector(".gnat");
     var swatterButton = document.querySelector('.swatter-button');
     swatterButton.style.transform = 'scale(0.4)';
+    swatterButton.style.overflow = 'visible';
+    swatterButton.style.zIndex = '1000';
     var enemies = document.querySelector(".enemies");
     var gnats = [];
     var swatThreshold = 45;
@@ -428,14 +430,18 @@ window.onload = function() {
         const buttonHeight = parseInt(getComputedStyle(buttonClose).height)
 
         if (!isRemove) {
-            closeCount = !closeCount;
-
             if (!isMobile && e.clientX > buttonX && e.clientX < buttonX + buttonWidth && e.clientY > buttonY && e.clientY < buttonY + buttonHeight) {
+                closeCount = !closeCount;
+
                 if (closeCount) {
                     buttonClose.style.opacity = '0.5';
-                    hideSvg()
+                    wrapperSvg.style.zIndex = '0';
+                    swatter.style.visibility = 'hidden';
+                    hideSvg();
                 } else {
                     buttonClose.style.opacity = '1';
+                    wrapperSvg.style.zIndex = '1000';
+                    swatter.style.visibility = 'visible';
                     openSvg();
                 }
             }
@@ -443,14 +449,18 @@ window.onload = function() {
             if (isMobile && e.targetTouches[0].clientX > buttonX && e.targetTouches[0].clientX < buttonX + buttonWidth &&
                 e.targetTouches[0].clientY > buttonY && e.targetTouches[0].clientY < buttonY + buttonHeight) {
                 swatter.style.display = 'none';
+                closeCount = !closeCount;
 
                 if (closeCount) {
                     buttonClose.style.opacity = '0.5'
+                    wrapperSvg.style.zIndex = '0';
+                    swatter.style.visibility = 'hidden';
                     hideSvg()
                 } else {
                     buttonClose.style.opacity = '1'
+                    wrapperSvg.style.zIndex = '1000';
+                    swatter.style.visibility = 'visible';
                     openSvg();
-                    swatter.style.display = 'none';
                 }
             }
 
@@ -458,7 +468,7 @@ window.onload = function() {
                 swatter.style.display = 'block';
             }
 
-            if (isMobile && !isSwatterHide &&  e.targetTouches[0].clientX < buttonX && e.targetTouches[0].clientY < buttonY) {
+            if (isMobile && !isSwatterHide && e.targetTouches[0].clientX < buttonX && e.targetTouches[0].clientY < buttonY) {
                 swatter.style.display = 'block';
             }
         }
@@ -472,7 +482,7 @@ window.onload = function() {
         const buttonHeight = parseInt(getComputedStyle(buttonClose).height)
 
         TweenMax.set(swatterButton, {
-            x: document.documentElement.clientWidth - 145,
+            x: document.documentElement.clientWidth - 152,
             y: document.documentElement.clientHeight - 110
         })
 
@@ -489,17 +499,17 @@ window.onload = function() {
         if (!isRemove) {
             if (closeCount) {
                 document.body.style.cursor = 'auto';
+                swatter.style.visibility = 'hidden';
             } else {
                 document.body.style.cursor = 'none';
+                swatter.style.visibility = 'visible';
             }
 
             if (e.clientX > buttonX && e.clientX < buttonX + buttonWidth && e.clientY > buttonY && e.clientY < buttonY + buttonHeight) {
                 document.body.style.cursor = 'pointer';
                 buttonClose.style.opacity = '0.5'
-                swatter.style.visibility = 'hidden';
             } else {
                 buttonClose.style.opacity = '1'
-                swatter.style.visibility = 'visible';
             }
         }
     })
