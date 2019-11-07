@@ -105,7 +105,7 @@ class GameFrameController extends Controller
         $rule->frame_id = $gameFrame->id;
         $rule->save();
 
-        return \redirect('/login');
+        return \redirect('/user-dashboard/users');
     }
 
     public function storeAdminFrame(Request $request)
